@@ -109,3 +109,6 @@ gtceu/prospection_cache/
 .pakku/server-overrides/scripts
 .pakku/server-overrides/mods
 .pakku/server-overrides/user_jvm_args.txt
+
+# Nix
+.direnv/
