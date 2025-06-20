@@ -399,4 +399,4 @@ jobs:
             ${{ needs.info.outputs.project_full_name }}-multimc.zip
           prerelease: ${{ env.RELEASE_TYPE != 'release' }}
           generate_release_notes: true
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_TOKEN }}

@@ -4,17 +4,7 @@
   <a href="https://github.com/TerraFirmaGreg-Team/Modpack-Modern">
     <img src="https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/logo.png?raw=true" alt="Logo" height="100">
   </a>
-  <p align="center">
-    <a href="https://github.com/TerraFirmaGreg-Team/Modpack-Modern/wiki">Wiki</a>
-    ·
-    <a href="https://github.com/TerraFirmaGreg-Team/Modpack-Modern/issues">Report Bugs</a>
-    ·
-    <a href="https://github.com/TerraFirmaGreg-Team/Modpack-Modern/issues">Request Features</a>
-    ·
-    <a href="https://github.com/orgs/TerraFirmaGreg-Team/projects/10">Roadmap</a>
-  </p>
 </div>
-
 <br/>
 
 ![Logo Large](https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/logo_large.png?raw=true)
@@ -22,6 +12,11 @@
 ---
 
 ## Survival Modpack as it Should've Been
+
+[TerraFirmaCraft]: https://www.curseforge.com/minecraft/mc-mods/terrafirmacraft
+[GregTech Modern]: https://www.curseforge.com/minecraft/mc-mods/gregtechceu-modern
+[Applied Energistics]: https://www.curseforge.com/minecraft/mc-mods/ae2
+[Create]: https://www.curseforge.com/minecraft/mc-mods/create
 
 **TerraFirmaGreg-Modern** is a Forge modpack that redefines Minecraft survival
 by introducing realistic challenges alongside advanced technological mechanics.
@@ -45,18 +40,28 @@ Several hand-picked TFC and Create addons to provide even more depth. Many other
 small mods tie everything together, and the modpack also integrates quests to
 help you navigate its complex world.
 
+### Personal Additions
+
+[live documentation]: https://shelfmd.github.io/TFG-Modern
+
+This repository houses my _personal_ build of TerrafirmaGreg-Modern. It is
+designed to be used on my private server, and as such it includes my own
+personal selection of mods. Some of those decisions, additions, or other changes
+will be documented in the [live documentation].
+
+I have elected to soft-fork the TerrafirmaGreg-Modern repository, as GitHub
+imposes absurd CI restrictions to forks of repositories. I do not claim
+authorship of this modpack, nor the mods and configurations in it unless
+explicitly stated. See [LICENSE](../LICENSE) for details of licensing.
+
 ---
 
 ![Image Readme](https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/image_readme.png?raw=true)
 
 ### External Credits
 
+- TerraFirmaGreg Team for the original modpack, which I have forked
 - WithersChat from the Monifactory team for the universal circuit textures
 - GregTech Community Pack Modern for most of their quest text
-
-<!-- Links: -->
-
-[TerraFirmaCraft]: https://www.curseforge.com/minecraft/mc-mods/terrafirmacraft
-[GregTech Modern]: https://www.curseforge.com/minecraft/mc-mods/gregtechceu-modern
-[Applied Energistics]: https://www.curseforge.com/minecraft/mc-mods/ae2
-[Create]: https://www.curseforge.com/minecraft/mc-mods/create
+- Mod authors, to whom I owe all the credit. Without them, there would bee no
+  modpack.
