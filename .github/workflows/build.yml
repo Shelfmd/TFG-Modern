@@ -1,6 +1,7 @@
 name: Project Build
 run-name: "📦 Project Build #${{ github.run_number }}"
 on:
+  workflow_dispatch:
   push:
     branches:
       - dev
@@ -15,7 +16,7 @@ env:
   MINECRAFT_VERSION: "1.20.1"
   DEV_ENVIRONMENT: ${{ github.ref_name != 'main' }}
 
-jobs:    
+jobs:
   info:
     name: 🖥️ Project Info
     runs-on: ubuntu-latest
@@ -27,13 +28,13 @@ jobs:
       diff: ${{ steps.read_diff.outputs.diff }}
       exists: ${{ steps.check.outputs.exists }}
       make_release: ${{ steps.check.outputs.make_release }}
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
-        
+
       - name: 🔍 Check pakku-lock.json
         id: check_pakku_lock
         shell: bash
@@ -43,7 +44,7 @@ jobs:
           else
             echo "✔️ pakku-lock.json"
           fi
-        
+
       - name: 🔍 Check pakku.json
         id: check_pakku
         shell: bash
@@ -65,7 +66,7 @@ jobs:
             echo "✔️ Latest tag found: $tag"
             echo "tag=$tag" >> $GITHUB_OUTPUT
           fi
-        
+
       - name: 🔍 Check pakku-lock.json in previous tag
         id: check_pakku_lock_prev
         shell: bash
@@ -77,7 +78,7 @@ jobs:
             echo "❌ File pakku-lock.json not found in previous tag"
             echo "file_found=false" >> $GITHUB_OUTPUT
           fi
-        
+
       - name: 📁 Check and copy pakku-lock.json from previous tag
         id: check_copy_lock
         if: steps.check_pakku_lock_prev.outputs.file_found
@@ -89,7 +90,7 @@ jobs:
           else
             echo "❌ Error: File pakku-lock-prev.json is empty or not created" && exit 1
           fi
-        
+
       - name: 📦 Download pakku.jar
         id: download_pakku
         if: steps.check_pakku_lock_prev.outputs.file_found
@@ -97,7 +98,7 @@ jobs:
         run: |
           curl https://github.com/juraj-hrivnak/pakku/releases/latest/download/pakku.jar -o pakku.jar -L -J
           echo "✔️ Downloaded pakku.jar "
-        
+
       - name: 🔄 Run pakku diff
         id: pakku_diff
         if: steps.check_pakku_lock_prev.outputs.file_found
@@ -109,7 +110,7 @@ jobs:
           else
             echo "❌ Error: File PROJECTS_DIFF.md not created" && exit 1
           fi
-        
+
       - name: 📝 Read PROJECTS_DIFF.md to variable
         id: read_diff
         if: steps.check_pakku_lock_prev.outputs.file_found
@@ -150,7 +151,7 @@ jobs:
           else
             echo "version=${{ steps.pakku_info.outputs.version }}" >> $GITHUB_OUTPUT
           fi
-        
+
       - name: 📄 Changelog Parser
         id: changelog
         uses: coditory/changelog-parser@v1.0.2
@@ -186,7 +187,7 @@ jobs:
             ```markdown
             ${{ steps.read_diff.outputs.diff }}
             ```
-        
+
       - name: 📝 Generate Github Summary
         uses: WcAServices/markdown-template-action@v1.1.1
         with:
@@ -199,11 +200,11 @@ jobs:
             📃 **Dev Environment**: `${{ env.DEV_ENVIRONMENT }}`
             📃 **Tag Exists**: `${{ steps.check.outputs.exists }}`
             📃 **Make Release**: `${{ steps.check.outputs.make_release }}`
-            
+
 
             ${{ steps.changelog.outputs.description }}
             ${{ steps.format_diff.outputs.text }}
-  
+
 
   build-modpack:
     name: 📦 Build Modpack
@@ -239,7 +240,7 @@ jobs:
         run: |
           cd ./build/curseforge/
           mv *.zip $(basename -s .zip *.zip)-curseforge.zip
-          
+
       - name: 🚀 Upload artifact CurseForge
         uses: actions/upload-artifact@v4.6.2
         with:
@@ -333,7 +334,7 @@ jobs:
           curl https://github.com/juraj-hrivnak/pakku/releases/latest/download/pakku.jar -o pakku.jar -L -J
           java -jar pakku.jar --debug fetch
           java -jar pakku.jar --debug export
-          
+
       - name: 📁 Move files
         run: |
           ls
@@ -343,9 +344,9 @@ jobs:
           mv -vf ./build/.cache/curseforge/overrides .pakku/multimc-overrides/.minecraft
           mv -vf ./mods .pakku/multimc-overrides/.minecraft/mods
           cd .pakku/multimc-overrides/
-          
+
           zip -r ${{ needs.info.outputs.project_full_name }}-multimc.zip icon.png mmc-pack.json instance.cfg .minecraft/ flame/
-      
+
       - name: 🚀 Upload zip multimc
         uses: actions/upload-artifact@v4.6.2
         with:
@@ -437,7 +438,7 @@ jobs:
         run: |
           if [ "${{ secrets.CURSEFORGE_TOKEN }}" == '' ]; then
             echo '::error::No value found for secret key `CURSEFORGE_TOKEN`. See https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository' && exit 1
-          fi  
+          fi
 
       - name: 📦 Download artifact
         uses: actions/download-artifact@v4.3.0
@@ -487,8 +488,8 @@ jobs:
           run: |
             if [ "${{ secrets.MODRINTH_TOKEN }}" == '' ]; then
               echo '::error::No value found for secret key `MODRINTH_TOKEN`. See https://docs.github.com/en/  actionssecurity-guides/  encrypted-secrets#creating-encrypted-secrets-for-a-repository' && exit 1
-            fi  
-    
+            fi
+
         - name: 📦 Download artifact
           uses: actions/download-artifact@v4.3.0
           with:
@@ -505,7 +506,7 @@ jobs:
               echo '::error::No value found for artifact `serverpack.zip`.' && exit 1
             fi
             echo "✔️ All artifacts found"
-    
+
         - name: 🚀 Upload Modrinth
           id: release
           uses: Xikaro/upload-curseforge-modpack-action@1.1.1
