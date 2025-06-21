@@ -1,0 +1,65 @@
+name: Documentation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "docs/**"
+      - "pakku-lock.json"
+      - ".github/workflows/docs.yml"
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            substituters = https://cache.nixos.org/ https://nyx.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nyx.cachix.org-1:xH6G0MO9PrpeGe7mHBtj1WbNzmnXr7jId2mCiq6hipE
+
+      - name: Install Dependencies
+        run: |
+          nix profile install nixpkgs#python3
+          nix profile install github:notashelf/nyxexprs#ndg
+
+      - name: Generate mod list
+        run: |
+          python docs/utils/modlist.py ./pakku-lock.json --output-path docs/mod-list.md
+
+      - name: Build documentation
+        run: |
+          ndg html --title "nvf options" \
+            --input-dir ./docs --output-dir site \
+            --generate-search true --options-depth 2
+
+      - name: Upload documentation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: site/
+
+  publish-docs:
+    name: Publish Docs to GitHub Pages
+    needs: [build-docs]
+    runs-on: ubuntu-latest
+    if: ${{ github.ref_name == 'main' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download built site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

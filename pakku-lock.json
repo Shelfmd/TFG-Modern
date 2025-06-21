@@ -878,45 +878,6 @@
             ]
         },
         {
-            "pakku_id": "LVF7UEBiNQpjRDSW",
-            "type": "MOD",
-            "side": "CLIENT",
-            "slug": {
-                "curseforge": "better-foliage-renewed"
-            },
-            "name": {
-                "curseforge": "Better Foliage Renewed"
-            },
-            "id": {
-                "curseforge": "470013"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "betterfoliage-5.0.2.jar",
-                    "mc_versions": [
-                        "1.20.2",
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "neoforge",
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/4923/669/betterfoliage-5.0.2.jar",
-                    "id": "4923669",
-                    "parent_id": "470013",
-                    "hashes": {
-                        "sha1": "4163772d08837daf22034e5333ddefc8532cdb69",
-                        "md5": "22f5753234b465c44688f9555acb4713"
-                    },
-                    "required_dependencies": [],
-                    "size": 396130,
-                    "date_published": "2023-12-03T18:03:18.697Z"
-                }
-            ]
-        },
-        {
             "pakku_id": "hn4E1S13hPaLVPSH",
             "type": "MOD",
             "slug": {
@@ -1456,6 +1417,81 @@
                     "required_dependencies": [],
                     "size": 60956,
                     "date_published": "2024-12-02T08:22:35.773Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "vCvKml9975udZl14",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "chisels-bits"
+            },
+            "name": {
+                "curseforge": "Chisels & Bits - For Forge"
+            },
+            "id": {
+                "curseforge": "231095"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "chisels-and-bits-forge-1.4.148.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5203/366/chisels-and-bits-forge-1.4.148.jar",
+                    "id": "5203366",
+                    "parent_id": "231095",
+                    "hashes": {
+                        "sha1": "bff153dc16b26a0d4f0e8ccc27b2e0fc2dc89355",
+                        "md5": "dab773ee65efd8f1f79505e7cadd825a"
+                    },
+                    "required_dependencies": [],
+                    "size": 2105922,
+                    "date_published": "2024-03-22T18:46:20.373Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "gR692YtiqXMrHD8M",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "chiselse-bits-for-tfc"
+            },
+            "name": {
+                "curseforge": "Chisels & Bits for TFC"
+            },
+            "id": {
+                "curseforge": "950281"
+            },
+            "redistributable": false,
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "ChiselsBitsTFC-1.0.0-forge-1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "neoforge",
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/4957/708/ChiselsBitsTFC-1.0.0-forge-1.20.1.jar",
+                    "id": "4957708",
+                    "parent_id": "950281",
+                    "hashes": {
+                        "sha1": "907aa1308d27c3f70c7676960632e48f00193890",
+                        "md5": "5fdf4f7971af5361ff947f0fa5e20163"
+                    },
+                    "required_dependencies": [],
+                    "size": 33495,
+                    "date_published": "2023-12-14T22:53:51.997Z"
                 }
             ]
         },
@@ -3681,6 +3717,88 @@
             ]
         },
         {
+            "pakku_id": "yHY9OiUTa9sfMgYF",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "farmers-delight"
+            },
+            "name": {
+                "curseforge": "Farmer's Delight"
+            },
+            "id": {
+                "curseforge": "398521"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "FarmersDelight-1.20.1-1.2.8.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "neoforge",
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6597/298/FarmersDelight-1.20.1-1.2.8.jar",
+                    "id": "6597298",
+                    "parent_id": "398521",
+                    "hashes": {
+                        "sha1": "a3402ee46cf12583416b8fbe84a97dd20ba1401a",
+                        "md5": "56aed09101bcbf0790154f8d8f09d9aa"
+                    },
+                    "required_dependencies": [],
+                    "size": 2962947,
+                    "date_published": "2025-05-30T01:49:22.850Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "6H18dL6kl2nHoOwP",
+            "pakku_links": [
+                "fMkiGcRPRv1DdRC1",
+                "yHY9OiUTa9sfMgYF"
+            ],
+            "type": "MOD",
+            "slug": {
+                "curseforge": "farmers-delight-tfc"
+            },
+            "name": {
+                "curseforge": "Farmer's Delight TFC"
+            },
+            "id": {
+                "curseforge": "951750"
+            },
+            "redistributable": false,
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "FarmersDelightTFC-1.0.6-forge-1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "neoforge",
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5956/017/FarmersDelightTFC-1.0.6-forge-1.20.1.jar",
+                    "id": "5956017",
+                    "parent_id": "951750",
+                    "hashes": {
+                        "sha1": "096efced31db0b99b0f44583ddf674a74f4ed602",
+                        "md5": "f58700a1f92eddcd1658d141c10c4398"
+                    },
+                    "required_dependencies": [
+                        "302973",
+                        "398521"
+                    ],
+                    "size": 382381,
+                    "date_published": "2024-12-02T10:07:51.253Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "hggeEmhEPzF5fKKr",
             "type": "MOD",
             "side": "CLIENT",
@@ -4559,7 +4677,7 @@
             "files": [
                 {
                     "type": "curseforge",
-                    "file_name": "guideme-20.1.8.jar",
+                    "file_name": "guideme-20.1.9.jar",
                     "mc_versions": [
                         "1.20.1"
                     ],
@@ -4567,16 +4685,16 @@
                         "forge"
                     ],
                     "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/6634/593/guideme-20.1.8.jar",
-                    "id": "6634593",
+                    "url": "https://edge.forgecdn.net/files/6654/696/guideme-20.1.9.jar",
+                    "id": "6654696",
                     "parent_id": "1173950",
                     "hashes": {
-                        "sha1": "cc5e96b09949c5f1ad5d6aa5c45695f760715e95",
-                        "md5": "38d8791dc9114d9cf6bcd5f2af1402e7"
+                        "sha1": "5619e9e6c4e2f14c3e7f093698e2103c75f4dcf2",
+                        "md5": "e3692a66b10b1df1b3d40cdc99773a6e"
                     },
                     "required_dependencies": [],
-                    "size": 9401167,
-                    "date_published": "2025-06-09T21:54:55.087Z"
+                    "size": 9403366,
+                    "date_published": "2025-06-15T15:50:42.330Z"
                 }
             ]
         },
@@ -6396,6 +6514,83 @@
             ]
         },
         {
+            "pakku_id": "3bV9EGo4aF7KlJVG",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "parcool"
+            },
+            "name": {
+                "curseforge": "ParCool! ~ Minecraft Parkour ~"
+            },
+            "id": {
+                "curseforge": "482378"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "ParCool-1.20.1-3.4.0.7.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6652/972/ParCool-1.20.1-3.4.0.7.jar",
+                    "id": "6652972",
+                    "parent_id": "482378",
+                    "hashes": {
+                        "sha1": "04acff668a1de9ff02837910c8aa1213a001001d",
+                        "md5": "105f8182a1b7668d3402e67f563f80c7"
+                    },
+                    "required_dependencies": [],
+                    "size": 1127561,
+                    "date_published": "2025-06-15T04:17:31.737Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "PBjkMdv2jL2ZL5Fi",
+            "pakku_links": [
+                "3bV9EGo4aF7KlJVG"
+            ],
+            "type": "MOD",
+            "slug": {
+                "curseforge": "parcool-compatibility-addon"
+            },
+            "name": {
+                "curseforge": "ParCool+ / Compatibility Addon"
+            },
+            "id": {
+                "curseforge": "1132901"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "ParCool-CompatibilityAddon-1.20.1-3.3.1.0-1.0.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6036/25/ParCool-CompatibilityAddon-1.20.1-3.3.1.0-1.0.jar",
+                    "id": "6036025",
+                    "parent_id": "1132901",
+                    "hashes": {
+                        "sha1": "2783cb8af6f47456f5b7acf3e24ce418f4ea5a3f",
+                        "md5": "36415278a77b7a9a6b9a7d493ba09ac6"
+                    },
+                    "required_dependencies": [
+                        "482378"
+                    ],
+                    "size": 15192,
+                    "date_published": "2024-12-30T10:25:59.090Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "VtDR8w64cypdCZD4",
             "pakku_links": [
                 "lzhyE6qnNX8vJ50C"
@@ -6714,7 +6909,6 @@
             "id": {
                 "curseforge": "585406"
             },
-            "export": false,
             "files": [
                 {
                     "type": "curseforge",
@@ -7954,7 +8148,7 @@
             "files": [
                 {
                     "type": "curseforge",
-                    "file_name": "tfclunchbox-1.20.1-1.0.0.14.jar",
+                    "file_name": "tfclunchbox-1.20.1-1.0.0.20.jar",
                     "mc_versions": [
                         "1.20.1"
                     ],
@@ -7963,16 +8157,16 @@
                         "forge"
                     ],
                     "release_type": "beta",
-                    "url": "https://edge.forgecdn.net/files/6646/846/tfclunchbox-1.20.1-1.0.0.14.jar",
-                    "id": "6646846",
+                    "url": "https://edge.forgecdn.net/files/6675/072/tfclunchbox-1.20.1-1.0.0.20.jar",
+                    "id": "6675072",
                     "parent_id": "1283445",
                     "hashes": {
-                        "sha1": "de4051c4345290b9d99f2d26090ad466f112b3ec",
-                        "md5": "ada6f65d0fc9785a34b9deb76c53e882"
+                        "sha1": "334167b4cc5ec81a917d168b6ec8a876f315298e",
+                        "md5": "3dc59cd3d685fe4f5d097ca4e66746f4"
                     },
                     "required_dependencies": [],
-                    "size": 95828,
-                    "date_published": "2025-06-13T12:54:20.803Z"
+                    "size": 111379,
+                    "date_published": "2025-06-20T14:40:33.51Z"
                 }
             ]
         },
@@ -8629,44 +8823,6 @@
             ]
         },
         {
-            "pakku_id": "mxWVAqlbiiejXL6S",
-            "type": "MOD",
-            "slug": {
-                "curseforge": "visual-workbench"
-            },
-            "name": {
-                "curseforge": "Visual Workbench"
-            },
-            "id": {
-                "curseforge": "500273"
-            },
-            "files": [
-                {
-                    "type": "curseforge",
-                    "file_name": "VisualWorkbench-v8.0.0-1.20.1-Forge.jar",
-                    "mc_versions": [
-                        "1.20.1"
-                    ],
-                    "loaders": [
-                        "forge"
-                    ],
-                    "release_type": "release",
-                    "url": "https://edge.forgecdn.net/files/4612/695/VisualWorkbench-v8.0.0-1.20.1-Forge.jar",
-                    "id": "4612695",
-                    "parent_id": "500273",
-                    "hashes": {
-                        "sha1": "7ebf579edcf2440eadf1ed6c8c895e1bc2d77bf1",
-                        "md5": "d741bc2d4d3a385116d094b874474a6b"
-                    },
-                    "required_dependencies": [
-                        "495476"
-                    ],
-                    "size": 82055,
-                    "date_published": "2023-06-27T21:00:10.803Z"
-                }
-            ]
-        },
-        {
             "pakku_id": "SZ5c7Jc5GOwlNtbX",
             "type": "MOD",
             "side": "BOTH",
@@ -8887,6 +9043,43 @@
                     "required_dependencies": [],
                     "size": 7997,
                     "date_published": "2023-11-20T20:55:45.500Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "o6zOKZlAFtCc1Qbw",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "playeranimator"
+            },
+            "name": {
+                "curseforge": "playerAnimator"
+            },
+            "id": {
+                "curseforge": "658587"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "player-animation-lib-forge-1.0.2-rc1+1.20.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "beta",
+                    "url": "https://edge.forgecdn.net/files/4587/214/player-animation-lib-forge-1.0.2-rc1+1.20.jar",
+                    "id": "4587214",
+                    "parent_id": "658587",
+                    "hashes": {
+                        "sha1": "16808f94a41d45d8e986b4e4ea6b02ba57fa058a",
+                        "md5": "46f8554181d4d240075ea4919d01fd01"
+                    },
+                    "required_dependencies": [],
+                    "size": 181437,
+                    "date_published": "2023-06-14T20:01:58.627Z"
                 }
             ]
         }
