@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TFG Modern Documentation (Shelfmade Tweaks)</title>
+    <script>
+      // Apply sidebar state immediately to prevent flash
+      (function () {
+        if (localStorage.getItem("sidebar-collapsed") === "true") {
+          document.documentElement.classList.add("sidebar-collapsed");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script defer src="assets/main.js"></script>
+    
+    <script defer src="assets/search.js"></script>
+    
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-left">
+          <h1 class="site-title"><a href="index.html">nvf options</a></h1>
+        </div>
+        <nav class="header-nav">
+          <ul>
+            <li style="display:none;"><a href="options.html">Options</a></li>
+            
+            <li><a href="search.html">Search</a></li>
+            
+          </ul>
+        </nav>
+        
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." />
+          <div id="search-results" class="search-results"></div>
+        </div>
+        
+      </header>
+
+      <div class="layout">
+        <div class="sidebar-toggle" aria-label="Toggle sidebar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+          </svg>
+        </div>
+        <nav class="sidebar">
+          <div class="docs-nav">
+            <h2>Documents</h2>
+            <ul>
+              <li><a href="mod-list.html">mod-list</a></li>
+<li><a href="mod-introductions.html">Mod Introductions</a></li>
+<li><a href="installing/java.html">Installing Java</a></li>
+<li><a href="README.html">TFG Modern Documentation (Shelfmade Tweaks)</a></li>
+<li><a href="search.html">Search</a></li>
+
+            </ul>
+          </div>
+
+          <div class="toc">
+            <h2>Contents</h2>
+            <ul class="toc-list">
+              <li><a href="#tfg-modern-documentation-shelfmade-tweaks">TFG Modern Documentation (Shelfmade Tweaks)</a>
+<ul><li><a href="#requirements">Requirements</a>
+<li><a href="#installation">Installation</a>
+<ul><li><a href="#downloading-from-latest-release">Downloading from Latest Release</a>
+<li><a href="#usage">Usage</a>
+</ul><li><a href="#contributing">Contributing</a>
+</li></ul></li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="content">
+          <h1>TFG Modern Documentation (Shelfmade Tweaks)</h1>
+<p>Welcome to the documentation for TFG Modern-Shelfmade. This is my own take on a
+Terrafirmacraft + GregTech modpack, built upon the existing (and awesome!) work
+on TerrafirmaGreg. It follows the original vision of a hyperrealistic modpack
+but includes fun, believable tweaks for my own entertainment. The reason? I want
+to have fun while doing chores.</p>
+<h2>Requirements</h2>
+<ul>
+<li>Minecraft 1.20.1 - PrismLauncher recommended</li>
+<li>Java 17+ - See <a href="installing/java">Java Section</a> for installation instructions
+if stuck</li>
+</ul>
+<h2>Installation</h2>
+<p>The pack itself is constructed with Pakku, following <a href="options.html#option-pakku-json" class="option-reference"><code>pakku.json</code></a> and
+<code>pakku-lock.json</code> in the repository root. While more advanced users might choose
+to <a href="https://juraj-hrivnak.github.io/Pakku/exporting-a-modpack.html">prepare the pack themselves</a>, pre-built releases for client and server usage
+will be made available under GitHub Releases.</p>
+<h3>Downloading from Latest Release</h3>
+<ol>
+<li>Download the latest release from the <a href="https://github.com/Shelfmd/TFG-Modern/releases">Github Releases</a> page.</li>
+<li>Unpack or import the pack<ul>
+<li>The automated releases contain exports for CurseForge, which can be
+imported by some launchers. If stuck, please consider using PrismLauncher
+as it is able to import our pack format without any hassle.</li>
+</ul>
+</li>
+</ol>
+<h3>Usage</h3>
+<p>Create an instance on your launcher, or manually place mods &amp; client
+configuration in your Minecraft instance. Once you're done, launch the game and
+pick "Multiplayer" on the main menu. Then, hit "Add Server" and enter the
+<code>ip:port</code> (in the same line) or the domain pointing at the server.</p>
+<ul>
+<li>See the generated <a href="docs/mod-list.md">Mod List</a> for a full list of included
+mods.</li>
+<li>For introductions to key mods, see <a href="mod-introductions.md">Mod Introductions</a>.</li>
+</ul>
+<h2>Contributing</h2>
+<p>Feel free to submit issues or pull requests for documentation improvements!</p>
+
+          <div class="footnotes-container">
+            <!-- Footnotes will be appended here -->
+          </div>
+        </main>
+      </div>
+
+      <footer>
+        <p></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

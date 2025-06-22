@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installing Java</title>
+    <script>
+      // Apply sidebar state immediately to prevent flash
+      (function () {
+        if (localStorage.getItem("sidebar-collapsed") === "true") {
+          document.documentElement.classList.add("sidebar-collapsed");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script defer src="assets/main.js"></script>
+    
+    <script defer src="assets/search.js"></script>
+    
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-left">
+          <h1 class="site-title"><a href="index.html">nvf options</a></h1>
+        </div>
+        <nav class="header-nav">
+          <ul>
+            <li style="display:none;"><a href="options.html">Options</a></li>
+            
+            <li><a href="search.html">Search</a></li>
+            
+          </ul>
+        </nav>
+        
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search..." />
+          <div id="search-results" class="search-results"></div>
+        </div>
+        
+      </header>
+
+      <div class="layout">
+        <div class="sidebar-toggle" aria-label="Toggle sidebar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+          </svg>
+        </div>
+        <nav class="sidebar">
+          <div class="docs-nav">
+            <h2>Documents</h2>
+            <ul>
+              <li><a href="mod-list.html">mod-list</a></li>
+<li><a href="mod-introductions.html">Mod Introductions</a></li>
+<li><a href="installing/java.html">Installing Java</a></li>
+<li><a href="README.html">TFG Modern Documentation (Shelfmade Tweaks)</a></li>
+<li><a href="search.html">Search</a></li>
+
+            </ul>
+          </div>
+
+          <div class="toc">
+            <h2>Contents</h2>
+            <ul class="toc-list">
+              <li><a href="#installing-java">Installing Java</a>
+<ul><li><a href="#installing-java-17-on-windows-10">Installing Java 17 on Windows 10</a>
+</li></ul></li>
+            </ul>
+          </div>
+        </nav>
+
+        <main class="content">
+          <h1>Installing Java</h1>
+<p>TFG Modern runs on Minecraft 1.20.1, requires Java 17 JDK to be installed on
+your system. You may install it based on your system, but instructions for a
+generic Windows system are listed below.</p>
+<h2>Installing Java 17 on Windows 10</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While those instructions are for Windows 10, future Windows versions are bound
+to remain the same, or at least very similar.</p>
+</div>
+<p><img src="./img/find_java.png" alt="" />Find Java</p>
+<ol>
+<li>Go to <a href="https://www.oracle.com/java/technologies/downloads/">Oracle Java Website</a> and find <strong>Java 17</strong> under Java Downloads</li>
+<li>Pick your operating system, and download the appropriate installer. For
+Windows 10 <code>.exe</code> and <code>.msi</code> options are both usable.</li>
+<li>Run the installer, and follow the installation wizard.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>PrismLauncher has the option to install and manage Java JDKs for you. It is
+also the “recommended” launcher for running this modpack.</p>
+</div>
+
+          <div class="footnotes-container">
+            <!-- Footnotes will be appended here -->
+          </div>
+        </main>
+      </div>
+
+      <footer>
+        <p></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
