@@ -1,10 +1,10 @@
 name: Sync Repo with Upstream
 
 on:
+  workflow_dispatch:
   schedule:
     # Runs every 8 hours
     - cron: "0 */8 * * *"
-  workflow_dispatch:
 
 jobs:
   check-upstream:
@@ -17,7 +17,7 @@ jobs:
 
       - name: Add upstream remote
         run: |
-          git remote add upstream https://TerraFirmaGreg-Team/Modpack-Modern.git
+          git remote add upstream https://github.com/TerraFirmaGreg-Team/Modpack-Modern.git
           git fetch upstream --tags
 
       - name: Get latest upstream tag
