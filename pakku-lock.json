@@ -372,6 +372,47 @@
             ]
         },
         {
+            "pakku_id": "prk9ragL8D7nuOgB",
+            "pakku_links": [
+                "aHeU7fAIYgE8bqks"
+            ],
+            "type": "MOD",
+            "slug": {
+                "curseforge": "amendments"
+            },
+            "name": {
+                "curseforge": "Amendments"
+            },
+            "id": {
+                "curseforge": "896746"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "amendments-1.20-1.2.19.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6259/599/amendments-1.20-1.2.19.jar",
+                    "id": "6259599",
+                    "parent_id": "896746",
+                    "hashes": {
+                        "sha1": "495a3a96b1e3c66485ff0b41f71516a8e37d80bf",
+                        "md5": "f7d92c04d8880072ca435637cb0a5436"
+                    },
+                    "required_dependencies": [
+                        "499980"
+                    ],
+                    "size": 1031095,
+                    "date_published": "2025-03-03T11:25:35.850Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "0IQGejKaqyQTLzbL",
             "pakku_links": [
                 "dR8ZIMOQFxDrUtOO"
@@ -6909,6 +6950,7 @@
             "id": {
                 "curseforge": "585406"
             },
+            "export": false,
             "files": [
                 {
                     "type": "curseforge",
@@ -7311,6 +7353,43 @@
                     "required_dependencies": [],
                     "size": 77732,
                     "date_published": "2024-04-23T06:56:49.313Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "vveC2pLmcts35V0l",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "smooth-chunk-save"
+            },
+            "name": {
+                "curseforge": "Server Performance - Smooth Chunk Save[Forge/Fabric]"
+            },
+            "id": {
+                "curseforge": "582327"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "smoothchunk-1.20.1-4.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "neoforge",
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6296/598/smoothchunk-1.20.1-4.1.jar",
+                    "id": "6296598",
+                    "parent_id": "582327",
+                    "hashes": {
+                        "sha1": "3e142e4a2e12db1c9a3777879cc021aff49da088",
+                        "md5": "66c9037777d4cafe6d5464f6eff5d8e2"
+                    },
+                    "required_dependencies": [],
+                    "size": 14249,
+                    "date_published": "2025-03-12T16:39:35.327Z"
                 }
             ]
         },
@@ -8166,7 +8245,7 @@
                     },
                     "required_dependencies": [],
                     "size": 111379,
-                    "date_published": "2025-06-20T14:40:33.51Z"
+                    "date_published": "2025-06-20T14:40:33.510Z"
                 }
             ]
         },
@@ -9080,6 +9159,43 @@
                     "required_dependencies": [],
                     "size": 181437,
                     "date_published": "2023-06-14T20:01:58.627Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "r8Inq3G4ewkYeRxU",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "spark"
+            },
+            "name": {
+                "curseforge": "spark"
+            },
+            "id": {
+                "curseforge": "361579"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "spark-1.10.53-forge.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/4738/952/spark-1.10.53-forge.jar",
+                    "id": "4738952",
+                    "parent_id": "361579",
+                    "hashes": {
+                        "sha1": "231fb325368c0660954f47bfb03493f5246fa4d1",
+                        "md5": "95dcd3b5400cc5eb5d0478a744e6ef98"
+                    },
+                    "required_dependencies": [],
+                    "size": 3114590,
+                    "date_published": "2023-09-05T08:02:20.050Z"
                 }
             ]
         }
