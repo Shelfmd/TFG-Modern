@@ -47,7 +47,7 @@ jobs:
     name: Publish Docs to GitHub Pages
     needs: [build-docs]
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'main' }}
+    if: ${{ github.ref_name != 'dev' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
