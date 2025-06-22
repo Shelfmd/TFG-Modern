@@ -166,7 +166,12 @@ jobs:
         id: check
         shell: bash
         run: |
-          echo "make_release=${{ steps.check_tag.outputs.exists == 'false' && env.DEV_ENVIRONMENT == 'false' }}" >> $GITHUB_OUTPUT
+          # Set make_release to true if this is a tag push on main (not dev), otherwise false
+          if [[ "${GITHUB_REF}" == refs/tags/* && "${GITHUB_REF_NAME}" != "dev" ]]; then
+            echo "make_release=true" >> $GITHUB_OUTPUT
+          else
+            echo "make_release=false" >> $GITHUB_OUTPUT
+          fi
           echo "exists=${{ steps.check_tag.outputs.exists }}" >> $GITHUB_OUTPUT
 
           echo "project_name=${{ steps.pakku_info.outputs.name }}" >> $GITHUB_OUTPUT
