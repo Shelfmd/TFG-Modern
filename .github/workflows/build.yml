@@ -18,6 +18,9 @@ env:
   MINECRAFT_VERSION: "1.20.1"
   DEV_ENVIRONMENT: ${{ github.ref_name != 'main' }}
 
+permissions:
+  contents: write
+
 jobs:
   info:
     name: 🖥️ Project Info
