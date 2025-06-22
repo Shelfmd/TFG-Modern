@@ -383,6 +383,20 @@ jobs:
           fi
           echo "✔️ All artifacts found"
 
+      - name: 🧹 Sanitize release notes (remove GitHub pings)
+        id: sanitize_notes
+        shell: bash
+        run: |
+          # Remove @username mentions from changelog and diff
+          changelog_sanitized="$(echo "${{ needs.info.outputs.changelog }}" | sed -E 's/@[A-Za-z0-9_-]+//g')"
+          diff_sanitized="$(echo "${{ needs.info.outputs.diff }}" | sed -E 's/@[A-Za-z0-9_-]+//g')"
+          echo "changelog_sanitized<<EOF" >> $GITHUB_OUTPUT
+          echo "$changelog_sanitized" >> $GITHUB_OUTPUT
+          echo EOF >> $GITHUB_OUTPUT
+          echo "diff_sanitized<<EOF" >> $GITHUB_OUTPUT
+          echo "$diff_sanitized" >> $GITHUB_OUTPUT
+          echo EOF >> $GITHUB_OUTPUT
+
       - name: 📄 Format diff
         id: format_diff
         if: ${{ needs.info.outputs.diff != '' }}
@@ -390,7 +404,7 @@ jobs:
         with:
           template: |
             ```markdown
-            ${{ needs.info.outputs.diff }}
+            ${{ steps.sanitize_notes.outputs.diff_sanitized }}
             ```
 
       - name: 🚀 Create release
@@ -401,7 +415,7 @@ jobs:
           tag_name: ${{ needs.info.outputs.project_version }}
           target_commitish: ${{ github.sha }}
           body: |
-            ${{ needs.info.outputs.changelog }}
+            ${{ steps.sanitize_notes.outputs.changelog_sanitized }}
             ${{ steps.format_diff.outputs.text }}
           files: |
             ${{ needs.info.outputs.project_full_name }}-curseforge.zip
