@@ -399,7 +399,7 @@ jobs:
         with:
           name: ${{ needs.info.outputs.project_version }}
           tag_name: ${{ needs.info.outputs.project_version }}
-          target_commitish: ${{ github.ref_name }}
+          target_commitish: ${{ github.sha }}
           body: |
             ${{ needs.info.outputs.changelog }}
             ${{ steps.format_diff.outputs.text }}
