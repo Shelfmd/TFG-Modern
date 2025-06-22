@@ -253,6 +253,9 @@
         },
         "probejs": {
             "export": false
+        },
+        "smooth-chunk-save": {
+            "side": "server"
         }
     }
 }
