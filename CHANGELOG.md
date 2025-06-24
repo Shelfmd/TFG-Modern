@@ -126,10 +126,10 @@
 ### Changes
 - Changed to a different mod to claim/forceload chunks - use Ctrl+M to open the interface. @Xikaro
 - Fixed a bug where sometimes, materials would fail to load and a lot of recipes would break. (#1028) @Pyritie
-- Changes to entity loot tables, so now butchery knife gives more meat drops but nothing else. (#1035) @Pyritie 
+- Changes to entity loot tables, so now butchery knife gives more meat drops but nothing else. (#1035) @Pyritie
 - Remove various overlapping recipe conflicts. @Oosyrag
 - Improved crafting of GregTech credits, if servers want to use them as currency. (#944) @Pyritie
-- Fixed some missing behaviours with damascus steel tools from bastion chests. (#1010) @Pyritie 
+- Fixed some missing behaviours with damascus steel tools from bastion chests. (#1010) @Pyritie
 - Increased the frequency of some overworld structures. @Pyritie
 - Decreased the frequency of caves/canyons so the world looks less 'scarred'. @Pyritie
 - Added mixer recipe for Sugar Water. @Pyritie
@@ -295,8 +295,8 @@
 
 ## [0.9.0] - 18.04.2025
 ### Warning for upgrading your world
-- This is a major update that changes many things! 
-- It is safest to create a new instance and copy your world across, instead of trying to update your world in-place. 
+- This is a major update that changes many things!
+- It is safest to create a new instance and copy your world across, instead of trying to update your world in-place.
 - Check that everything works before permanently changing over to the new version!
 - GregTech has removed its kinetic machines, so they will disappear when upgrading. Please recycle your machines first!
 - Several ores and ingots have changed. After upgrading, they will have a "REPLACE ME" texture. Put them in a crafting grid to change to the new version.
@@ -500,7 +500,7 @@
 ### Changes
 - Small fixes in quests. (FriendlyCube)
 - The version of the Falling Tree's has been rolled back because it sometimes crashes, the developer has been notified.
-- Added AE2 quest line. (Friendly Cube) 
+- Added AE2 quest line. (Friendly Cube)
 - ExtendedAE and Mega Cells recipes have been added and changed. (Friendly Cube)
 ### Updated mods
 - Panda's Falling Tree's  0.12.1 -> 0.12
@@ -821,7 +821,7 @@
 
 ## [0.7.1] - 19.03.2024
 ### Changes
-- Fixed Menu. 
+- Fixed Menu.
 
 ## [0.7.0] - 19.03.2024
 ### Changes
@@ -1054,7 +1054,7 @@
 - Removed dye + bed = dye bed recipes, because u should use chemical bath or barrel for that.
 - Disabled coordinates displaying in xaeros map. Of course, I understand that everyone can turn this back on, but the modpack involves navigating the terrain using firmaciv devices, so this solution is temporary.
 - Disabled entity displaying in xaeros map.
-- Players are now displayed on the map as dots. 
+- Players are now displayed on the map as dots.
 - Fixed oil output from tfc dirt -> biomass recipe (what??)
 - GTCEu bolts now can be used in FirmaCiv boats (Fix for new FirmaCiv ver).
 - Hided for now nether items.
@@ -1768,7 +1768,7 @@
 - Небольшая кастомизаци меню паузы.
 ### New Mods
 - FTBQuestsOptimizer
-- TFC ambiental 
+- TFC ambiental
 
 ## [0.0.7] - 2023-11-20
 ### Changes

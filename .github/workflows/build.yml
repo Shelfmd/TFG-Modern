@@ -7,7 +7,7 @@ on:
       - dev
       - main
     tags:
-      - '**'
+      - "**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -342,6 +342,7 @@ jobs:
           mv -vf ./mods .pakku/multimc-overrides/.minecraft/mods
           cd .pakku/multimc-overrides/
 
+
           zip -r ${{ needs.info.outputs.project_full_name }}-multimc.zip icon.png mmc-pack.json instance.cfg .minecraft/ flame/
 
       - name: 🚀 Upload zip multimc
@@ -396,7 +397,7 @@ jobs:
           echo "diff_sanitized<<EOF" >> $GITHUB_OUTPUT
           echo "$diff_sanitized" >> $GITHUB_OUTPUT
           echo EOF >> $GITHUB_OUTPUT
-
+          echo "✔️ Sanitized release notes and diff"
       - name: 📄 Format diff
         id: format_diff
         if: ${{ needs.info.outputs.diff != '' }}

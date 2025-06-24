@@ -1,8 +1,8 @@
 // priority: 0
 
 /**
- * 
- * @param {Internal.RecipesEventJS} event 
+ *
+ * @param {Internal.RecipesEventJS} event
  */
 const registerMinecraftRecipes = (event) => {
 
@@ -307,7 +307,7 @@ const registerMinecraftRecipes = (event) => {
 		.duration(50)
 		.EUt(30)
 
-    event.recipes.gtceu.large_chemical_reactor('golden_apple_1')             
+    event.recipes.gtceu.large_chemical_reactor('golden_apple_1')
         .itemInputs('tfc:food/red_apple', '8x #forge:ingots/gold')
         .itemOutputs('minecraft:golden_apple')
         .duration(50)
@@ -1046,14 +1046,14 @@ const registerMinecraftRecipes = (event) => {
 	event.stonecutting('create:cut_deepslate', 'minecraft:polished_deepslate')
 
 	//Glowing Ink Sacs
-		
+
 	event.recipes.gtceu.chemical_bath('minecraft:glow_inc_sac4')
 		.itemInputs("gtceu:thorium_dust", "4x #forge:dyes/black")
 		.inputFluids(Fluid.of('gtceu:glowstone', 512))
 		.itemOutputs('16x minecraft:glow_ink_sac')
 		.duration(20)
 		.EUt(GTValues.VA[GTValues.HV])
-		
+
 	event.recipes.gtceu.chemical_bath('minecraft:glow_inc_sac1')
 		.itemInputs("#forge:dyes/black")
 		.inputFluids(Fluid.of('gtceu:glowstone', 144))

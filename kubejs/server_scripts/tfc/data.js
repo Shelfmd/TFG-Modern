@@ -80,7 +80,7 @@ const registerTFCItemSize = (event) => {
 
 
 const registerTFCFoodData = (event) => {
-	
+
 	event.foodItem('gtceu:chocolate_coin', food => {
 		food.hunger(1)
 		food.dairy(0.5)
