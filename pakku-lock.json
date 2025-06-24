@@ -3947,20 +3947,16 @@
             "type": "MOD",
             "slug": {
                 "curseforge": "farmers-delight"
-                "curseforge": "farmers-delight"
             },
             "name": {
                 "curseforge": "Farmer's Delight"
-                "curseforge": "Farmer's Delight"
             },
             "id": {
-                "curseforge": "398521"
                 "curseforge": "398521"
             },
             "files": [
                 {
                     "type": "curseforge",
-                    "file_name": "FarmersDelight-1.20.1-1.2.8.jar",
                     "file_name": "FarmersDelight-1.20.1-1.2.8.jar",
                     "mc_versions": [
                         "1.20.1"
@@ -3973,18 +3969,11 @@
                     "url": "https://edge.forgecdn.net/files/6597/298/FarmersDelight-1.20.1-1.2.8.jar",
                     "id": "6597298",
                     "parent_id": "398521",
-                    "url": "https://edge.forgecdn.net/files/6597/298/FarmersDelight-1.20.1-1.2.8.jar",
-                    "id": "6597298",
-                    "parent_id": "398521",
                     "hashes": {
-                        "sha1": "a3402ee46cf12583416b8fbe84a97dd20ba1401a",
-                        "md5": "56aed09101bcbf0790154f8d8f09d9aa"
                         "sha1": "a3402ee46cf12583416b8fbe84a97dd20ba1401a",
                         "md5": "56aed09101bcbf0790154f8d8f09d9aa"
                     },
                     "required_dependencies": [],
-                    "size": 2962947,
-                    "date_published": "2025-05-30T01:49:22.850Z"
                     "size": 2962947,
                     "date_published": "2025-05-30T01:49:22.850Z"
                 }
@@ -3992,31 +3981,24 @@
         },
         {
             "pakku_id": "6H18dL6kl2nHoOwP",
-            "pakku_id": "6H18dL6kl2nHoOwP",
             "pakku_links": [
-                "fMkiGcRPRv1DdRC1",
-                "yHY9OiUTa9sfMgYF"
                 "fMkiGcRPRv1DdRC1",
                 "yHY9OiUTa9sfMgYF"
             ],
             "type": "MOD",
             "slug": {
                 "curseforge": "farmers-delight-tfc"
-                "curseforge": "farmers-delight-tfc"
             },
             "name": {
                 "curseforge": "Farmer's Delight TFC"
-                "curseforge": "Farmer's Delight TFC"
             },
             "id": {
-                "curseforge": "951750"
                 "curseforge": "951750"
             },
             "redistributable": false,
             "files": [
                 {
                     "type": "curseforge",
-                    "file_name": "FarmersDelightTFC-1.0.6-forge-1.20.1.jar",
                     "file_name": "FarmersDelightTFC-1.0.6-forge-1.20.1.jar",
                     "mc_versions": [
                         "1.20.1"
@@ -4029,22 +4011,14 @@
                     "url": "https://edge.forgecdn.net/files/5956/017/FarmersDelightTFC-1.0.6-forge-1.20.1.jar",
                     "id": "5956017",
                     "parent_id": "951750",
-                    "url": "https://edge.forgecdn.net/files/5956/017/FarmersDelightTFC-1.0.6-forge-1.20.1.jar",
-                    "id": "5956017",
-                    "parent_id": "951750",
                     "hashes": {
-                        "sha1": "096efced31db0b99b0f44583ddf674a74f4ed602",
-                        "md5": "f58700a1f92eddcd1658d141c10c4398"
                         "sha1": "096efced31db0b99b0f44583ddf674a74f4ed602",
                         "md5": "f58700a1f92eddcd1658d141c10c4398"
                     },
                     "required_dependencies": [
                         "302973",
                         "398521"
-                        "398521"
                     ],
-                    "size": 382381,
-                    "date_published": "2024-12-02T10:07:51.253Z"
                     "size": 382381,
                     "date_published": "2024-12-02T10:07:51.253Z"
                 }
