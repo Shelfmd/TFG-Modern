@@ -412,7 +412,7 @@ jobs:
         id: release
         uses: softprops/action-gh-release@v2.3.2
         with:
-          name: ${{ needs.info.outputs.project_version }}
+          name: ${{ needs.info.outputs.project_version }} (${{ github.ref_name }})
           tag_name: ${{ needs.info.outputs.project_version }}
           target_commitish: ${{ github.sha }}
           body: |
@@ -424,4 +424,4 @@ jobs:
             ${{ needs.info.outputs.project_full_name }}-multimc.zip
           prerelease: ${{ env.RELEASE_TYPE != 'release' }}
           generate_release_notes: true
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
