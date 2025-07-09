@@ -18,6 +18,8 @@
 # Those should not be rendered in GH's rich display.
 *.zip binary
 *.png binary
+*.jpg binary
+*.jpeg binary
 
 # Git Configuration files
 *.gitattributes linguist-detectable=false

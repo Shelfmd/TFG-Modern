@@ -7,7 +7,7 @@
 </div>
 <br/>
 
-![Logo Large](https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/logo_large.png?raw=true)
+![Logo Large](https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/title/large.png?raw=true)
 
 ---
 
@@ -64,6 +64,7 @@ explicitly stated. See [LICENSE](../LICENSE) for details of licensing.
 - TerraFirmaGreg Team for the original modpack, which I have forked
 - WithersChat from the Monifactory team for the universal circuit textures
 - GregTech Community Pack Modern for most of their quest text
+- Better End for some assets
 
 <!-- Links: -->
 [TerraFirmaCraft]: https://www.curseforge.com/minecraft/mc-mods/terrafirmacraft

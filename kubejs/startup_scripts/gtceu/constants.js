@@ -92,7 +92,33 @@ global.GTCEU_DISABLED_ITEMS = [
     'gtceu:zpm_solar_panel',
     'gtceu:uv_solar_panel',
 
+    'gtceu:lv_air_scrubber',
+    'gtceu:mv_air_scrubber',
+    'gtceu:hv_air_scrubber',
+    'gtceu:ev_air_scrubber',
+
+    'gtceu:lv_world_accelerator',
+    'gtceu:mv_world_accelerator',
+    'gtceu:hv_world_accelerator',
+    'gtceu:ev_world_accelerator',
+    'gtceu:iv_world_accelerator',
+    'gtceu:luv_world_accelerator',
+    'gtceu:zpm_world_accelerator',
+    'gtceu:uv_world_accelerator',
+
     'gtceu:compressed_clay',
+
+    'gtceu:damascus_steel_nugget',
+    'gtceu:damascus_steel_ingot',
+    'gtceu:damascus_steel_block',
+    'gtceu:damascus_steel_plate',
+    'gtceu:damascus_steel_bolt',
+    'gtceu:damascus_steel_screw',
+    'gtceu:damascus_steel_rod',
+    'gtceu:long_damascus_steel_rod',
+    'gtceu:damascus_steel_dust',
+    'gtceu:small_damascus_steel_dust',
+    'gtceu:tiny_damascus_steel_dust',
 
     // Sculk
     'gtceu:tiny_echo_shard_dust',
@@ -108,6 +134,13 @@ global.GTCEU_DISABLED_ITEMS = [
     'gtceu:tiny_skulk_dust',
     'gtceu:small_skulk_dust',
     'gtceu:skulk_dust',
+
+    // Ender eye
+    'gtceu:ender_eye_plate',
+    'gtceu:ender_eye_block',
+    'gtceu:ender_eye_dust',
+    'gtceu:small_ender_eye_dust',
+    'gtceu:tiny_ender_eye_dust',
 
     // Marble
     'gtceu:marble',
@@ -162,7 +195,12 @@ global.TFG_EXTRUDER_MOLDS = [
     'tfg:javelin_head_extruder_mold',
     'tfg:chisel_head_extruder_mold',
     'tfg:mace_head_extruder_mold',
-    'tfg:mattock_head_extruder_mold'
+    'tfg:mattock_head_extruder_mold',
+    'tfg:fish_hook_extruder_mold',
+    'tfg:whisk_extruder_mold',
+    'tfg:screwdriver_tip_extruder_mold',
+    'tfg:wrench_tip_extruder_mold',
+    'tfg:wire_cutter_head_extruder_mold'
 ];
 
 global.TFG_CASTING_MOLDS = [
