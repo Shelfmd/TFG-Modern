@@ -35,6 +35,7 @@ def extract_mods_from_pakku_lock(lock_path):
 
 def generate_markdown(mods):
     md = (
+        "# Mod List\n\n"
         "The list of all mods present in the modpack.\n\n"
         "For a brief introduction for the mods that matter, please see the "
         "[Mod Introductions](/docs/mod-introductions) page.\n\n"
