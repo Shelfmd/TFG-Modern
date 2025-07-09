@@ -14,6 +14,30 @@ jobs:
   check-upstream:
     runs-on: ubuntu-latest
     steps:
+      - name: Report sync context
+        id: report_sync
+        run: |
+          echo "--- Sync Job Context ---"
+          echo "Actor: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "--- Upstream/Local Tag Info ---"
+          git remote add upstream https://github.com/TerraFirmaGreg-Team/Modpack-Modern.git 2>/dev/null || true
+          git fetch upstream --tags
+          LATEST_UPSTREAM=$(git ls-remote --tags upstream | awk '{print $2}' | sed 's|refs/tags/||' | sort -V | tail -n1)
+          echo "Latest upstream tag: $LATEST_UPSTREAM"
+          LATEST_SHELF=$(git tag --list "$LATEST_UPSTREAM-shelf*" | sort -V | tail -n1)
+          echo "Latest local shelf tag for this upstream: $LATEST_SHELF"
+          LATEST_SHELF_BASE=$(git tag --list '*-shelf*' | sed 's/-shelf[0-9]*$//' | sort -V | tail -n1)
+          echo "Latest local shelf base version: $LATEST_SHELF_BASE"
+          if [ "$LATEST_UPSTREAM" \> "$LATEST_SHELF_BASE" ]; then
+            echo "Action: Will attempt to sync $LATEST_UPSTREAM"
+          else
+            echo "Action: No new upstream tag to sync (semver check)"
+          fi
+
       - name: Checkout fork
         uses: actions/checkout@v4
         with:
@@ -82,6 +106,31 @@ jobs:
     needs: check-upstream
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
+      - name: Report tag context
+        id: report_tag
+        run: |
+          echo "--- Tag Job Context ---"
+          echo "Actor: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "--- Tagging Info ---"
+          git remote add upstream https://github.com/TerraFirmaGreg-Team/Modpack-Modern.git 2>/dev/null || true
+          git fetch upstream --tags
+          LATEST_UPSTREAM=$(git ls-remote --tags upstream | awk '{print $2}' | sed 's|refs/tags/||' | sort -V | tail -n1)
+          echo "Latest upstream tag: $LATEST_UPSTREAM"
+          EXISTING=$(git tag --list "$LATEST_UPSTREAM-shelf*" | sed 's/.*-shelf//' | sort -n | tail -n1)
+          if [ -z "$EXISTING" ]; then
+            NEXT=1
+          else
+            NEXT=$((EXISTING+1))
+          fi
+          NEW_TAG="$LATEST_UPSTREAM-shelf$NEXT"
+          echo "Next shelf tag to be created: $NEW_TAG"
+          LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Last commit message: $LAST_COMMIT_MSG"
+
       - name: Checkout main
         uses: actions/checkout@v4
         with:
