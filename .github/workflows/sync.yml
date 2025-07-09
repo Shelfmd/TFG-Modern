@@ -6,6 +6,10 @@ on:
     # Runs every 8 hours
     - cron: "0 */8 * * *"
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   check-upstream:
     runs-on: ubuntu-latest
@@ -64,7 +68,7 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: sync-upstream-${{ steps.latest_upstream.outputs.latest_tag }}
           title: "Sync upstream tag ${{ steps.latest_upstream.outputs.latest_tag }}"
           body: |
@@ -115,7 +119,7 @@ jobs:
 
       - name: Create and push new shelf tag
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
