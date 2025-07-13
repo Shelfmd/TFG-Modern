@@ -2,12 +2,29 @@
 <div align="center">
   <h1>TerraFirmaGreg - Modern</h1>
   <a href="https://github.com/TerraFirmaGreg-Team/Modpack-Modern">
-    <img src="https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/logo.png?raw=true" alt="Logo" height="100"/>
+    <img src="https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/icon/v3/1080x_1080p_still_ring.gif?raw=true" alt="Logo" height="120"/>
   </a>
+  <br/>
+  <a href="https://discord.gg/AEaCzCTUwQ">
+    <img src="https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/button/discord_logo.png?raw=true" alt="Join our Discord" height="50"/>
+  </a>
+  <a href="https://www.curseforge.com/minecraft/modpacks/terrafirmagreg-modern">
+    <img src="https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/button/curseforge_logo.png?raw=true" alt="Available on CurseForge" height="50"/>
+  </a>
+  <br/>
+  <p align="center">
+    <a href="https://github.com/TerraFirmaGreg-Team/Modpack-Modern/wiki">Wiki</a>
+    ·
+    <a href="https://github.com/TerraFirmaGreg-Team/Modpack-Modern/issues">Report Bugs</a>
+    ·
+    <a href="https://github.com/TerraFirmaGreg-Team/Modpack-Modern/issues">Request Features</a>
+    ·
+    <a href="https://github.com/orgs/TerraFirmaGreg-Team/projects/10">Roadmap</a>
+  </p>
 </div>
 <br/>
 
-![Logo Large](https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/title/large.png?raw=true)
+![Logo Large](https://github.com/TerraFirmaGreg-Team/.github/blob/main/storage/modern/title/1920x720_with_background_4.png?raw=true)
 
 ---
 
@@ -57,14 +74,15 @@ explicitly stated. See [LICENSE](../LICENSE) for details of licensing.
 
 ---
 
-![Image Readme](https://github.com/TerraFirmaGreg-Team/.github/blob/main/branding/image_readme.png?raw=true)
+![Image Readme](https://github.com/TerraFirmaGreg-Team/.github/blob/main/storage/modern/unedited/credit_tfg_dev_team.png?raw=true)
 
-### External Credits
+<h2 align="center">External Credits and Special Thanks</h2>
+
 
 - TerraFirmaGreg Team for the original modpack, which I have forked
-- WithersChat from the Monifactory team for the universal circuit textures
-- GregTech Community Pack Modern for most of their quest text
-- Better End for some assets
+- WithersChat from the Monifactory team for the universal circuit textures.
+- GregTech Community Pack Modern for most of their quest text.
+- Better End for some assets.
 
 <!-- Links: -->
 [TerraFirmaCraft]: https://www.curseforge.com/minecraft/mc-mods/terrafirmacraft

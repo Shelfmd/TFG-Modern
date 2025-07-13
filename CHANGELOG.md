@@ -1,18 +1,22 @@
 # Changelog
 
 ## [Unreleased]
+
+## [0.10.0] - 13.07.2025
+- [!WARNING] If you're upgrading your world from 0.9 to 0.10, please read the upgrade guide [here](https://github.com/TerraFirmaGreg-Team/Modpack-Modern/wiki/%5BEN%5D-Upgrading-from-0.9-to-0.10). We do not recommend using Alpha versions for progression, but if you do, please make frequent backups!
 ### Major changes
 - Build a rocket and blast off to the moon, a new dimension! You can get started in mid-HV.
 - AE2 inscriber presses are now found on the moon instead of being craftable, and making various AE2 components is also significantly cheaper there. @TomPlop & @Pyritie
 - Significant ore changes: certus quartz, raw aluminium, ilmenite, and some other mid-lategame materials have been moved from the overworld to the moon. Check your field guide for more information. @TomPlop
-- A new system for interstellar item transport, made just for TerraFirmaGreg - new logistical problems to solve and automate. (Coming soon) @ofoxsmith
-- New machines to properly automate food, along with proper compatibility between machines and TFC's food system, so you can't turn rotten grains into fresh bread any more. The electric greenhouse now also always outputs fresh food. @ofoxsmith & @Redeix
-- New electric refrigerator with different tiers. You can craft the old one into this new one, but please take your food out of it before upgrading otherwise it will be lost! @ofoxsmith
+- A new system for interstellar item transport, made just for TerraFirmaGreg - new logistical problems to solve and automate. (Coming soon) @gustovafing
+- New machines to properly automate food, along with proper compatibility between machines and TFC's food system, so you can't turn rotten grains into fresh bread any more. The electric greenhouse now also always outputs fresh food. @gustovafing & @Redeix
+- New electric refrigerator with different tiers. You can craft the old one into this new one, but please take your food out of it before upgrading otherwise it will be lost! @gustovafing
 - Added many new advanced food items including freeze-dried fruit, calorie paste, and meal bags. @Redeix
 - Quest updates for all of the above @TomPlop @Redeix @Pyritie
 - Main UI overhaul and curseforge branding updated @Redeix
 - Added sunflowers and rapeseed to make Bio Diesel viable (#1248) @34y34y34y34y34y34y34y34y34y @Redeix
 - Create 6 update! @AirRice @aidie8
+- Added guns! @BlueBoat29
 ### Minor changes
 - Balance changes for water wheels and glowstone blocks @Pyritie
 - Added straws for the blaze burners so now you can pump liquid fuels into them (#1204) @34y34y34y34y34y34y34y34y34y
@@ -48,6 +52,7 @@
 - New item replacement for ender eyes @Pyritie @Redeix
 - Added more tools and components to the anvil and extruder molds (#898) @BlueBoat29 @Pyritie
 - Added recipes for crafting all the cakes @Pyritie
+- Removed infinite lava from hose-pulleys. Check out new biodiesel line for early power! (#1271) @Redeix 
 ### Bug fixes
 - Fixed a mud hut structure that had deprecated zinc ingots @Pyritie
 - The electric greenhouse now also allows loose rocks and plants inside, since TFC spawns them on any grass block @Pyritie
@@ -99,7 +104,7 @@
 - Added wine-related recipes to GregTech machines (#1111) @JeanRdS
 - Added optional quest for bacon because its JEI recipe isn't clear (#1122) @SpicyNoodle5
 - Anthracite now also superheats blaze burners @Pyritie
-- Changed LV chem reactor quest to work with any container of rubber instead of just a rubber bucket (#1116) @ofoxsmith
+- Changed LV chem reactor quest to work with any container of rubber instead of just a rubber bucket (#1116) @gustovafing
 - Added perfect overclock to the electric greenhouse so it scales better with the pyro oven @Pyritie
 - Electric greenhouse now accepts logs and leaf blocks inside it, so you can build a little tree if you want @Pyritie
 - Increased durability of the blue steel diving suit to match blue steel armor @Pyritie

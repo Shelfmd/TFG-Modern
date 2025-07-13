@@ -27,7 +27,9 @@ const registerAdAstraMaterials = (event) => {
 			GTMaterialFlags.FORCE_GENERATE_BLOCK, 
 			GTMaterialFlags.GENERATE_PLATE, 
 			GTMaterialFlags.GENERATE_ROD,
-			GTMaterialFlags.GENERATE_DENSE
+			GTMaterialFlags.GENERATE_DENSE,
+			GTMaterialFlags.GENERATE_GEAR,
+			GTMaterialFlags.GENERATE_FRAME
 		)
 
 	// mars?

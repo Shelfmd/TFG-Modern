@@ -112,6 +112,11 @@ global.GTCEU_DISABLED_ITEMS = [
     'gtceu:damascus_steel_ingot',
     'gtceu:damascus_steel_block',
     'gtceu:damascus_steel_plate',
+    'gtceu:double_damascus_steel_plate',
+    'gtceu:damascus_steel_gear',
+    'gtceu:damascus_steel_buzzsaw_blade',
+    'gtceu:damascus_steel_drill_head',
+    'gtceu:damascus_steel_chainsaw_head',
     'gtceu:damascus_steel_bolt',
     'gtceu:damascus_steel_screw',
     'gtceu:damascus_steel_rod',
@@ -119,6 +124,26 @@ global.GTCEU_DISABLED_ITEMS = [
     'gtceu:damascus_steel_dust',
     'gtceu:small_damascus_steel_dust',
     'gtceu:tiny_damascus_steel_dust',
+    'gtceu:lv_damascus_steel_drill',
+    'gtceu:mv_damascus_steel_drill',
+    'gtceu:hv_damascus_steel_drill',
+    'gtceu:ev_damascus_steel_drill',
+    'gtceu:iv_damascus_steel_drill',
+    'gtceu:lv_damascus_steel_chainsaw',
+    'gtceu:damascus_steel_buzzsaw',
+    'gtceu:lv_damascus_steel_wirecutter',
+    'gtceu:hv_damascus_steel_wirecutter',
+    'gtceu:iv_damascus_steel_wirecutter',
+    'gtceu:lv_damascus_steel_wrench',
+    'gtceu:hv_damascus_steel_wrench',
+    'gtceu:iv_damascus_steel_wrench',
+    'gtceu:lv_damascus_steel_screwdriver',
+    'gtceu:damascus_steel_bucket',
+
+    // Huh
+    'gtceu:wax_dust',
+    'gtceu:small_wax_dust',
+    'gtceu:tiny_wax_dust',
 
     // Sculk
     'gtceu:tiny_echo_shard_dust',
@@ -131,9 +156,9 @@ global.GTCEU_DISABLED_ITEMS = [
     'gtceu:echo_shard_plate',
     'gtceu:echo_shard_rod',
     'gtceu:echo_shard_block',
-    'gtceu:tiny_skulk_dust',
-    'gtceu:small_skulk_dust',
-    'gtceu:skulk_dust',
+    'gtceu:tiny_sculk_dust',
+    'gtceu:small_sculk_dust',
+    'gtceu:sculk_dust',
 
     // Ender eye
     'gtceu:ender_eye_plate',
@@ -200,7 +225,10 @@ global.TFG_EXTRUDER_MOLDS = [
     'tfg:whisk_extruder_mold',
     'tfg:screwdriver_tip_extruder_mold',
     'tfg:wrench_tip_extruder_mold',
-    'tfg:wire_cutter_head_extruder_mold'
+    'tfg:wire_cutter_head_extruder_mold',
+	'tfg:small_casing_extruder_mold',
+	'tfg:shell_casing_extruder_mold',
+	'tfg:large_casing_extruder_mold'
 ];
 
 global.TFG_CASTING_MOLDS = [

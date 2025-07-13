@@ -511,28 +511,28 @@ function registerTFGMiscellaneousRecipes(event) {
 	// Refrigerants
 
 	event.recipes.gtceu.chemical_reactor('tfg:chemical_reactor/chlorodifluoromethane')
-		.inputFluids(Fluid.of('gtceu:chloroform', 2000), Fluid.of('gtceu:hydrofluoric_acid', 4000))
-		.outputFluids(Fluid.of('tfg:chlorodifluoromethane', 6000))
+		.inputFluids(Fluid.of('gtceu:chloroform', 1000), Fluid.of('gtceu:hydrofluoric_acid', 2000))
+		.outputFluids(Fluid.of('tfg:chlorodifluoromethane', 1000), Fluid.of('gtceu:hydrochloric_acid', 2000))
 		.duration(480)
 		.circuit(2)
 		.EUt(GTValues.VA[GTValues.MV])
 
 	event.recipes.gtceu.chemical_reactor('tfg:chemical_reactor/breakdown/chlorodifluoromethane')
-		.inputFluids(Fluid.of('tfg:chlorodifluoromethane', 300))
+		.inputFluids(Fluid.of('tfg:chlorodifluoromethane', 200))
 		.outputFluids(Fluid.of('gtceu:tetrafluoroethylene', 100), Fluid.of('gtceu:hydrochloric_acid', 200))
 		.duration(100)
 		.EUt(GTValues.VA[GTValues.HV])
 
 	event.recipes.gtceu.chemical_reactor('tfg:chemical_reactor/acetylene')
-		.inputFluids(Fluid.of('gtceu:methane', 3000), Fluid.of('gtceu:oxygen', 3000))
-		.outputFluids(Fluid.of('tfg:acetylene', 100))
+		.inputFluids(Fluid.of('gtceu:methane', 2000), Fluid.of('gtceu:oxygen', 3000))
+		.outputFluids(Fluid.of('tfg:acetylene', 1000), Fluid.of('minecraft:water', 3000))
 		.circuit(4)
 		.duration(120)
 		.EUt(GTValues.VA[GTValues.MV])
 
 	event.recipes.gtceu.chemical_reactor('tfg:chemical_reactor/1_1_1_2_tetrafluoroethane')
-		.inputFluids(Fluid.of('tfg:acetylene', 1000), Fluid.of('gtceu:chlorine', 2000), Fluid.of('gtceu:hydrofluoric_acid', 8000))
-		.outputFluids(Fluid.of('tfg:1_1_1_2_tetrafluoroethane', 2000), Fluid.of('gtceu:hydrochloric_acid', 6000))
+		.inputFluids(Fluid.of('tfg:acetylene', 1000), Fluid.of('gtceu:chlorine', 4000), Fluid.of('gtceu:hydrofluoric_acid', 4000))
+		.outputFluids(Fluid.of('tfg:1_1_1_2_tetrafluoroethane', 1000), Fluid.of('gtceu:hydrochloric_acid', 4000))
 		.circuit(4)
 		.duration(480)
 		.EUt(GTValues.VA[GTValues.HV])
@@ -626,8 +626,6 @@ function registerTFGMiscellaneousRecipes(event) {
 
 	// Not-ender pearl stuff
 
-	event.replaceInput({ mod: 'gtceu' }, 'minecraft:ender_eye', 'tfg:vitrified_pearl')
-
 	event.recipes.gtceu.chemical_reactor('kaolinite')
 		.itemInputs('5x #tfg:aluminium_oxide', '2x #forge:dusts/silicon')
 		.inputFluids(Fluid.of('gtceu:distilled_water', 6000), Fluid.of('gtceu:chlorine', 8000))
@@ -645,9 +643,9 @@ function registerTFGMiscellaneousRecipes(event) {
 		.EUt(GTValues.VA[GTValues.HV])
 
 	event.recipes.gtceu.pyrolyse_oven('vitrified_ender_dust')
-		.itemInputs('#forge:dusts/ender_pearl', '2x tfc:powder/kaolinite', '4x #forge:insulation_t1')
+		.itemInputs('#forge:ender_pearls', '2x tfc:powder/kaolinite', '4x #forge:insulation_t1')
 		.inputFluids(Fluid.of('gtceu:nitrogen', 100))
-		.itemOutputs('#forge:dusts/vitrified_pearl')
+		.itemOutputs('tfg:vitrified_pearl')
 		.chancedOutput('gtceu:ash_dust', 2500, 0)
 		.duration(20 * 10)
 		.EUt(GTValues.VA[GTValues.HV])
@@ -685,4 +683,66 @@ function registerTFGMiscellaneousRecipes(event) {
 		.itemOutputs('#forge:dusts/vitrified_pearl')
 		.duration(40)
 		.EUt(GTValues.VA[GTValues.ULV])
+
+	// Have to redo all these because .replaceInput doesn't work for some reason!!
+
+	event.shaped('gtceu:mv_field_generator', [
+		'ABA',
+		'CDC',
+		'ABA'
+	], {
+		A: '#forge:quadruple_wires/magnesium_diboride',
+		B: '#forge:plates/aluminium',
+		C: '#gtceu:circuits/mv',
+		D: 'tfg:vitrified_pearl'
+	}).id('gtceu:shaped/field_generator_mv')
+
+	event.recipes.gtceu.assembler('field_generator_mv')
+		.itemInputs('tfg:vitrified_pearl', '2x #forge:plates/aluminium', '2x #gtceu:circuits/mv', '4x #forge:quadruple_wires/magnesium_diboride')
+		.itemOutputs('gtceu:mv_field_generator')
+		.duration(100)
+		.EUt(30)
+
+	event.shaped('gtceu:hv_emitter', [
+		'ABC',
+		'BDB',
+		'CBA'
+	], {
+		A: '#forge:single_cables/gold',
+		B: '#forge:rods/chromium',
+		C: '#gtceu:circuits/hv',
+		D: 'tfg:vitrified_pearl'
+	}).id('gtceu:shaped/emitter_hv')
+
+	event.recipes.gtceu.assembler('emitter_hv')
+		.itemInputs('tfg:vitrified_pearl', '4x #forge:rods/chromium', '2x #gtceu:circuits/hv', '2x #forge:single_cables/gold')
+		.itemOutputs('gtceu:hv_emitter')
+		.circuit(1)
+		.duration(100)
+		.EUt(30)
+
+	event.shaped('gtceu:hv_sensor', [
+		'A B',
+		'AC ',
+		'DAA'
+	], {
+		A: '#forge:plates/stainless_steel',
+		B: 'tfg:vitrified_pearl',
+		C: '#forge:rods/chromium',
+		D: '#gtceu:circuits/hv',
+	}).id('gtceu:shaped/sensor_hv')
+
+	event.recipes.gtceu.assembler('sensor_hv')
+		.itemInputs('tfg:vitrified_pearl', '#forge:rods/chromium', '#gtceu:circuits/hv', '4x #forge:plates/stainless_steel')
+		.itemOutputs('gtceu:hv_sensor')
+		.duration(100)
+		.EUt(30)
+
+	// Temporary
+	event.recipes.gtceu.chemical_bath('quantum_eye')
+		.itemInputs('tfg:vitrified_pearl')
+		.inputFluids(Fluid.of('gtceu:radon', 250))
+		.itemOutputs('gtceu:quantum_eye')
+		.duration(24 * 20)
+		.EUt(480)
 }
