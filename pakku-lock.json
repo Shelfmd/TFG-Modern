@@ -2774,6 +2774,49 @@
             ]
         },
         {
+            "pakku_id": "DhaFBdy1TB7OGzBb",
+            "pakku_links": [
+                "9BWHeKNUZfbwXhZ8"
+            ],
+            "type": "MOD",
+            "slug": {
+                "curseforge": "chunk-sending-forge-fabric"
+            },
+            "name": {
+                "curseforge": "Chunk Sending[Forge/Fabric]"
+            },
+            "id": {
+                "curseforge": "831663"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "chunksending-1.20.1-2.8.jar",
+                    "mc_versions": [
+                        "1.20.1",
+                        "1.20"
+                    ],
+                    "loaders": [
+                        "neoforge",
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/4894/789/chunksending-1.20.1-2.8.jar",
+                    "id": "4894789",
+                    "parent_id": "831663",
+                    "hashes": {
+                        "sha1": "befdcf1c0177c8dd97d68ebb3c5c5581065caefe",
+                        "md5": "550fcf675d0039e7da8336e001db3732"
+                    },
+                    "required_dependencies": [
+                        "326652"
+                    ],
+                    "size": 11734,
+                    "date_published": "2023-11-23T20:23:20.963Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "souzHQQB9HhNTn5r",
             "type": "MOD",
             "side": "BOTH",
@@ -4444,6 +4487,43 @@
                     "required_dependencies": [],
                     "size": 269589,
                     "date_published": "2025-06-21T21:06:55.448902Z"
+                }
+            ]
+        },
+        {
+            "pakku_id": "9BWHeKNUZfbwXhZ8",
+            "type": "MOD",
+            "slug": {
+                "curseforge": "cupboard"
+            },
+            "name": {
+                "curseforge": "Cupboard"
+            },
+            "id": {
+                "curseforge": "326652"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "cupboard-1.20.1-2.7.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "neoforge",
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5470/32/cupboard-1.20.1-2.7.jar",
+                    "id": "5470032",
+                    "parent_id": "326652",
+                    "hashes": {
+                        "sha1": "204bc8aa83e8a685f64311b72d55505ab2eca867",
+                        "md5": "3620912474f47bf58d1fe5bfe133763a"
+                    },
+                    "required_dependencies": [],
+                    "size": 25983,
+                    "date_published": "2024-06-24T20:50:03.140Z"
                 }
             ]
         },
