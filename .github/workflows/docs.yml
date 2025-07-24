@@ -29,18 +29,19 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          nix profile install nixpkgs#python3
-          nix profile install github:notashelf/nyxexprs#ndg
+          nix profile add nixpkgs#python3
+          nix profile add github:notashelf/nyxexprs#ndg
 
       - name: Generate mod list
         run: |
-          python docs/utils/modlist.py ./pakku-lock.json --output-path docs/mod-list.md
+          python docs/utils/modlist.py ./pakku-lock.json \
+            --output-path docs/mod-list.md
 
       - name: Build documentation
         run: |
           ndg html --title "nvf options" \
             --input-dir ./docs --output-dir site \
-            --generate-search true --options-depth 2
+            --generate-search false --options-depth 2
 
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
