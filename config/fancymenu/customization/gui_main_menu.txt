@@ -52,7 +52,7 @@ element {
   nine_slice_custom_background = false
   nine_slice_border_x = 5
   nine_slice_border_y = 5
-  label = 
+  label =
   navigatable = true
   widget_active_state_requirement_container_identifier = d16c5a1d-f73e-4c7d-ae94-9e77f40b8bea-1738509235086
   [loading_requirement_container_meta:d16c5a1d-f73e-4c7d-ae94-9e77f40b8bea-1738509235086] = [groups:][instances:]
@@ -111,7 +111,7 @@ element {
   nine_slice_custom_background = false
   nine_slice_border_x = 5
   nine_slice_border_y = 5
-  label = 
+  label =
   navigatable = true
   widget_active_state_requirement_container_identifier = e6feb8b0-31fc-4a41-9d8b-4f42c26af923-1738509235086
   [loading_requirement_container_meta:e6feb8b0-31fc-4a41-9d8b-4f42c26af923-1738509235086] = [groups:][instances:]
@@ -170,7 +170,7 @@ element {
   nine_slice_custom_background = false
   nine_slice_border_x = 5
   nine_slice_border_y = 5
-  label = 
+  label =
   navigatable = true
   widget_active_state_requirement_container_identifier = c148ade9-c007-42f1-9783-c4c0689b3eb9-1738509235086
   [loading_requirement_container_meta:c148ade9-c007-42f1-9783-c4c0689b3eb9-1738509235086] = [groups:][instances:]
@@ -229,7 +229,7 @@ element {
   nine_slice_custom_background = false
   nine_slice_border_x = 5
   nine_slice_border_y = 5
-  label = 
+  label =
   navigatable = true
   widget_active_state_requirement_container_identifier = 6cbad76b-bff4-40c6-a2f1-8d0fca899879-1738509235086
   [loading_requirement_container_meta:6cbad76b-bff4-40c6-a2f1-8d0fca899879-1738509235086] = [groups:][instances:]
@@ -339,7 +339,7 @@ element {
 
 element {
   interactable = true
-  source = Forge {"placeholder":"modversion","values":{"modid":"forge"}}%n%Minecraft {"placeholder":"mcversion"}%n%{"placeholder":"loadedmods"} mods loaded%n%Modpack Version: &cDEV&r%n%Latest Modpack Version: &b{"placeholder":"json","values":{"source":"https://api.github.com/repos/TerraFirmaGreg-Team/Modpack-Modern/releases/latest","json_path":"$.tag_name"}}&r
+  source = Forge {"placeholder":"modversion","values":{"modid":"forge"}}%n%Minecraft {"placeholder":"mcversion"}%n%{"placeholder":"loadedmods"} mods loaded%n%Modpack Version: &cDEV&r%n%Latest Modpack Version: &b{"placeholder":"json","values":{"source":"https://api.github.com/repos/Shelfmd/TFG-Modern/releases/latest","json_path":"$.tag_name"}}&r
   source_mode = direct
   shadow = true
   scale = 1.0
