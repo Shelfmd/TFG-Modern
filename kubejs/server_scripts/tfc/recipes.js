@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 /**
  * 
@@ -56,34 +57,40 @@ const registerTFCRecipes = (event) => {
 
 	// Дерево
 	global.TFC_WOOD_TYPES.forEach(wood => {
-		generateGreenHouseRecipe(event, `8x tfc:wood/sapling/${wood}`, 16000, `64x tfc:wood/log/${wood}`, `tfg:greenhouse/${wood}`, 'minecraft:overworld', 8)
+		generateGreenHouseRecipe(event, `8x tfc:wood/sapling/${wood}`, '#tfg:clean_water', 16000, `64x tfc:wood/log/${wood}`,
+			`tfg:greenhouse/${wood}`, 'minecraft:overworld', 16, null, GTValues.VA[GTValues.MV])
 	})
 
 	global.AFC_SAPLINGS.forEach(x => {
-		generateGreenHouseRecipe(event, `8x afc:wood/sapling/${x.sapling}`, 16000, `64x ${x.log}`, `tfg:greenhouse/${x.sapling}`, 'minecraft:overworld', 8)
+		generateGreenHouseRecipe(event, `8x afc:wood/sapling/${x.sapling}`, '#tfg:clean_water', 16000, `64x ${x.log}`,
+			`tfg:greenhouse/${x.sapling}`, 'minecraft:overworld', 16, null, GTValues.VA[GTValues.MV])
 	})
 
 	// Семена фруктов
 	global.TFC_GREENHOUSE_FRUIT_RECIPE_COMPONENTS.forEach(element => {
-		generateGreenHouseRecipe(event, element.input, element.fluid_amount, element.output, element.name, 'minecraft:overworld', 1)
+		generateGreenHouseRecipe(event, element.input, '#tfg:clean_water', element.fluid_amount, element.output,
+			element.name, 'minecraft:overworld', 8, null, GTValues.VA[GTValues.LV])
 	})
 
 	// Семена овощей
 	global.TFC_GREENHOUSE_VEGETABLE_RECIPE_COMPONENTS.forEach(element => {
-		generateGreenHouseRecipe(event, element.input, element.fluid_amount, element.output, element.name, null, 1)
+		generateGreenHouseRecipe(event, element.input, '#tfg:clean_water', element.fluid_amount, element.output,
+			element.name, null, 8, null, GTValues.VA[GTValues.LV])
 	})
 
 	// Семена ягод
 	global.TFC_GREENHOUSE_BERRY_RECIPE_COMPONENTS.forEach(element => {
-		generateGreenHouseRecipe(event, element.input, element.fluid_amount, element.output, element.name, null, 1)
+		generateGreenHouseRecipe(event, element.input, '#tfg:clean_water', element.fluid_amount, element.output,
+			element.name, null, 8, null, GTValues.VA[GTValues.LV])
 	})
 
 	// Растения
-	Ingredient.of('#tfc:plants').stacks.forEach(element => {
+	Ingredient.of('#tfc:plants').subtract('#tfc:wild_fruits').stacks.forEach(element => {
 		const itemId = element.id;
 		const recipeId = `greenhouse_${itemId.replace(':', '_')}`;
 
-		generateGreenHouseRecipe(event, itemId, 8000, `8x ${itemId}`, recipeId, null, 1);
+		generateGreenHouseRecipe(event, itemId, '#tfg:clean_water', 8000, `8x ${itemId}`,
+			recipeId, null, 8, null, GTValues.VA[GTValues.LV]);
 	});
 
 	//#endregion
@@ -91,6 +98,12 @@ const registerTFCRecipes = (event) => {
 	event.shapeless('tfc:crucible', ['tfc:crucible']).id('tfg:empty_crucible')
 
 	event.shapeless('2x minecraft:stick', ['#minecraft:saplings', '#forge:tools/knives']).id('tfg:strip_saplings')
+
+	event.recipes.gtceu.cutter('tfg:saplings_to_sticks')
+		.itemInputs('#minecraft:saplings')
+		.itemOutputs('2x minecraft:stick')
+		.duration(20)
+		.EUt(7)
 
 	// Доменная печь
 	event.shaped('tfc:blast_furnace', [
@@ -134,6 +147,7 @@ const registerTFCRecipes = (event) => {
 	// Kaolinite Clay - regular smelting recipes can't have multiple inputs
 	event.recipes.gtceu.alloy_smelter('tfg:kaolinite')
 		.itemInputs('tfc:kaolin_clay')
+		.circuit(1)
 		.chancedOutput('tfc:powder/kaolinite', 2000, 0)
 		.duration(100)
 		.EUt(16)
@@ -157,9 +171,7 @@ const registerTFCRecipes = (event) => {
 		.id('tfg:tfc/pot/salt')
 
 	// Salt Water
-	generateMixerRecipe(event,
-		['#forge:dusts/salt'], 
-		JsonIO.of({ amount: 1000, value: { tag: "tfg:clean_water" }}),
+	generateMixerRecipe(event, ['#forge:dusts/salt'], "#tfg:clean_water 1000",
 		[], 2, Fluid.of('tfc:salt_water', 1000), 40, 7, 64, 'tfg:tfc/salt_water')
 
 
@@ -191,8 +203,7 @@ const registerTFCRecipes = (event) => {
 		.id('tfg:splashing/wash_torch')
 
 	//Lye in mixer
-	generateMixerRecipe(event, 'tfc:powder/wood_ash', 
-		JsonIO.of({ amount: 200, value: { tag: "tfg:clean_water" }}),
+	generateMixerRecipe(event, 'tfc:powder/wood_ash', "#tfg:clean_water 200",
 		[], null, Fluid.of('tfc:lye', 200), 100, 2, 64, 'lye_in_mixer')
 
 	// Brass Mechanism
@@ -302,4 +313,10 @@ const registerTFCRecipes = (event) => {
 		.inputFluid(Fluid.of('minecraft:water', 1000))
 		.outputFluid(Fluid.of('tfc:salt_water', 1000))
 		.id('tfg:barrel/water_to_salt_water')
+
+	event.recipes.tfc.barrel_instant()
+		.inputItem("tfc:powder/salt")
+		.inputFluid(Fluid.of('minecraft:water', 250))
+		.outputFluid(Fluid.of('tfc:salt_water', 250))
+		.id('tfg:barrel/water_to_salt_water_tfc')
 }

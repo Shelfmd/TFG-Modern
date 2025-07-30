@@ -24,7 +24,7 @@
 </div>
 <br/>
 
-![Logo Large](https://github.com/TerraFirmaGreg-Team/.github/blob/main/storage/modern/title/1920x720_with_background_4.png?raw=true)
+![Logo_Title](https://github.com/TerraFirmaGreg-Team/.github/blob/main/storage/modern/title_logo.png?raw=true)
 
 ---
 
@@ -74,15 +74,15 @@ explicitly stated. See [LICENSE](../LICENSE) for details of licensing.
 
 ---
 
-![Image Readme](https://github.com/TerraFirmaGreg-Team/.github/blob/main/storage/modern/unedited/credit_tfg_dev_team.png?raw=true)
+![Image_Readme](https://github.com/TerraFirmaGreg-Team/.github/blob/main/storage/modern/image_readme.png?raw=true)
 
 <h2 align="center">External Credits and Special Thanks</h2>
 
 
 - TerraFirmaGreg Team for the original modpack, which I have forked
-- WithersChat from the Monifactory team for the universal circuit textures.
-- GregTech Community Pack Modern for most of their quest text.
-- Better End for some assets.
+- [GregTech Community Pack Modern](https://www.curseforge.com/minecraft/modpacks/gregtech-community-pack-modern) for most of their quest text.
+- [Better End](https://www.curseforge.com/minecraft/mc-mods/betterend) for some assets.
+- Uni for Mars' dunes terrain generation.
 
 <!-- Links: -->
 [TerraFirmaCraft]: https://www.curseforge.com/minecraft/mc-mods/terrafirmacraft

@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 //#region Disabled Items
 /** @global */
@@ -142,6 +143,20 @@ global.GTCEU_DISABLED_ITEMS = [
     'gtceu:lv_damascus_steel_screwdriver',
     'gtceu:damascus_steel_bucket',
 
+    //armor
+    'gtceu:bronze_helmet',
+    'gtceu:bronze_chestplate',
+    'gtceu:bronze_leggings',
+    'gtceu:bronze_boots',
+    'gtceu:steel_helmet',
+    'gtceu:steel_chestplate',
+    'gtceu:steel_leggings',
+    'gtceu:steel_boots',
+    'gtceu:titanium_helmet',
+    'gtceu:titanium_chestplate',
+    'gtceu:titanium_leggings',
+    'gtceu:titanium_boots',
+
     // Huh
     'gtceu:wax_dust',
     'gtceu:small_wax_dust',
@@ -202,8 +217,7 @@ global.GTCEU_ARMORS = [
 	'gtceu:nanomuscle_leggings',
 	'gtceu:nanomuscle_boots',
 	'gtceu:nanomuscle_helmet',
-	// typo in gtceu
-	'gtceu:avanced_nanomuscle_chestplate',
+	'gtceu:advanced_nanomuscle_chestplate',
 	'gtceu:quarktech_chestplate',
 	'gtceu:quarktech_leggings',
 	'gtceu:quarktech_boots',
@@ -297,5 +311,20 @@ global.ADD_CIRCUIT = [
     {recipeId: 'gtceu:chemical_reactor/tetrafluoroethylene_from_chloroform', circuitNumber: 1},
     {recipeId: 'gtceu:chemical_reactor/hydrofluoric_acid_from_elements', circuitNumber: 2},
 ];
+//#endregion
+
+//#region Superconductors
+/** @global */
+global.GTCEU_SUPERCONDUCTORS = [
+    {name: 'manganese_phosphide', materialId: 'ManganesePhosphide'}, 
+    {name: 'magnesium_diboride', materialId: 'MagnesiumDiboride'},
+    {name: 'mercury_barium_calcium_cuprate', materialId: 'MercuryBariumCalciumCuprate'},
+    {name: 'uranium_triplatinum', materialId: 'UraniumTriplatinum'},
+    {name: 'samarium_iron_arsenic_oxide', materialId: 'SamariumIronArsenicOxide'},
+    {name: 'indium_tin_barium_titanium_cuprate', materialId: 'IndiumTinBariumTitaniumCuprate'},
+    {name: 'uranium_rhodium_dinaquadide', materialId: 'UraniumRhodiumDinaquadide'},
+    {name: 'enriched_naquadah_trinium_europium_duranide', materialId: 'EnrichedNaquadahTriniumEuropiumDuranide'},
+    {name: 'ruthenium_trinium_americium_neutronate', materialId: 'RutheniumTriniumAmericiumNeutronate'}
+]
 //#endregion
 

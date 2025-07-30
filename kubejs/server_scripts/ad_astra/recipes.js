@@ -1,5 +1,9 @@
 // priority: 0
+"use strict";
 
+/**
+ * @param {Internal.RecipesEventJS_} event 
+ */
 const registerAdAstraRecipes = (event) => {
 
 	event.remove({ mod: 'ad_astra' })
@@ -95,10 +99,160 @@ const registerAdAstraRecipes = (event) => {
 
 	//#endregion
 
+
+	//region tier 2 rocket DISABLED UNTIL EV
+	
+	event.remove({ mod: 'gtceu', input: 'gtceu:hot_rocket_alloy_t2_ingot' })
+/*
+	event.recipes.gtceu.mixer('tfg:rocket_alloy_t2')
+		.itemInputs('19x #forge:dusts/titanium', '3x #forge:small_dusts/chromium', '3x #forge:small_dusts/tin', '3x #forge:small_dusts/aluminium')
+		.inputFluids(Fluid.of('gtceu:vanadium', 540))
+		.itemOutputs('25x #forge:dusts/rocket_alloy_t2')
+		.duration(580)
+		.circuit(5)
+		.EUt(GTValues.VA[GTValues.EV])
+	
+	event.recipes.gtceu.vacuum_freezer('tfg:vacuum_freezer/cool_rocket_alloy_t2')
+		.itemInputs('#forge:hot_ingots/rocket_alloy_t2')
+		.inputFluids(Fluid.of('gtceu:distilled_water', 500), Fluid.of('tfg:cryogenized_fluix', 288))
+		.itemOutputs('#forge:ingots/rocket_alloy_t2')
+		.duration(120)
+		.EUt(GTValues.VA[GTValues.HV])
+		
+	event.recipes.gtceu.assembler('tfg:rocket_fin_t2')
+		.itemInputs('#forge:plates/rocket_alloy_t2', 
+					'#forge:double_plates/titanium')
+		.itemOutputs('tfg:rocket_fin_t2')
+		.duration(180)
+		.circuit(3)
+		.EUt(GTValues.VA[GTValues.EV])
+		
+	event.recipes.gtceu.assembler('tfg:rocket_cone_t2')
+		.itemInputs('gtceu:ev_emitter', '#forge:dense_plates/rocket_alloy_t2', '#forge:double_plates/titanium', 
+					'#forge:double_plates/desh')
+		.itemOutputs('tfg:rocket_cone_t2')
+		.duration(1440)
+		.circuit(3)
+		.EUt(GTValues.VA[GTValues.EV])
+
+	
+	event.recipes.gtceu.assembler('tfg:rocket_desh_engine')
+		.itemInputs(
+			'4x #forge:double_plates/titanium',
+			'4x #gtceu:circuits/ev',
+			'gtceu:ev_electric_pump',
+			'3x gtceu:advanced_power_thruster',
+			'4x #forge:rods/magnetic_neodymium',
+			'#forge:rotors/titanium')
+		.inputFluids(Fluid.of('gtceu:desh', 144 * 12))
+		.itemOutputs('ad_astra:desh_engine')
+		.duration(800)
+		.circuit(3)
+		.EUt(GTValues.VA[GTValues.EV])
+	
+	event.recipes.gtceu.assembler('ad_astra:tier_2_rocket')
+		.itemInputs(
+			'12x #forge:dense_plates/rocket_alloy_t2',
+			'4x tfg:rocket_fin_t2',
+			'1x ad_astra:desh_engine',
+			'1x tfg:rocket_cone_t2',
+			'12x #forge:insulation_t2/roll'
+		)
+		.inputFluids(Fluid.of('tfg:cryogenized_fluix', 144 * 2 * 16))
+		.itemOutputs('ad_astra:tier_2_rocket')
+		.duration(1440)
+		.circuit(3)
+		.EUt(GTValues.VA[GTValues.EV])
+*/
 	//#endregion
 
-
-	//#region space suits
+	//region Tier 3 DISABLED UNTIL IV
+	event.remove({ id: "gtceu:vacuum_freezer/cool_hot_rocket_alloy_t3_ingot" })
+	event.remove({ id: "gtceu:vacuum_freezer/rocket_alloy_t3" })
+	/*
+	event.recipes.gtceu.vacuum_freezer('tfg:cool_rocket_alloy_t3')
+		.inputFluids(Fluid.of('gtceu:molten_rocket_alloy_t3', 144), Fluid.of('gtceu:ice', 4000))
+		.notConsumable('gtceu:ingot_casting_mold')
+		.itemOutputs('#forge:ingots/rocket_alloy_t3')
+		.duration(800)
+		.EUt(GTValues.VA[GTValues.HV])
+	event.recipes.gtceu.vacuum_freezer('tfg:cool_hot_rocket_alloy_t3')
+		.itemInputs('#forge:hot_ingots/rocket_alloy_t3')
+		.inputFluids(Fluid.of('gtceu:liquid_helium', 500))
+		.itemOutputs('#forge:ingots/rocket_alloy_t3')
+		.outputFluids(Fluid.of('gtceu:helium', 250))
+		.duration(400)
+		.EUt(GTValues.VA[GTValues.HV])
+		
+	//Add some unique cooling thing for molten ingots
+	
+	event.recipes.gtceu.assembler('tfg:rocket_fin_t3')
+		.itemInputs('#forge:plates/rocket_alloy_t3', '#forge:double_plates/tungsten_steel')
+		.itemOutputs('tfg:rocket_fin_t3')
+		.duration(220)
+		.circuit(4)
+		.EUt(GTValues.VA[GTValues.IV])
+		
+	event.recipes.gtceu.assembler('tfg:rocket_cone_t3')
+		.itemInputs('gtceu:iv_emitter', '#forge:dense_plates/rocket_alloy_t3', '#forge:double_plates/tungsten_steel', 
+					'#forge:double_plates/ostrum', 'gtceu:plutonium_nugget') //change this to the pellet
+		.itemOutputs('tfg:rocket_cone_t3')
+		.duration(1700)
+		.circuit(4)
+		.EUt(GTValues.VA[GTValues.IV])
+	
+	event.recipes.gtceu.assembler('tfg:elite_power_thruster')
+		.itemInputs('gtceu:ev_electric_motor', '2x #forge:rings/titanium', '#forge:rods/titanium',
+					'gtceu:ultimet_rotor', '2x gtceu:aluminium_single_cable')
+		.itemOutputs('tfg:elite_power_thruster')
+		.duration(200)
+		.EUt(GTValues.VA[GTValues.LV])
+	
+	event.recipes.gtceu.assembler('tfg:rocket_ostrum_engine')
+		.itemInputs(
+			'6x #forge:double_plates/tungsten_steel',
+			'4x #gtceu:circuits/iv',
+			'gtceu:iv_electric_pump',
+			'3x tfg:elite_power_thruster',
+			'4x #forge:insulation_t3/cryo',
+			'6x #forge:rods/magnetic_neodymium',
+			'#forge:rotors/tungsten_steel')
+		.inputFluids(Fluid.of('gtceu:ostrum', 144 * 16))
+		.itemOutputs('ad_astra:ostrum_engine')
+		.duration(960)
+		.circuit(4)
+		.EUt(GTValues.VA[GTValues.IV])
+		
+	event.recipes.gtceu.assembler('tfg:rocket_ostrum_tank')
+		.itemInputs(
+			'4x #forge:double_plates/rocket_alloy_t3',
+			'gtceu:iv_electric_pump',
+			'tfg:elite_power_thruster',
+			'2x #forge:insulation_t3/cryo')
+		.inputFluids(Fluid.of('gtceu:ostrum', 144 * 4))
+		.itemOutputs('ad_astra:ostrum_tank')
+		.duration(400)
+		.circuit(4)
+		.EUt(GTValues.VA[GTValues.IV])
+	
+	event.recipes.gtceu.assembler('ad_astra:tier_3_rocket')
+		.itemInputs(
+			'16x #forge:dense_plates/rocket_alloy_t3',
+			'4x tfg:rocket_fin_t3',
+			'1x ad_astra:ostrum_engine',
+			'2x ad_astra:ostrum_tank',
+			'1x tfg:rocket_cone_t3',
+			'8x #forge:insulation_t3/sheet'
+		)
+		.inputFluids(Fluid.of('gtceu:bromine', 1000 * 16))
+		.itemOutputs('ad_astra:tier_3_rocket')
+		.duration(1700)
+		.circuit(4)
+		.EUt(GTValues.VA[GTValues.IV])
+	
+	//#endregion
+*/
+	//#region space suits NETHERITE STUFF DISABLED UNTIL IV
 
 	event.recipes.gtceu.forming_press('space_suit_fabric')
 		.itemInputs(
@@ -110,7 +264,17 @@ const registerAdAstraRecipes = (event) => {
 		.itemOutputs('2x tfg:space_suit_fabric')
 		.duration(20 * 10)
 		.EUt(GTValues.VA[GTValues.HV])
-
+	/*
+	event.recipes.gtceu.forming_press('better_space_suit_fabric')
+		.itemInputs(
+			'gtceu:carbon_fiber_mesh',
+			'#forge:aerogels',
+			'tfc:wool'//replace with glacian wool
+		)
+		.itemOutputs('2x tfg:better_space_suit_fabric')
+		.duration(20 * 5)
+		.EUt(GTValues.VA[GTValues.IV])
+*/
 	event.shaped('ad_astra:space_helmet', [
 		'AAA',
 		'ADA',
@@ -120,18 +284,18 @@ const registerAdAstraRecipes = (event) => {
 		B: 'tfg:space_suit_fabric',
 		D: '#forge:small_fluid_pipes/polyethylene'
 	}).id('tfg:space_helmet')
-
-	//event.recipes.gtceu.assembler('ad_astra:netherite_space_helmet')
-	//	.itemInputs(
-	//		'ad_astra:space_helmet',
-	//		'3x #forge:plates/titanium_tungsten_carbide',
-	//		'3x #forge:plates/polyphenylene_sulfide',
-	//		'5x gtceu:laminated_glass'
-	//	)
-	//	.itemOutputs('ad_astra:netherite_space_helmet')
-	//	.duration(400)
-	//	.EUt(GTValues.VA[GTValues.IV])
-
+/*
+	event.recipes.gtceu.assembler('ad_astra:netherite_space_helmet')
+		.itemInputs(
+			'ad_astra:space_helmet',
+			'3x #forge:plates/tungsten_steel',
+			'3x tfg:better_space_suit_fabric',
+			'5x gtceu:laminated_glass'
+		)
+		.itemOutputs('ad_astra:netherite_space_helmet')
+		.duration(400)
+		.EUt(GTValues.VA[GTValues.IV])
+*/
 	event.shaped('ad_astra:space_suit', [
 		'B B',
 		'BDB',
@@ -140,13 +304,13 @@ const registerAdAstraRecipes = (event) => {
 		B: 'tfg:space_suit_fabric',
 		D: 'ad_astra:oxygen_gear'
 	}).id('tfg:space_suit')
-
-	//event.recipes.gtceu.assembler('ad_astra:netherite_space_suit')
-	//	.itemInputs('ad_astra:space_suit', '4x #forge:plates/titanium_tungsten_carbide', '4x #forge:plates/polyphenylene_sulfide')
-	//	.itemOutputs('ad_astra:netherite_space_suit')
-	//	.duration(400)
-	//	.EUt(GTValues.VA[GTValues.IV])
-
+/*
+	event.recipes.gtceu.assembler('ad_astra:netherite_space_suit')
+		.itemInputs('ad_astra:space_suit', '5x #forge:plates/tungsten_steel','5x tfg:better_space_suit_fabric')
+		.itemOutputs('ad_astra:netherite_space_suit')
+		.duration(400)
+		.EUt(GTValues.VA[GTValues.IV])
+*/
 	event.shaped('ad_astra:space_pants', [
 		'BAB',
 		'B B',
@@ -155,13 +319,13 @@ const registerAdAstraRecipes = (event) => {
 		A: 'gtceu:hv_electric_motor',
 		B: 'tfg:space_suit_fabric',
 	}).id('tfg:space_pants')
-
-	//event.recipes.gtceu.assembler('ad_astra:netherite_space_pants')
-	//	.itemInputs('ad_astra:space_pants', '4x #forge:plates/titanium_tungsten_carbide', '4x #forge:plates/polyphenylene_sulfide')
-	//	.itemOutputs('ad_astra:netherite_space_pants')
-	//	.duration(400)
-	//	.EUt(GTValues.VA[GTValues.IV])
-
+/*
+	event.recipes.gtceu.assembler('ad_astra:netherite_space_pants')
+		.itemInputs('ad_astra:space_pants', '4x #forge:plates/tungsten_steel', '4x tfg:better_space_suit_fabric')
+		.itemOutputs('ad_astra:netherite_space_pants')
+		.duration(400)
+		.EUt(GTValues.VA[GTValues.IV])
+*/
 	event.shaped('ad_astra:space_boots', [
 		'B B',
 		'A A'
@@ -169,13 +333,13 @@ const registerAdAstraRecipes = (event) => {
 		A: '#forge:plates/polyphenylene_sulfide',
 		B: 'tfg:space_suit_fabric'
 	}).id('tfg:space_boots')
-
-	//event.recipes.gtceu.assembler('ad_astra:netherite_space_boots')
-	//	.itemInputs('ad_astra:space_boots', '2x #forge:plates/titanium_tungsten_carbide', '2x #forge:plates/polyphenylene_sulfide')
-	//	.itemOutputs('ad_astra:netherite_space_boots')
-	//	.duration(400)
-	//	.EUt(GTValues.VA[GTValues.IV])
-
+/*
+	event.recipes.gtceu.assembler('ad_astra:netherite_space_boots')
+		.itemInputs('ad_astra:space_boots', '2x #forge:plates/tungsten_steel', '2x tfg:better_space_suit_fabric')
+		.itemOutputs('ad_astra:netherite_space_boots')
+		.duration(400)
+		.EUt(GTValues.VA[GTValues.IV])
+*/
 
 	event.shaped('ad_astra:oxygen_gear', [
 		'BAB',
@@ -233,7 +397,7 @@ const registerAdAstraRecipes = (event) => {
 		'ADA'
 	], {
 		A: '#forge:rods/magnetic_neodymium',
-		B: 'gtceu:ev_field_generator',
+		B: 'gtceu:mv_field_generator',
 		C: '#forge:plates/titanium',
 		D: 'gtceu:ev_polarizer',
 	}).id('tfg:gravity_normalizer')
@@ -350,7 +514,7 @@ const registerAdAstraRecipes = (event) => {
 		.category(GTRecipeCategories.CHEM_DYES)
 
 	global.MINECRAFT_DYE_NAMES.forEach(color => {
-		if (color != "white") {
+		if (color !== "white") {
 			event.recipes.gtceu.chemical_bath(`tfg:ad_astra_${color}_flag`)
 				.itemInputs('ad_astra:white_flag')
 				.inputFluids(Fluid.of(`tfc:${color}_dye`, 36))
@@ -697,6 +861,18 @@ const registerAdAstraRecipes = (event) => {
 		structure: "tfg:orbit/space_station"
 	})
 
+	event.custom({
+		type: "ad_astra:space_station_recipe",
+		dimension: "ad_astra:mars_orbit",
+		ingredients: [
+			{ count: 43, ingredient: { item: "gtceu:aluminium_frame" }},
+			{ count: 24, ingredient: { item: "gtceu:glass_plate" }},
+			{ count: 4, ingredient: { item: "minecraft:glowstone_dust" }},
+			{ count: 1, ingredient: { item: "ad_astra:launch_pad" }}
+		],
+		structure: "tfg:orbit/space_station"
+	})
+
 	//#endregion
 
 	//#region Wood
@@ -730,8 +906,14 @@ const registerAdAstraRecipes = (event) => {
 			B: ChemicalHelper.get(TagPrefix.rod, GTMaterials.Wood, 1),
 		}).id('tfg:shaped/strophar_ladder')
 
-		generateGreenHouseRecipe(event, '8x ad_astra:glacian_fur', 16000, '64x ad_astra:glacian_log', 'tfg:green_house/glacian_tree', 'ad_astra:moon', 8, '8x ad_astra:glacian_leaves', GTValues.VA[GTValues.MV])
-		generateGreenHouseRecipe(event, '8x ad_astra:strophar_mushroom', 16000, '64x ad_astra:strophar_stem', 'tfg:green_house/strophar_mushroom', 'ad_astra:moon', 8, '16x ad_astra:strophar_cap', GTValues.VA[GTValues.MV])
-		generateGreenHouseRecipe(event, '8x ad_astra:aeronos_mushroom', 16000, '64x ad_astra:aeronos_stem', 'tfg:green_house/aeronos_mushroom', 'ad_astra:moon', 8, '16x ad_astra:aeronos_cap', GTValues.VA[GTValues.MV])
+
+		generateGreenHouseRecipe(event, '8x ad_astra:strophar_mushroom', 'tfg:semiheavy_ammoniacal_water', 16000,
+			'64x ad_astra:strophar_stem', 'tfg:green_house/strophar_mushroom', 'ad_astra:mars', 8, 
+			'16x ad_astra:strophar_cap', GTValues.VA[GTValues.MV])
+		generateGreenHouseRecipe(event, '8x ad_astra:aeronos_mushroom', 'tfg:semiheavy_ammoniacal_water', 16000, 
+			'64x ad_astra:aeronos_stem', 'tfg:green_house/aeronos_mushroom', 'ad_astra:mars', 8,
+			'16x ad_astra:aeronos_cap', GTValues.VA[GTValues.MV])
+		// TODO: needs a sapling
+		//generateGreenHouseRecipe(event, '8x ___', 16000, '64x ad_astra:glacian_log', 'tfg:green_house/glacian_tree', 'ad_astra:mars', 8, '8x species:alphacene_moss_block', GTValues.VA[GTValues.MV])
 	//#endregion
 }

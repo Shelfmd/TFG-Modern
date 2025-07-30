@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 function registerBetterEndRecipes(event) {
 
@@ -16,7 +17,7 @@ function registerBetterEndRecipes(event) {
 			.EUt(GTValues.VA[GTValues.MV])
 			.dimension('ad_astra:moon')
 
-		event.recipes.gtceu.greenhouse(recipeId + "_helium")
+		event.recipes.gtceu.greenhouse(`${recipeId  }_helium`)
 			.notConsumable(element.id)
 			.inputFluids(Fluid.of('gtceu:helium_3', 500))
 			.itemOutputs(`8x ${element.id}`)

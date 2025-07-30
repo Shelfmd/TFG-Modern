@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerGTCEUItemTags = (event) => {
 
@@ -59,8 +60,7 @@ const registerGTCEUItemTags = (event) => {
 	event.add('tfg:sugars', 'afc:birch_sugar')
 	event.add('tfg:sugars', 'afc:maple_sugar')
     
-    global.MINECRAFT_DYE_NAMES.forEach(dyeName =>
-    {
+    global.MINECRAFT_DYE_NAMES.forEach(dyeName => {
         event.remove('ae2:p2p_attunements/fluid_p2p_tunnel', `gtceu:${dyeName}_dye_bucket`)
     })
 

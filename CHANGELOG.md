@@ -2,6 +2,84 @@
 
 ## [Unreleased]
 ### Changes
+- New major GregTech version! Read all about its new changes [here](https://github.com/GregTechCEu/GregTech-Modern/releases), and please report any issues you find! @gustovafing
+- Added initial implementation of interplanetary logistics @gustovafing
+- Vanilla moss blocks/carpet are now compostable @Pyritie
+- Added missing mixer recipes for turning medium compost greens/browns into compost @Pyritie
+- Adjusted recipe times of the VI machines @Pyritie
+- Added universal compost items, for more efficient storage of compostables @Vazde
+- Added recipe for backpack feeding upgrade (#1462) @Pyritie
+- Greate shaft recipes are now shapeless (#1453) @Pyritie
+- Added crafting table recipes for matches and the matchbox (#1449) @Pyritie
+- Made "Etched" more accessible (#1473) @Nebby1999
+- Added faster recipes for crafting dough @Pyritie
+- Black bronze now has a fluid pipe instead of an item pipe, so the drum has proper containment info @Pyritie
+- Added recipes to create basic TFC alcohol in the food processor @Pyritie
+- Added melting recipes for all the TFC metal dusts @Pyritie
+- Added mortar and pestle recipes for soybean and olive paste (#1480) @Pyritie
+### Bug fixes
+- Fixed not being able to craft fine wire in a coiling machine for materials that didn't also have normal wire @Pyritie
+- Fixed cobalt brass and potin double plates not being obtainable until MV @Pyritie
+- Fixed missing recipe for cooking fox meat @Pyritie
+- Fixed ingot extruder mold recipe conflict @BlueBoat29
+- Fixed wire cutter head extruder recipes missing a mold @Pyritie
+- Possibly fixed the issue with airplanes and akistor carts not appearing when placing them (#1447) @Pyritie
+- Fixed not being able to make sea water with TFC salt in a barrel (#1476) @Pyritie
+- Fixed the electric greenhouse fruit tree recipes making more saplings instead of fruit (#1445) @Pyritie
+- Fixed missing firmalife jam food processor recipes (#1478) @Pyritie
+### Translations
+- Ukranian @Furryks
+
+## [0.10.4] - 25-07-2025
+### Changes
+- Added block interactions for mossy cobble (#1434) @Redeix
+- Clipboards are now craftable earlier (#1432) @Pyritie
+### Bug fixes
+- Fixed key bindings being reverted every time you started the game (#1430)
+- Pushed a patch to fix registry errors on Linux machines. If you are still receiving these errors please report it [here](https://github.com/TerraFirmaGreg-Team/Modpack-Modern/issues/1431) (#1434) @Redeix
+- Added a temporary workaround for the blue steel diving suit not protecting from lava (#1361) @Pyritie
+- Fixed a broken link in the papermaking field guide entry (#1426) @Pyritie
+- Fixed small springs melting into twice as much as they should (#1435) @Pyritie
+- Fixed framed item frames having the same crafting ratio as regular ones (#1427) @Pyritie
+- Fixed a recipe conflict with kaolinite powder and fire clay in an alloy smelter @Pyritie
+- Fixed some mixing bowl recipes with too many outputs @Pyritie
+
+## [0.10.3] - 23-07-2025
+### Changes
+- Reduced duration of biodiesel recipes @Pyritie
+- Changed some options of a performance mod, let us know if you find any weird issues! (#1410) @victordlp8
+- Added mortar and pestel recipes for grain to flour @Pyritie
+- Added in-world shift + right-click interactions for bricks. Greens can be used to turn bricks into mossy bricks, and a knife reverts it. Hammers make cracked bricks and mortar repairs them. (#1416) @Redeix
+- Steam can now be pumped into Blaze Burners via the Straw (#1379) @Nyonyix
+- Rearranged some anvil finish sequences to fit TFG convention @Zippity
+- Replaced moon skeletons with Strays @Pyritie
+- Replaced Beneath cave endermen with a different, passive one (same loot table though) @Pyritie
+- Added sandpaper recipes for early game gems @Pyritie
+- Unified observer recipes @Pyritie
+### Bug fixes
+- Fixed butchery knife crafting recipe (#1405) @Pyritie
+- Fixed new extruder molds missing a tag to work with the curving press (#1412) @Forsuin
+- Fixed contraptions no longer understanding TFC chests @Pyritie
+- Fixed ice never melting in the overworld (#1408) @Pyritie
+- Fixed small gears not having heat data @Zippity
+- Fixed forgeable small gears not being meltable @Zippity
+- Removed most empty tag recipes (#1420) @BlueBoat29
+- Fixed Styrene Butadiene Belt recipe (#1421) @BlueBoat29
+- Fixed deer dropping camelidae meat with a butchery knife @Pyritie
+- Fixed gas pressurizer machine not having a GUI (#1425) @Pyritie
+- Fixed recipe conflict with hoppers and ULV machine casings (#1423) @Pyritie
+
+## [0.10.2] - 20-07-2025
+### Changes
+- Aged Corn Whiskey and Aged Rye Whiskey now have status effects (#1390) @EveProgrammingsockson 
+### Bug fixes
+- Fixed TFG-Core version mismatch @Xikaro
+- Fixed hardwood logs macerating into softwood pulp (#1391) @Forsuin
+- Fixed iron flask dupe (#1397) @Pyritie
+- Fixed amethyst/nether quartz dupe (#1395) @Pyritie
+
+## [0.10.1] - 19-07-2025
+### Changes
 - Added harvest baskets to pick fruit from fruit trees and berry bushes (#1338) @Redeix
 - Added ice soup @Pyritie
 - Gave plants tag to bushes so they can be used for other things (#1338) @Redeix
@@ -10,6 +88,9 @@
 - Added Tier 2 Insulation: Alkaline Earth Silicate @BlueBoat29
 - Added tfc data to tacz guns and attachments (#1353) @Redeix
 - Allowed "window" blocks and panes to be broken and picked up @BlueBoat29
+- Updated title and loading screens to be more memory efficient and hopefully look better on other resolutions. (#1381) @Redeix
+- Changed Firmalife greenhouses to no longer allow any doors/trapdoors/pipes (#1363) @BlueBoat29
+- Thorium is now Pink (#1378) @Nebby1999
 ### Bug fixes
 - Fixed yeast food processor conflict (#1310) @Redeix
 - Fixed seed oil voiding in barrels (#1310) @Redeix
@@ -41,6 +122,8 @@
 - Fixed flintlock not being craftable before LV (#1353) @Redeix
 - Fixed the field guide not working for chinese players (#1356) @Pyritie
 - Fixed glass blocks dropping with gem saw (#1367) @BlueBoat29
+- Fixed Hv Quest TNT #1373 @TomPlop
+- Fixed Smooth Stone #1380 @TomPlop
 
 ## [0.10.0] - 13.07.2025
 - [!WARNING] If you're upgrading your world from 0.9 to 0.10, please read the upgrade guide [here](https://github.com/TerraFirmaGreg-Team/Modpack-Modern/wiki/%5BEN%5D-Upgrading-from-0.9-to-0.10). We do not recommend using Alpha versions for progression, but if you do, please make frequent backups!

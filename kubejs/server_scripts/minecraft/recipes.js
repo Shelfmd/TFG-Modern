@@ -1,8 +1,9 @@
 // priority: 0
+"use strict";
 
 /**
- *
- * @param {Internal.RecipesEventJS} event
+ * 
+ * @param {Internal.RecipesEventJS} event 
  */
 const registerMinecraftRecipes = (event) => {
 
@@ -41,7 +42,7 @@ const registerMinecraftRecipes = (event) => {
 
 			event.recipes.gtceu.chemical_reactor(`tfg:minecraft/oxidizing_block_${element.name}`)
 				.itemInputs(element.block)
-				.inputFluids(JsonIO.of({ amount: 150, value: { tag: "tfc:any_water" }}))
+				.inputFluids("#tfc:any_water 150")
 				.circuit(1)
 				.itemOutputs(element2.block)
 				.duration(1000)
@@ -49,7 +50,7 @@ const registerMinecraftRecipes = (event) => {
 
 			event.recipes.gtceu.chemical_reactor(`tfg:minecraft/oxidizing_cutted_${element.name}`)
 				.itemInputs(element.cutted)
-				.inputFluids(JsonIO.of({ amount: 150, value: { tag: "tfc:any_water" }}))
+				.inputFluids("#tfc:any_water 150")
 				.circuit(1)
 				.itemOutputs(element2.cutted)
 				.duration(1000)
@@ -57,7 +58,7 @@ const registerMinecraftRecipes = (event) => {
 
 			event.recipes.gtceu.chemical_reactor(`tfg:minecraft/oxidizing_stairs_${element.name}`)
 				.itemInputs(element.stairs)
-				.inputFluids(JsonIO.of({ amount: 150, value: { tag: "tfc:any_water" }}))
+				.inputFluids("#tfc:any_water 150")
 				.circuit(1)
 				.itemOutputs(element2.stairs)
 				.duration(1000)
@@ -65,7 +66,7 @@ const registerMinecraftRecipes = (event) => {
 
 			event.recipes.gtceu.chemical_reactor(`tfg:minecraft/oxidizing_slabs_${element.name}`)
 				.itemInputs(element.slabs)
-				.inputFluids(JsonIO.of({ amount: 150, value: { tag: "tfc:any_water" }}))
+				.inputFluids("#tfc:any_water 150")
 				.circuit(1)
 				.itemOutputs(element2.slabs)
 				.duration(1000)
@@ -104,7 +105,7 @@ const registerMinecraftRecipes = (event) => {
 
 		// Обрезанный блок
 		event.recipes.tfc.damage_inputs_shapeless_crafting(
-			event.shapeless('4x ' + element.cutted, [element.block, '#tfc:chisels'])
+			event.shapeless(`4x ${  element.cutted}`, [element.block, '#tfc:chisels'])
 		).id(`tfg:shapeless/cutted_${element.name}`)
 	}
 
@@ -152,7 +153,7 @@ const registerMinecraftRecipes = (event) => {
 
 	event.recipes.gtceu.chemical_bath('paper_from_papyrus')
 		.itemInputs('tfc:papyrus')
-		.inputFluids(JsonIO.of({ amount: 100, value: { tag: "tfg:clean_water" }}))
+		.inputFluids("#tfg:clean_water 100")
 		.itemOutputs('minecraft:paper')
 		.duration(100)
 		.EUt(7)
@@ -163,7 +164,7 @@ const registerMinecraftRecipes = (event) => {
 
 	event.recipes.gtceu.centrifuge('sugar_from_sugarcane')
 		.itemInputs('tfc:food/sugarcane')
-		.inputFluids(JsonIO.of({ amount: 600, value: { tag: "tfg:clean_water" }}))
+		.inputFluids("#tfg:clean_water 600")
 		.itemOutputs('minecraft:sugar', 'gtceu:plant_ball')
 		.duration(800)
 		.EUt(6)
@@ -229,9 +230,9 @@ const registerMinecraftRecipes = (event) => {
 
 	event.recipes.gtceu.chemical_reactor('minecraft:gtceu/chemical_reactor/sponge')
 		.itemInputs(ChemicalHelper.get(TagPrefix.dust, GTMaterials.SodiumBisulfate, 1))
-		.inputFluids(Fluid.of('gtceu:polyethylene', 144), JsonIO.of({ amount: 250, value: { tag: "tfg:clean_water" }}))
+		.inputFluids('gtceu:polyethylene 144', "#tfg:clean_water 250")
 		.itemOutputs('2x minecraft:sponge')
-		.outputFluids(Fluid.of('gtceu:sodium_persulfate', 35))
+		.outputFluids('gtceu:sodium_persulfate 35')
 		.duration(80)
 		.EUt(GTValues.VA[GTValues.LV])
 
@@ -307,7 +308,7 @@ const registerMinecraftRecipes = (event) => {
 		.duration(50)
 		.EUt(30)
 
-    event.recipes.gtceu.large_chemical_reactor('golden_apple_1')
+    event.recipes.gtceu.large_chemical_reactor('golden_apple_1')             
         .itemInputs('tfc:food/red_apple', '8x #forge:ingots/gold')
         .itemOutputs('minecraft:golden_apple')
         .duration(50)
@@ -602,7 +603,7 @@ const registerMinecraftRecipes = (event) => {
 	event.recipes.gtceu.assembler('hopper_wrought_iron')
 		.itemInputs('#forge:chests', '5x #forge:plates/wrought_iron')
 		.itemOutputs('minecraft:hopper')
-		.circuit(8)
+		.circuit(32)
 		.duration(700)
 		.EUt(2)
 
@@ -647,20 +648,50 @@ const registerMinecraftRecipes = (event) => {
 
 	//#region Выход: Наблюдатель
 
+	event.shaped('minecraft:observer', [
+		'AAA',
+		'BBC',
+		'AAA'
+	], {
+		A: '#forge:cobblestone',
+		B: 'minecraft:redstone',
+		C: '#forge:gems/certus_quartz'
+	}).id('tfg:shaped/observer_certus_q')
+
+	event.shaped('minecraft:observer', [
+		'AAA',
+		'BBC',
+		'AAA'
+	], {
+		A: '#forge:cobblestone',
+		B: 'minecraft:redstone',
+		C: '#forge:gems/nether_quartz'
+	}).id('tfg:shaped/observer_nether_q')
+
+	event.shaped('minecraft:observer', [
+		'AAA',
+		'BBC',
+		'AAA'
+	], {
+		A: '#forge:cobblestone',
+		B: 'minecraft:redstone',
+		C: '#forge:gems/quartzite'
+	}).id('tfg:shaped/observer_quartzite')
+
 	event.recipes.gtceu.assembler('observer_certus_quartz')
-		.itemInputs('6x #forge:cobblestone', '2x minecraft:redstone', '#forge:plates/certus_quartz')
+		.itemInputs('6x #forge:cobblestone', '2x minecraft:redstone', '#forge:gems/certus_quartz')
 		.itemOutputs('minecraft:observer')
 		.duration(100)
 		.EUt(30)
 
 	event.recipes.gtceu.assembler('observer_nether_quartz')
-		.itemInputs('6x #forge:cobblestone', '2x minecraft:redstone', '#forge:plates/nether_quartz')
+		.itemInputs('6x #forge:cobblestone', '2x minecraft:redstone', '#forge:gems/nether_quartz')
 		.itemOutputs('minecraft:observer')
 		.duration(100)
 		.EUt(30)
 
 	event.recipes.gtceu.assembler('observer_quartzite')
-		.itemInputs('6x #forge:cobblestone', '2x minecraft:redstone', '#forge:plates/quartzite')
+		.itemInputs('6x #forge:cobblestone', '2x minecraft:redstone', '#forge:gems/quartzite')
 		.itemOutputs('minecraft:observer')
 		.duration(100)
 		.EUt(30)
@@ -1005,7 +1036,6 @@ const registerMinecraftRecipes = (event) => {
 	event.recipes.gtceu.compressor('tfg:red_mushroom')
 		.itemInputs('4x minecraft:red_mushroom')
 		.itemOutputs('minecraft:red_mushroom_block')
-		.circuit(2)
 		.duration(20)
 		.EUt(GTValues.VA[GTValues.ULV])
 
@@ -1013,7 +1043,6 @@ const registerMinecraftRecipes = (event) => {
 		.itemInputs('4x minecraft:brown_mushroom')
 		.itemOutputs('minecraft:brown_mushroom_block')
 		.duration(20)
-		.circuit(2)
 		.EUt(GTValues.VA[GTValues.ULV])
 
 	event.recipes.gtceu.chemical_bath('tfg:red_mushroom_to_shroomlight')
@@ -1051,14 +1080,14 @@ const registerMinecraftRecipes = (event) => {
 	event.stonecutting('create:cut_deepslate', 'minecraft:polished_deepslate')
 
 	//Glowing Ink Sacs
-
+		
 	event.recipes.gtceu.chemical_bath('minecraft:glow_inc_sac4')
 		.itemInputs("gtceu:thorium_dust", "4x #forge:dyes/black")
 		.inputFluids(Fluid.of('gtceu:glowstone', 512))
 		.itemOutputs('16x minecraft:glow_ink_sac')
 		.duration(20)
 		.EUt(GTValues.VA[GTValues.HV])
-
+		
 	event.recipes.gtceu.chemical_bath('minecraft:glow_inc_sac1')
 		.itemInputs("#forge:dyes/black")
 		.inputFluids(Fluid.of('gtceu:glowstone', 144))

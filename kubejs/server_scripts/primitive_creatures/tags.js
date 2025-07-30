@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 function registerPrimitiveCreaturesItemTags(event) {
 	const DISABLED_ITEMS = [
@@ -8,6 +9,10 @@ function registerPrimitiveCreaturesItemTags(event) {
 		'primitive_creatures:kopo',
 		// the friendly idol (spawns an allay)
 		'primitive_creatures:jjj',
+		// flint shears
+		'primitive_creatures:fragileprimitivescissors',
+		// upgrade item for terrible idol
+		'primitive_creatures:rw'
 	]
 
 	DISABLED_ITEMS.forEach(item => {
