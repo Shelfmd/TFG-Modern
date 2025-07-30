@@ -1,13 +1,13 @@
 {
     "name": "TFG-Modern",
-    "version": "0.10.0-shelf1",
+    "version": "0.10.4-shelf1",
     "description": "An innovative modpack that contains GregTech and TerraFirmaCraft on 1.20.x.",
-    "author": "Exception, Xikaro, NotAShelf <raf@notashelf.dev",
+    "author": "Exception, Xikaro, NotAShelf <raf@notashelf.dev>",
     "overrides": [
         "config",
         "defaultconfigs",
         "kubejs",
-		"tacz",
+        "tacz",
         "!kubejs/probe/**"
     ],
     "server_overrides": [
