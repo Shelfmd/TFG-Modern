@@ -1,5 +1,9 @@
 // priority: 0
+"use strict";
 
+/**
+ * @param {Internal.RecipesEventJS} event 
+ */
 function registerTFGRockRecipes(event) {
 
 	// #region Nether rock recipes
@@ -99,7 +103,7 @@ function registerTFGRockRecipes(event) {
 		{ raw: 'ae2:sky_stone_brick', polished: 'ae2:sky_stone_small_brick' },
 		{ raw: 'gtceu:certus_quartz_block', polished: 'ae2:cut_quartz_block' },
 	]
-
+	
 	RAW_TO_POLISHED.forEach(x => {
 		event.recipes.tfc.damage_inputs_shapeless_crafting(event.recipes.minecraft.crafting_shapeless(
 			x.polished, [x.raw, '#tfc:chisels']
@@ -145,51 +149,59 @@ function registerTFGRockRecipes(event) {
 			.itemOutputs(x.cracked)
 			.duration(12)
 			.EUt(8)
+
+		event.recipes.greate.pressing(x.cracked, x.raw)
+			.recipeTier(1)
+			.id(`greate:pressing/${x.raw}_to_${x.cracked}`.replace(/:/g, '_'))
 	})
 
 	// forge hammer
 
 	const HAMMERING = [
-		{ raw: 'minecraft:deepslate', hammered: 'minecraft:cobbled_deepslate' },
-		{ raw: 'minecraft:cobbled_deepslate', hammered: 'tfc:sand/black' },
-		{ raw: 'minecraft:blackstone', hammered: 'tfc:sand/black' },
-		{ raw: 'beneath:crackrack', hammered: 'tfc:sand/pink' },
-		{ raw: 'minecraft:dripstone_block', hammered: 'tfc:sand/brown' },
+		{ raw: 'minecraft:deepslate', hammered: 'minecraft:cobbled_deepslate', duration: 10, eu: 16 },
+		{ raw: 'minecraft:cobbled_deepslate', hammered: 'tfc:sand/black', duration: 200, eu: 2 },
+		{ raw: 'minecraft:blackstone', hammered: 'tfc:sand/black', duration: 200, eu: 2 },
+		{ raw: 'beneath:crackrack', hammered: 'tfc:sand/pink', duration: 200, eu: 2 },
+		{ raw: 'minecraft:dripstone_block', hammered: 'tfc:sand/brown', duration: 200, eu: 2 },
 
-		{ raw: 'ad_astra:moon_stone', hammered: 'ad_astra:moon_cobblestone' },
-		{ raw: 'tfg:rock/hardened_moon_stone', hammered: 'ad_astra:moon_cobblestone' },
-		{ raw: 'ad_astra:moon_cobblestone', hammered: 'ad_astra:moon_sand' },
-		{ raw: 'ad_astra:moon_deepslate', hammered: 'ad_astra:moon_sand' },
-		{ raw: 'tfg:rock/hardened_moon_deepslate', hammered: 'ad_astra:moon_sand' },
-		{ raw: 'ad_astra:mars_stone', hammered: 'ad_astra:mars_cobblestone' },
-		{ raw: 'tfg:rock/hardened_mars_stone', hammered: 'ad_astra:mars_cobblestone' },
-		{ raw: 'ad_astra:mars_cobblestone', hammered: 'ad_astra:mars_sand' },
-		{ raw: 'ad_astra:venus_stone', hammered: 'ad_astra:venus_cobblestone' },
-		{ raw: 'tfg:rock/hardened_venus_stone', hammered: 'ad_astra:venus_cobblestone' },
-		{ raw: 'ad_astra:venus_cobblestone', hammered: 'ad_astra:venus_sand' },,
-		{ raw: 'ad_astra:mercury_stone', hammered: 'ad_astra:mercury_cobblestone' },
-		{ raw: 'tfg:rock/hardened_mercury_stone', hammered: 'ad_astra:mercury_cobblestone' },
-		{ raw: 'ad_astra:mercury_cobblestone', hammered: 'tfc:sand/red' },
-		{ raw: 'ad_astra:glacio_stone', hammered: 'ad_astra:glacio_cobblestone' },
-		{ raw: 'tfg:rock/hardened_glacio_stone', hammered: 'ad_astra:glacio_cobblestone' },
-		{ raw: 'ad_astra:glacio_cobblestone', hammered: 'tfc:sand/white' },
-		{ raw: 'ad_astra:conglomerate', hammered: 'tfc:rock/gravel/conglomerate' },
-		{ raw: 'ad_astra:permafrost', hammered: 'tfg:loose/permafrost' }
+		{ raw: 'ad_astra:moon_stone', hammered: 'ad_astra:moon_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'tfg:rock/hardened_moon_stone', hammered: 'ad_astra:moon_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'ad_astra:moon_cobblestone', hammered: 'ad_astra:moon_sand', duration: 200, eu: 2 },
+		{ raw: 'ad_astra:moon_deepslate', hammered: 'ad_astra:moon_sand', duration: 200, eu: 2 },
+		{ raw: 'tfg:rock/hardened_moon_deepslate', hammered: 'ad_astra:moon_sand', duration: 200, eu: 2 },
+		{ raw: 'ad_astra:mars_stone', hammered: 'ad_astra:mars_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'tfg:rock/hardened_mars_stone', hammered: 'ad_astra:mars_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'ad_astra:mars_cobblestone', hammered: 'ad_astra:mars_sand', duration: 200, eu: 2 },
+		{ raw: 'ad_astra:venus_stone', hammered: 'ad_astra:venus_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'tfg:rock/hardened_venus_stone', hammered: 'ad_astra:venus_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'ad_astra:venus_cobblestone', hammered: 'ad_astra:venus_sand', duration: 200, eu: 2 },
+		{ raw: 'ad_astra:mercury_stone', hammered: 'ad_astra:mercury_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'tfg:rock/hardened_mercury_stone', hammered: 'ad_astra:mercury_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'ad_astra:mercury_cobblestone', hammered: 'tfc:sand/red', duration: 200, eu: 2 },
+		{ raw: 'ad_astra:glacio_stone', hammered: 'ad_astra:glacio_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'tfg:rock/hardened_glacio_stone', hammered: 'ad_astra:glacio_cobblestone', duration: 10, eu: 16 },
+		{ raw: 'ad_astra:glacio_cobblestone', hammered: 'tfc:sand/white', duration: 200, eu: 2 },
+		{ raw: 'ad_astra:conglomerate', hammered: 'tfc:rock/gravel/conglomerate', duration: 10, eu: 16 },
+		{ raw: 'ad_astra:permafrost', hammered: '4x gtceu:ice_dust', duration: 200, eu: 2 }
 	]
 
 	HAMMERING.forEach(x => {
-		event.recipes.gtceu.forge_hammer(`${x.raw}_to_${x.hammered}`.replace(/:/g, '_'))
+		event.recipes.gtceu.forge_hammer(`${x.raw}_to_${x.hammered}`.replace(/[: ]/g, '_'))
 			.itemInputs(x.raw)
 			.itemOutputs(x.hammered)
-			.duration(12)
-			.EUt(8)
+			.duration(x.duration)
+			.EUt(x.eu)
+
+		event.recipes.greate.pressing(x.hammered, x.raw)
+			.recipeTier(x.eu <= 8 ? 0 : 1)
+			.id(`greate:pressing/${x.raw}_to_${x.hammered}`.replace(/[: ]/g, '_'))
 	})
 
 	// slabs, stairs, walls
 
 	const CUTTER = [
 		// #region Nether
-		{
+		{ 
 			raw: 'minecraft:cobbled_deepslate',
 			stair: 'minecraft:cobbled_deepslate_stairs',
 			slab: 'minecraft:cobbled_deepslate_slab',
@@ -249,7 +261,7 @@ function registerTFGRockRecipes(event) {
 		},
 		// #endregion
 		// #region Space
-		{
+		{ 
 			raw: 'ad_astra:moon_cobblestone',
 			stair: 'ad_astra:moon_cobblestone_stairs',
 			slab: 'ad_astra:moon_cobblestone_slab',
@@ -257,7 +269,7 @@ function registerTFGRockRecipes(event) {
 			loose: 'tfg:loose/moon_stone',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:mars_cobblestone',
 			stair: 'ad_astra:mars_cobblestone_stairs',
 			slab: 'ad_astra:mars_cobblestone_slab',
@@ -265,7 +277,7 @@ function registerTFGRockRecipes(event) {
 			loose: 'tfg:loose/mars_stone',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:venus_cobblestone',
 			stair: 'ad_astra:venus_cobblestone_stairs',
 			slab: 'ad_astra:venus_cobblestone_slab',
@@ -273,7 +285,7 @@ function registerTFGRockRecipes(event) {
 			loose: 'tfg:loose/venus_stone',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:mercury_cobblestone',
 			stair: 'ad_astra:mercury_cobblestone_stairs',
 			slab: 'ad_astra:mercury_cobblestone_slab',
@@ -281,7 +293,7 @@ function registerTFGRockRecipes(event) {
 			loose: 'tfg:loose/mercury_stone',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:glacio_cobblestone',
 			stair: 'ad_astra:glacio_cobblestone_stairs',
 			slab: 'ad_astra:glacio_cobblestone_slab',
@@ -289,49 +301,49 @@ function registerTFGRockRecipes(event) {
 			loose: 'tfg:loose/glacio_stone',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:moon_stone',
 			stair: 'ad_astra:moon_stone_stairs',
 			slab: 'ad_astra:moon_stone_slab',
 			dust: 'tfg:moon_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:mars_stone',
 			stair: 'ad_astra:mars_stone_stairs',
 			slab: 'ad_astra:mars_stone_slab',
 			dust: 'tfg:mars_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:venus_stone',
 			stair: 'ad_astra:venus_stone_stairs',
 			slab: 'ad_astra:venus_stone_slab',
 			dust: 'tfg:venus_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:mercury_stone',
 			stair: 'ad_astra:mercury_stone_stairs',
 			slab: 'ad_astra:mercury_stone_slab',
 			dust: 'tfg:mercury_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:glacio_stone',
 			stair: 'ad_astra:glacio_stone_stairs',
 			slab: 'ad_astra:glacio_stone_slab',
 			dust: 'tfg:glacio_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:venus_sandstone_bricks',
 			stair: 'ad_astra:venus_sandstone_brick_stairs',
 			slab: 'ad_astra:venus_sandstone_brick_slab',
 			dust: '4x gtceu:venus_sand',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:moon_stone_bricks',
 			stair: 'ad_astra:moon_stone_brick_stairs',
 			slab: 'ad_astra:moon_stone_brick_slab',
@@ -339,7 +351,7 @@ function registerTFGRockRecipes(event) {
 			dust: 'tfg:moon_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:mars_stone_bricks',
 			stair: 'ad_astra:mars_stone_brick_stairs',
 			slab: 'ad_astra:mars_stone_brick_slab',
@@ -347,7 +359,7 @@ function registerTFGRockRecipes(event) {
 			dust: 'tfg:mars_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:venus_stone_bricks',
 			stair: 'ad_astra:venus_stone_brick_stairs',
 			slab: 'ad_astra:venus_stone_brick_slab',
@@ -355,7 +367,7 @@ function registerTFGRockRecipes(event) {
 			dust: 'tfg:venus_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:mercury_stone_bricks',
 			stair: 'ad_astra:mercury_stone_brick_stairs',
 			slab: 'ad_astra:mercury_stone_brick_slab',
@@ -363,7 +375,7 @@ function registerTFGRockRecipes(event) {
 			dust: 'tfg:mercury_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:glacio_stone_bricks',
 			stair: 'ad_astra:glacio_stone_brick_stairs',
 			slab: 'ad_astra:glacio_stone_brick_slab',
@@ -371,7 +383,7 @@ function registerTFGRockRecipes(event) {
 			dust: 'tfg:glacio_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:permafrost_bricks',
 			stair: 'ad_astra:permafrost_brick_stairs',
 			slab: 'ad_astra:permafrost_brick_slab',
@@ -379,84 +391,84 @@ function registerTFGRockRecipes(event) {
 			dust: 'gtceu:ice_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:chiseled_moon_stone_bricks',
 			stair: 'ad_astra:chiseled_moon_stone_stairs',
 			slab: 'ad_astra:chiseled_moon_stone_slab',
 			dust: 'tfg:moon_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:chiseled_mars_stone_bricks',
 			stair: 'ad_astra:chiseled_mars_stone_stairs',
 			slab: 'ad_astra:chiseled_mars_stone_slab',
 			dust: 'tfg:mars_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:chiseled_venus_stone_bricks',
 			stair: 'ad_astra:chiseled_venus_stone_stairs',
 			slab: 'ad_astra:chiseled_venus_stone_slab',
 			dust: 'tfg:venus_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:chiseled_mercury_stone_bricks',
 			stair: 'ad_astra:chiseled_mercury_stone_stairs',
 			slab: 'ad_astra:chiseled_mercury_stone_slab',
 			dust: 'tfg:mercury_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:chiseled_glacio_stone_bricks',
 			stair: 'ad_astra:chiseled_glacio_stone_stairs',
 			slab: 'ad_astra:chiseled_glacio_stone_slab',
 			dust: 'tfg:glacio_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:chiseled_permafrost_bricks',
 			stair: 'ad_astra:chiseled_permafrost_brick_stairs',
 			slab: 'ad_astra:chiseled_permafrost_brick_slab',
 			dust: 'gtceu:ice_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:polished_moon_stone',
 			stair: 'ad_astra:polished_moon_stone_stairs',
 			slab: 'ad_astra:polished_moon_stone_slab',
 			dust: 'tfg:moon_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:polished_mars_stone',
 			stair: 'ad_astra:polished_mars_stone_stairs',
 			slab: 'ad_astra:polished_mars_stone_slab',
 			dust: 'tfg:mars_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:polished_venus_stone',
 			stair: 'ad_astra:polished_venus_stone_stairs',
 			slab: 'ad_astra:polished_venus_stone_slab',
 			dust: 'tfg:venus_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:polished_mercury_stone',
 			stair: 'ad_astra:polished_mercury_stone_stairs',
 			slab: 'ad_astra:polished_mercury_stone_slab',
 			dust: 'tfg:mercury_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:polished_glacio_stone',
 			stair: 'ad_astra:polished_glacio_stone_stairs',
 			slab: 'ad_astra:polished_glacio_stone_slab',
 			dust: 'tfg:glacio_stone_dust',
 			stonecutting: true
 		},
-		{
+		{ 
 			raw: 'ad_astra:polished_permafrost',
 			stair: 'ad_astra:polished_permafrost_stairs',
 			slab: 'ad_astra:polished_permafrost_slab',
@@ -512,7 +524,7 @@ function registerTFGRockRecipes(event) {
 		}
 		// #endregion
 	]
-
+	
 	CUTTER.forEach(x => {
 		if ("stair" in x) {
 			event.recipes.tfc.chisel(x.stair, x.raw, 'stair')
@@ -521,7 +533,7 @@ function registerTFGRockRecipes(event) {
 				event.stonecutting(x.stair, x.raw).id(`${x.raw}_to_${x.stair}`.replace(/:/g, '_'))
 			}
 
-			if (x.dust != null) {
+			if (x.dust !== null) {
 				event.recipes.gtceu.macerator(`macerate_${x.stair}`.replace(/:/g, '_'))
 					.itemInputs(x.stair)
 					.itemOutputs(x.dust)
@@ -536,12 +548,12 @@ function registerTFGRockRecipes(event) {
 		}
 		if ("slab" in x) {
 			event.recipes.tfc.chisel(x.slab, x.raw, 'slab').extraDrop(x.slab)
-
+			
 			if (x.stonecutting) {
 				event.stonecutting(`2x ${x.slab}`, x.raw).id(`${x.raw}_to_${x.slab}`.replace(/:/g, '_'))
 			}
 
-			if (x.dust != null) {
+			if (x.dust !== null) {
 				event.recipes.gtceu.macerator(`macerate_${x.slab}`.replace(/:/g, '_'))
 					.itemInputs(`2x ${x.slab}`)
 					.itemOutputs(x.dust)
@@ -556,12 +568,12 @@ function registerTFGRockRecipes(event) {
 		}
 		if ("wall" in x) {
 			event.recipes.tfc.chisel(x.wall, x.raw, 'smooth')
-
+			
 			if (x.stonecutting) {
 				event.stonecutting(x.wall, x.raw).id(`${x.raw}_to_${x.wall}`.replace(/:/g, '_'))
 			}
 
-			if (x.dust != null) {
+			if (x.dust !== null) {
 				event.recipes.gtceu.macerator(`macerate_${x.wall}`.replace(/:/g, '_'))
 					.itemInputs(x.wall)
 					.itemOutputs(x.dust)
@@ -629,9 +641,10 @@ function registerTFGRockRecipes(event) {
 		'minecraft:deepslate',
 		'minecraft:cobbled_deepslate',
 		'minecraft:blackstone',
-		'minecraft:dripstone_block'
+		'minecraft:dripstone_block',
+		'minecraft:basalt'
 	]
-
+	
 	ROCK_DUPING.forEach(x => {
 		event.recipes.gtceu.rock_breaker(x)
 			.notConsumable(x)
@@ -643,6 +656,13 @@ function registerTFGRockRecipes(event) {
 	event.recipes.gtceu.rock_breaker('tfg:moon_stone')
 		.notConsumable('ad_astra:moon_stone')
 		.itemOutputs('ad_astra:moon_stone')
+		.duration(16)
+		.EUt(7)
+		.dimension('ad_astra:moon')
+
+	event.recipes.gtceu.rock_breaker('tfg:moon_cobblestone')
+		.notConsumable('ad_astra:moon_cobblestone')
+		.itemOutputs('ad_astra:moon_cobblestone')
 		.duration(16)
 		.EUt(7)
 		.dimension('ad_astra:moon')
@@ -661,6 +681,13 @@ function registerTFGRockRecipes(event) {
 		.EUt(7)
 		.dimension('ad_astra:moon')
 
+	event.recipes.gtceu.rock_breaker('tfg:glacio_cobblestone')
+		.notConsumable('ad_astra:glacio_cobblestone')
+		.itemOutputs('ad_astra:glacio_cobblestone')
+		.duration(16)
+		.EUt(7)
+		.dimension('ad_astra:moon')
+
 	event.recipes.gtceu.rock_breaker('tfg:mars_stone')
 		.notConsumable('ad_astra:mars_stone')
 		.itemOutputs('ad_astra:mars_stone')
@@ -668,16 +695,51 @@ function registerTFGRockRecipes(event) {
 		.EUt(7)
 		.dimension('ad_astra:mars')
 
+	event.recipes.gtceu.rock_breaker('tfg:mars_cobblestone')
+		.notConsumable('ad_astra:mars_cobblestone')
+		.itemOutputs('ad_astra:mars_cobblestone')
+		.duration(16)
+		.EUt(7)
+		.dimension('ad_astra:mars')
+		
 	event.recipes.gtceu.rock_breaker('tfg:venus_stone')
 		.notConsumable('ad_astra:venus_stone')
 		.itemOutputs('ad_astra:venus_stone')
 		.duration(16)
 		.EUt(7)
-		.dimension('ad_astra:venus')
+		.dimension('ad_astra:mars')
+
+	event.recipes.gtceu.rock_breaker('tfg:venus_cobblestone')
+		.notConsumable('ad_astra:venus_cobblestone')
+		.itemOutputs('ad_astra:venus_cobblestone')
+		.duration(16)
+		.EUt(7)
+		.dimension('ad_astra:mars')
+
+	event.recipes.gtceu.rock_breaker('tfg:red_granite')
+		.notConsumable('gtceu:red_granite')
+		.itemOutputs('gtceu:red_granite')
+		.duration(16)
+		.EUt(7)
+		.dimension('ad_astra:mars')
+
+	event.recipes.gtceu.rock_breaker('tfg:red_granite_cobblestone')
+		.notConsumable('gtceu:red_granite_cobblestone')
+		.itemOutputs('gtceu:red_granite_cobblestone')
+		.duration(16)
+		.EUt(7)
+		.dimension('ad_astra:mars')
 
 	event.recipes.gtceu.rock_breaker('tfg:mercury_stone')
 		.notConsumable('ad_astra:mercury_stone')
 		.itemOutputs('ad_astra:mercury_stone')
+		.duration(16)
+		.EUt(7)
+		.dimension('ad_astra:mercury')
+
+	event.recipes.gtceu.rock_breaker('tfg:mercury_cobblestone')
+		.notConsumable('ad_astra:mercury_cobblestone')
+		.itemOutputs('ad_astra:mercury_cobblestone')
 		.duration(16)
 		.EUt(7)
 		.dimension('ad_astra:mercury')
@@ -723,7 +785,7 @@ function registerTFGRockRecipes(event) {
 			.itemOutputs(`1x ${block.magma}`)
 			.duration(100)
 			.EUt(GTValues.VA[GTValues.ULV])
-
+			
 		event.recipes.gtceu.extractor(`tfg:gtceu/extractor/${block.magma}`.replace(/:/g, "/"))
 			.itemInputs(`1x ${block.magma}`)
 			.outputFluids(Fluid.of('minecraft:lava', 250))

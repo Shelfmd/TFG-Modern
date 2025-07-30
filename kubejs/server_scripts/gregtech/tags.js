@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerGTCEUItemTags = (event) => {
 
@@ -53,13 +54,13 @@ const registerGTCEUItemTags = (event) => {
 	//#endregion
 
 	event.remove('minecraft:planks', 'gtceu:treated_wood_planks')
+	event.remove('minecraft:planks', 'gtceu:treated_wood_plate')
 
 	event.add('tfg:sugars', 'minecraft:sugar')
 	event.add('tfg:sugars', 'afc:birch_sugar')
 	event.add('tfg:sugars', 'afc:maple_sugar')
     
-    global.MINECRAFT_DYE_NAMES.forEach(dyeName =>
-    {
+    global.MINECRAFT_DYE_NAMES.forEach(dyeName => {
         event.remove('ae2:p2p_attunements/fluid_p2p_tunnel', `gtceu:${dyeName}_dye_bucket`)
     })
 
@@ -72,7 +73,8 @@ const registerGTCEUItemTags = (event) => {
     event.remove('forge:gems', 'gtceu:coke_gem')
 
 	// Rose Quartz Lens
-	event.add('forge:lenses/pink', 'gtceu:rose_quartz_lens')}
+	event.add('forge:lenses/pink', 'gtceu:rose_quartz_lens')
+}
 
 const registerGTCEUBlockTags = (event) => {
 
@@ -128,4 +130,5 @@ const registerGTCEUFluidTags = (event) => {
 	event.add('c:hidden_from_recipe_viewers', 'gtceu:molten_black_steel')
 	event.add('c:hidden_from_recipe_viewers', 'gtceu:molten_red_steel')
 	event.add('c:hidden_from_recipe_viewers', 'gtceu:molten_blue_steel')
+	event.add('c:hidden_from_recipe_viewers', 'gtceu:damascus_steel')
 }

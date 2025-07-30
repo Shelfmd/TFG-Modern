@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerTFCItemTags = (event) => {
 	// Теги для соответствия инструментов TFC и GT
@@ -6,7 +7,7 @@ const registerTFCItemTags = (event) => {
 	forEachMaterial(material => {
 		if (material.hasProperty(PropertyKey.TOOL)) {
 			for (let [key, value] of Object.entries(global.GTCEU_TOOLTYPES_WHICH_HAS_TFC_DUPS)) {
-				var tool = ToolHelper.get(value, material)
+				let tool = ToolHelper.get(value, material)
 				if (!tool.isEmpty()) {
 					event.add(key, tool.getId())
 				}
@@ -63,6 +64,9 @@ const registerTFCItemTags = (event) => {
 	event.add('tfg:ferments_to_rennet', 'tfc:food/soybean')
 	event.add('tfg:ferments_to_rennet', 'firmalife:food/fig')
 	event.add('tfg:ferments_to_rennet', 'tfc:plant/ivy')
+
+	//Plants
+	event.add('tfc:plants', '#tfc:wild_fruits')
 
 	// Для складывания
 	event.add('tfc:pileable_ingots', '#forge:ingots')
@@ -270,6 +274,10 @@ const registerTFCItemTags = (event) => {
 		event.add('c:hidden_from_recipe_viewers', item)
 	})
 
+	global.TFC_HIDDEN_ITEMS.forEach(item => {
+		event.add('c:hidden_from_recipe_viewers', item)
+	})
+
 	// Удаление тегов у руд
 	event.removeAllTagsFrom("/tfc:ore/[^*]+/[^*]+/")
 
@@ -295,6 +303,21 @@ const registerTFCItemTags = (event) => {
 	event.add('minecraft:piglin_loved', 'tfc:ore/poor_native_gold')
 	event.add('minecraft:piglin_loved', 'tfc:ore/normal_native_gold')
 	event.add('minecraft:piglin_loved', 'tfc:ore/rich_native_gold')
+
+	// Bells
+	event.add('tfc:bells', 'tfc:bronze_bell')
+	event.add('tfc:bells', 'tfc:brass_bell')
+
+	// Lets the basin be put on top of a charcoal forge
+	event.add('tfc:forge_invisible_whitelist', 'create:basin')
+
+	// Allows automation with the 3x3 Hellforge
+	event.add('tfc:forge_invisible_whitelist', 'tfcchannelcasting:channel')
+	event.add('tfc:forge_invisible_whitelist', 'tfcchannelcasting:mold_table')
+	event.add('tfc:forge_invisible_whitelist', 'greate:steel_mechanical_pump')
+	event.add('tfc:forge_invisible_whitelist', 'greate:aluminum_mechanical_pump')
+	event.add('tfc:forge_invisible_whitelist', 'greate:stainless_steel_mechanical_pump')
+	event.add('tfc:forge_invisible_whitelist', 'greate:titanium_mechanical_pump')
 }
 
 const registerTFCBlockTags = (event) => {
@@ -385,26 +408,27 @@ const registerTFCBlockTags = (event) => {
 	event.add('beneath:nether_bush_plantable_on', '#tfc:dirt')
 	event.add('minecraft:frogs_spawnable_on', '#tfc:dirt')
 
-
-	event.add('minecraft:nether_carver_replaceables', 'tfc:rock/raw/gneiss')
-	event.add('minecraft:nether_carver_replaceables', 'tfc:rock/raw/schist')
-	event.add('minecraft:nether_carver_replaceables', 'tfc:rock/raw/diorite')
-	event.add('minecraft:nether_carver_replaceables', 'tfc:rock/raw/granite')
-	event.add('minecraft:nether_carver_replaceables', 'tfc:rock/raw/gabbro')
-	event.add('minecraft:nether_carver_replaceables', 'tfc:rock/raw/basalt')
 	event.add('minecraft:base_stone_nether', 'tfc:rock/raw/gneiss')
 	event.add('minecraft:base_stone_nether', 'tfc:rock/raw/schist')
 	event.add('minecraft:base_stone_nether', 'tfc:rock/raw/diorite')
 	event.add('minecraft:base_stone_nether', 'tfc:rock/raw/granite')
 	event.add('minecraft:base_stone_nether', 'tfc:rock/raw/gabbro')
 	event.add('minecraft:base_stone_nether', 'tfc:rock/raw/basalt')
-	event.add('minecraft:frogs_spawnable_on', 'tfc:rock/raw/gneiss')
-	event.add('minecraft:frogs_spawnable_on', 'tfc:rock/raw/schist')
-	event.add('minecraft:frogs_spawnable_on', 'tfc:rock/raw/diorite')
-	event.add('minecraft:frogs_spawnable_on', 'tfc:rock/raw/granite')
-	event.add('minecraft:frogs_spawnable_on', 'tfc:rock/raw/gabbro')
+	event.add('minecraft:nether_carver_replaceables', '#minecraft:base_stone_nether')
+	event.add('minecraft:frogs_spawnable_on', '#minecraft:base_stone_nether')
 
 	//#endregion
+
+	// Lets the basin be put on top of a charcoal forge
+	event.add('tfc:forge_invisible_whitelist', 'create:basin')
+
+	// Allows automation with the 3x3 Hellforge
+	event.add('tfc:forge_invisible_whitelist', 'tfcchannelcasting:channel')
+	event.add('tfc:forge_invisible_whitelist', 'tfcchannelcasting:mold_table')
+	event.add('tfc:forge_invisible_whitelist', 'greate:steel_mechanical_pump')
+	event.add('tfc:forge_invisible_whitelist', 'greate:aluminum_mechanical_pump')
+	event.add('tfc:forge_invisible_whitelist', 'greate:stainless_steel_mechanical_pump')
+	event.add('tfc:forge_invisible_whitelist', 'greate:titanium_mechanical_pump')
 
 	//Allows any block with the word "brick" in its id to be used as bloomery and forge insulation.
 	//Add blacklisted words to the const with | between.
@@ -462,6 +486,7 @@ const registerTFCFluidTags = (event) => {
 
 	event.add('tfc:usable_in_ingot_mold', 'gtceu:red_alloy')
 	event.add('tfc:usable_in_ingot_mold', 'gtceu:tin_alloy')
+	event.add('tfc:usable_in_ingot_mold', 'gtceu:lead')
 
 	event.add('tfc:usable_in_bell_mold', 'gtceu:bronze')
 	event.add('tfc:usable_in_bell_mold', 'gtceu:gold')
@@ -492,6 +517,15 @@ const registerTFCFluidTags = (event) => {
 	event.add('tfc:usable_in_wooden_bucket', 'tfc:spring_water')
 	event.add('tfc:usable_in_blue_steel_bucket', 'tfc:spring_water')
 	event.add('tfc:usable_in_red_steel_bucket', 'tfc:spring_water')
+
+	event.add('tfc:alcohols', "tfcagedalcohol:aged_beer")
+	event.add('tfc:alcohols', "tfcagedalcohol:aged_cider")
+	event.add('tfc:alcohols', "tfcagedalcohol:aged_rum")
+	event.add('tfc:alcohols', "tfcagedalcohol:aged_sake")
+	event.add('tfc:alcohols', "tfcagedalcohol:aged_vodka")
+	event.add('tfc:alcohols', "tfcagedalcohol:aged_whiskey")
+	event.add('tfc:alcohols', "tfcagedalcohol:aged_corn_whiskey")
+	event.add('tfc:alcohols', "tfcagedalcohol:aged_rye_whiskey")
 
 	// Добавляем тег для скрытия в EMI
 	event.add('c:hidden_from_recipe_viewers', 'tfc:metal/bismuth')
@@ -541,6 +575,10 @@ const registerTFCPlacedFeatures = (event) => {
 	event.add('tfc:in_biome/veins', 'tfg:earth/geode/opal')
 	event.add('tfc:in_biome/veins', 'tfg:earth/geode/pyrite')
 	event.add('tfc:in_biome/veins', 'tfg:earth/geode/quartzite')
+
+	// Crops
+	event.add('tfc:feature/crops', 'tfg:earth/sunflower_patch')
+	event.add('tfc:feature/crops', 'tfg:earth/rapeseed_patch')
 
 	// Other decoration
 	event.add('tfc:in_biome/underground_decoration', 'tfg:glow_lichen')

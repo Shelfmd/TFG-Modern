@@ -10,7 +10,7 @@ in
   mkShell {
     name = "tfg-dev";
     packages = [
-      # Used for he documentatiton script.
+      # Used for he documentation script.
       python3
 
       # Pakku is not available in Nixpkgs. 'tis a shame.

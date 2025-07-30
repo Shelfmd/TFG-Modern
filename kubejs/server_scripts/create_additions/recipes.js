@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerCreateAdditionsRecipes = (event) => {
 
@@ -92,25 +93,25 @@ const registerCreateAdditionsRecipes = (event) => {
 		E: 'gtceu:tin_single_cable',
 		F: '#tfg:shafts'
 	}).id('tfg:createadditions/shaped/alternator')
-	
-//#region Liquid blaze burners
-	
-	event.recipes.tfc.anvil('createaddition:straw', '#forge:plates/tin_alloy', ['shrink_second_last', 'upset_not_last', 'punch_last'])
-            	.tier(3)
-            	.id(`tfc:anvil/straw`)
 
-    	event.recipes.gtceu.lathe('assembler:createaddition_straw')
-        	.itemInputs('forge:small_fluid_pipes/tin_alloy')
-        	.itemOutputs('createaddition:straw')
-        	.duration(20*6)
-        	.EUt(16)
+	//#region Liquid blaze burners
 
-    	event.custom({
-        	type: 'vintageimprovements:turning',
-        	ingredients: [{ tag: 'forge:small_fluid_pipes/tin_alloy' }],
-        	results: [{ item: 'createaddition:straw' }],
-        	processingTime: 20*6
-   	 }).id(`tfg:vi/lathe/straw`)
+	event.recipes.tfc.anvil('createaddition:straw', '#forge:plates/tin_alloy', ['punch_last', 'shrink_second_last', 'upset_not_last'])
+		.tier(3)
+		.id(`tfc:anvil/straw`)
+
+	event.recipes.gtceu.lathe('assembler:createaddition_straw')
+		.itemInputs('#forge:plates/tin_alloy')
+		.itemOutputs('createaddition:straw')
+		.duration(20 * 6)
+		.EUt(16)
+
+	event.custom({
+		type: 'vintageimprovements:turning',
+		ingredients: [{ tag: 'forge:plates/tin_alloy' }],
+		results: [{ item: 'createaddition:straw' }],
+		processingTime: 20 * 6
+	}).id(`tfg:vi/lathe/straw`)
 
 	event.custom({
 		type: 'createaddition:liquid_burning',
@@ -118,7 +119,7 @@ const registerCreateAdditionsRecipes = (event) => {
 			fluidTag: 'minecraft:lava',
 			amount: 100
 		},
-		burnTime: 7*9*9
+		burnTime: 7 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/lava')
 
 	event.custom({
@@ -127,7 +128,7 @@ const registerCreateAdditionsRecipes = (event) => {
 			fluidTag: 'forge:creosote',
 			amount: 160
 		},
-		burnTime: 10*9*9
+		burnTime: 10 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/creosote')
 
 	event.custom({
@@ -136,7 +137,7 @@ const registerCreateAdditionsRecipes = (event) => {
 			fluidTag: 'forge:biomass',
 			amount: 40
 		},
-		burnTime: 10*9*9
+		burnTime: 10 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/biomass')
 
 	event.custom({
@@ -145,7 +146,7 @@ const registerCreateAdditionsRecipes = (event) => {
 			fluidTag: 'forge:oil',
 			amount: 200
 		},
-		burnTime: 10*9*9
+		burnTime: 10 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/oil')
 
 	event.custom({
@@ -154,7 +155,7 @@ const registerCreateAdditionsRecipes = (event) => {
 			fluidTag: 'forge:oil_heavy',
 			amount: 32
 		},
-		burnTime: 10*9*9
+		burnTime: 10 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/oil_heavy')
 
 	event.custom({
@@ -163,7 +164,7 @@ const registerCreateAdditionsRecipes = (event) => {
 			fluidTag: 'forge:sulfuric_heavy_fuel',
 			amount: 32
 		},
-		burnTime: 10*9*9
+		burnTime: 10 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/sulfuric_heavy_fuel')
 
 	event.custom({
@@ -172,25 +173,55 @@ const registerCreateAdditionsRecipes = (event) => {
 			fluidTag: 'forge:heavy_fuel',
 			amount: 16
 		},
-		burnTime: 30*9*9
+		burnTime: 30 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/heavy_fuel')
 
 	event.custom({
 		type: 'createaddition:liquid_burning',
 		input: {
 			fluidTag: 'forge:fish_oil',
-			amount: 160
+			amount: 50
 		},
-		burnTime: 10*9*9
+		burnTime: 100 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/fish_oil')
 
 	event.custom({
 		type: 'createaddition:liquid_burning',
 		input: {
-			fluidTag: 'tfc:olive_oil',
+			fluid: 'tfc:olive_oil',
 			amount: 50
 		},
-		burnTime: 150*9*9
+		burnTime: 150 * 9 * 9
 	}).id('tfg:createadditions/liquid_burning/olive_oil')
-//#endregion
+
+	event.custom({
+		type: 'createaddition:liquid_burning',
+		input: {
+			fluid: 'firmalife:soybean_oil',
+			amount: 50
+		},
+		burnTime: 150 * 9 * 9
+	}).id('tfg:createadditions/liquid_burning/soybean_oil')
+
+	event.custom({
+		type: 'createaddition:liquid_burning',
+		input: {
+			fluidTag: 'forge:seed_oil',
+			amount: 50
+		},
+		burnTime: 150 * 9 * 9
+	}).id('tfg:createadditions/liquid_burning/seed_oil')
+
+	event.custom({
+		type: 'createaddition:liquid_burning',
+		input: {
+			fluid: 'gtceu:steam',
+			amount: 256
+		},
+		burnTime: 4 * 9 * 9
+	}).id('tfg:createadditions/liquid_burning/steam')
+	//#endregion
+	
+	event.shapeless('createaddition:diamond_grit_sandpaper', ['minecraft:paper', 'tfc:glue', '#forge:dusts/diamond'])
+		.id('tfg:shapeless/diamond_grit_sand_paper')
 }

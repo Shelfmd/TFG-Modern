@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerAE2Recipes = (event) => {
 
@@ -15,15 +16,6 @@ const registerAE2Recipes = (event) => {
 			{ id: 'ae2:special/facade' },
 		], mod: 'ae2'
 	});
-
-	//#region Рецепты энтропии
-
-	global.TFC_STONE_TYPES.forEach(stone => {
-		registerEntropyRecipe(event, { block: { id: `tfc:rock/cobble/${stone}` } }, 'heat', { block: { id: `tfc:rock/raw/${stone}` } }, `tfg:entropy_raw_${stone}_to_cobble`)
-		registerEntropyRecipe(event, { block: { id: `tfc:rock/raw/${stone}` } }, 'cool', { block: { id: `tfc:rock/cobble/${stone}` } }, `tfg:entropy_cobble_${stone}_to_raw`)
-	})
-
-	//#endregion
 
 	// Cutting knives (for renaming things)
 	event.shaped('ae2:certus_quartz_cutting_knife', [
@@ -531,7 +523,7 @@ const registerAE2Recipes = (event) => {
         '2x #forge:rods/steel',
         'ae2:engineering_processor',
 		'2x #forge:plates/steel',
-		'#tfc:workbenches',)
+		'#tfc:workbenches')
     .itemOutputs('ae2:crafting_terminal')
     .duration(100)
     .EUt(GTValues.VA[GTValues.LV])
@@ -1026,7 +1018,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			'4x #gtceu:circuits/ev',
 			'4x #forge:plates/titanium',
 			'32x #forge:dusts/certus_quartz',
-			'ae2:calculation_processor',)
+			'ae2:calculation_processor')
 		.inputFluids(Fluid.of('tfg:fluix', 144))
 		.itemOutputs('ae2:spatial_cell_component_2')
 		.duration(200)
@@ -1038,7 +1030,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			'4x #gtceu:circuits/iv',
 			'4x #forge:plates/tungsten_steel',
 			'32x #forge:dusts/certus_quartz',
-			'ae2:calculation_processor',)
+			'ae2:calculation_processor')
 		.inputFluids(Fluid.of('tfg:fluix', 144))
 		.itemOutputs('ae2:spatial_cell_component_16')
 		.duration(200)
@@ -1097,7 +1089,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 		.itemInputs(
 			'2x ae2:formation_core',
 			'2x ae2:annihilation_core',
-			'ae2:storage_monitor',)
+			'ae2:storage_monitor')
 		.inputFluids(Fluid.of('gtceu:polyethylene', 144))
 		.itemOutputs('ae2:conversion_monitor')
 		.duration(200)
@@ -1713,8 +1705,8 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 		.EUt(480)
 
 	// Cable Colorization
-	for (var i = 0; i < 16; i++) {
-		event.recipes.gtceu.chemical_bath(global.AE2_GLASS_CABLES[i] + '_dye')
+	for (let i = 0; i < 16; i++) {
+		event.recipes.gtceu.chemical_bath(`${global.AE2_GLASS_CABLES[i]  }_dye`)
 			.itemInputs('ae2:fluix_glass_cable')
 			.inputFluids(Fluid.of(`tfc:${global.MINECRAFT_DYE_NAMES[i]}_dye`, 72))
 			.itemOutputs(global.AE2_GLASS_CABLES[i])
@@ -1722,7 +1714,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			.EUt(7)
 			.category(GTRecipeCategories.CHEM_DYES)
 
-		event.recipes.gtceu.chemical_bath(global.AE2_COVERED_CABLES[i] + '_dye')
+		event.recipes.gtceu.chemical_bath(`${global.AE2_COVERED_CABLES[i]  }_dye`)
 			.itemInputs('ae2:fluix_covered_cable')
 			.inputFluids(Fluid.of(`tfc:${global.MINECRAFT_DYE_NAMES[i]}_dye`, 72))
 			.itemOutputs(global.AE2_COVERED_CABLES[i])
@@ -1730,7 +1722,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			.EUt(7)
 			.category(GTRecipeCategories.CHEM_DYES)
 
-		event.recipes.gtceu.chemical_bath(global.AE2_COVERED_DENSE_CABLES[i] + '_dye')
+		event.recipes.gtceu.chemical_bath(`${global.AE2_COVERED_DENSE_CABLES[i]  }_dye`)
 			.itemInputs('ae2:fluix_covered_dense_cable')
 			.inputFluids(Fluid.of(`tfc:${global.MINECRAFT_DYE_NAMES[i]}_dye`, 72))
 			.itemOutputs(global.AE2_COVERED_DENSE_CABLES[i])
@@ -1738,7 +1730,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			.EUt(7)
 			.category(GTRecipeCategories.CHEM_DYES)
 
-		event.recipes.gtceu.chemical_bath(global.AE2_SMART_CABLES[i] + '_dye')
+		event.recipes.gtceu.chemical_bath(`${global.AE2_SMART_CABLES[i]  }_dye`)
 			.itemInputs('ae2:fluix_smart_cable')
 			.inputFluids(Fluid.of(`tfc:${global.MINECRAFT_DYE_NAMES[i]}_dye`, 72))
 			.itemOutputs(global.AE2_SMART_CABLES[i])
@@ -1746,7 +1738,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			.EUt(7)
 			.category(GTRecipeCategories.CHEM_DYES)
 
-		event.recipes.gtceu.chemical_bath(global.AE2_SMART_DENSE_CABLES[i] + '_dye')
+		event.recipes.gtceu.chemical_bath(`${global.AE2_SMART_DENSE_CABLES[i]  }_dye`)
 			.itemInputs('ae2:fluix_smart_dense_cable')
 			.inputFluids(Fluid.of(`tfc:${global.MINECRAFT_DYE_NAMES[i]}_dye`, 72))
 			.itemOutputs(global.AE2_SMART_DENSE_CABLES[i])
@@ -1755,7 +1747,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			.category(GTRecipeCategories.CHEM_DYES)
 
 		// Paint Balls
-		event.recipes.gtceu.chemical_bath(global.AE2_PAINTBALLS[i] + '_dye')
+		event.recipes.gtceu.chemical_bath(`${global.AE2_PAINTBALLS[i]  }_dye`)
 			.itemInputs('ae2:matter_ball')
 			.inputFluids(Fluid.of(`tfc:${global.MINECRAFT_DYE_NAMES[i]}_dye`, 36))
 			.itemOutputs(global.AE2_PAINTBALLS[i])
@@ -1764,7 +1756,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			.category(GTRecipeCategories.CHEM_DYES)
 
 		// Lumen Paint Ball
-		event.recipes.gtceu.chemical_bath(global.AE2_LUMEN_PAINTBALLS[i] + '_gtceu_dye')
+		event.recipes.gtceu.chemical_bath(`${global.AE2_LUMEN_PAINTBALLS[i]  }_gtceu_dye`)
 			.itemInputs(global.AE2_PAINTBALLS[i])
 			.inputFluids(Fluid.of('gtceu:glowstone', 125))
 			.itemOutputs(global.AE2_LUMEN_PAINTBALLS[i])
@@ -2157,7 +2149,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			'16x gtceu:iv_emitter',
 			'8x ae2:engineering_processor',
 			'14x gtceu:iv_sensor',
-			'ae2:logic_processor',)
+			'ae2:logic_processor')
 		.inputFluids(Fluid.of('gtceu:titanium', 1440))
 		.itemOutputs('ae2:quantum_ring')
 		.duration(900)
@@ -2180,7 +2172,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 
 	// Chemical Reactor
 	event.recipes.gtceu.chemical_reactor('ae2:fluix_pearl')
-		.itemInputs('4x #forge:gems/fluix', '#forge:gems/ender_eye')
+		.itemInputs('4x #forge:gems/fluix', 'tfg:vitrified_pearl')
 		.inputFluids(Fluid.of('tfg:fluix', 576))
 		.itemOutputs('ae2:fluix_pearl')
 		.duration(200)
@@ -2193,7 +2185,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			'#tfg:reactant_fluix_ruby',
 			'#tfg:reactant_fluix_quartz',
 			'4x ae2:charged_certus_quartz_crystal')
-		.inputFluids(Fluid.of('minecraft:water', 144))
+		.inputFluids("#tfg:clean_water 150")
 		.itemOutputs('5x ae2:fluix_crystal')
 		.duration(120)
 		.EUt(256)
@@ -2203,7 +2195,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			'#tfg:reactant_fluix_ruby_exquisite',
 			'#tfg:reactant_fluix_quartz',
 			'4x ae2:charged_certus_quartz_crystal')
-		.inputFluids(Fluid.of('minecraft:water', 144))
+		.inputFluids("#tfg:clean_water 150")
 		.itemOutputs('20x ae2:fluix_crystal')
 		.duration(80)
 		.EUt(256)
@@ -2213,7 +2205,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			'#tfg:reactant_fluix_ruby',
 			'#tfg:reactant_fluix_quartz_exquisite',
 			'4x ae2:charged_certus_quartz_crystal')
-		.inputFluids(Fluid.of('minecraft:water', 144))
+		.inputFluids("#tfg:clean_water 150")
 		.itemOutputs('20x ae2:fluix_crystal')
 		.duration(80)
 		.EUt(256)
@@ -2223,7 +2215,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 			'#tfg:reactant_fluix_ruby_exquisite',
 			'#tfg:reactant_fluix_quartz_exquisite',
 			'4x ae2:charged_certus_quartz_crystal')
-		.inputFluids(Fluid.of('gtceu:distilled_water', 144))
+		.inputFluids(Fluid.of('gtceu:distilled_water', 150))
 		.itemOutputs('40x ae2:fluix_crystal')
 		.duration(60)
 		.EUt(256)
@@ -2255,7 +2247,8 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 		.dimension('ad_astra:moon')
 
 	// Certus deco blocks
-
+	
+	event.stonecutting('ae2:quartz_block', '#tfg:certus_quartz_blocks')
 	event.stonecutting('ae2:cut_quartz_block', '#tfg:certus_quartz_blocks')
 	event.stonecutting('ae2:smooth_quartz_block', '#tfg:certus_quartz_blocks')
 	event.stonecutting('ae2:quartz_bricks', '#tfg:certus_quartz_blocks')
@@ -2282,7 +2275,7 @@ global.MINECRAFT_DYE_NAMES.forEach(dye => {
 
 	event.recipes.gtceu.macerator('tfg:macerate_certus_deco')
 		.itemInputs('#tfg:certus_quartz_blocks')
-		.itemOutputs('#forge:dusts/certus_quartz')
+		.itemOutputs('4x #forge:dusts/certus_quartz')
 		.duration(150)
 		.EUt(2)
 		.category(GTRecipeCategories.MACERATOR_RECYCLING)

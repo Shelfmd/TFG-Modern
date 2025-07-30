@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerTFCDataForTFC = (event) => {
 	registerTFCHeats(event)
@@ -42,6 +43,7 @@ const registerTFCFuels = (event) => {
 
 const registerTFCLampFuels = (event) => {
 	event.lampFuel('gtceu:creosote', '#tfc:lamps', 1000)
+	event.lampFuel('gtceu:seed_oil', '#tfc:lamps', 7000)
 	event.lampFuel("gtceu:glowstone", "#tfc:lamps", -1)
 }
 
@@ -80,10 +82,9 @@ const registerTFCItemSize = (event) => {
 
 
 const registerTFCFoodData = (event) => {
-
-	event.foodItem('gtceu:chocolate_coin', food => {
-		food.hunger(1)
-		food.dairy(0.5)
+	
+	event.foodItem('firmalife:ice_shavings', food => {
+		food.water(5)
+		food.decayModifier(0)
 	})
 }
-

@@ -1,16 +1,145 @@
 # Changelog
 
 ## [Unreleased]
+### Changes
+- New major GregTech version! Read all about its new changes [here](https://github.com/GregTechCEu/GregTech-Modern/releases), and please report any issues you find! @gustovafing
+- Added initial implementation of interplanetary logistics @gustovafing
+- Vanilla moss blocks/carpet are now compostable @Pyritie
+- Added missing mixer recipes for turning medium compost greens/browns into compost @Pyritie
+- Adjusted recipe times of the VI machines @Pyritie
+- Added universal compost items, for more efficient storage of compostables @Vazde
+- Added recipe for backpack feeding upgrade (#1462) @Pyritie
+- Greate shaft recipes are now shapeless (#1453) @Pyritie
+- Added crafting table recipes for matches and the matchbox (#1449) @Pyritie
+- Made "Etched" more accessible (#1473) @Nebby1999
+- Added faster recipes for crafting dough @Pyritie
+- Black bronze now has a fluid pipe instead of an item pipe, so the drum has proper containment info @Pyritie
+- Added recipes to create basic TFC alcohol in the food processor @Pyritie
+- Added melting recipes for all the TFC metal dusts @Pyritie
+- Added mortar and pestle recipes for soybean and olive paste (#1480) @Pyritie
+### Bug fixes
+- Fixed not being able to craft fine wire in a coiling machine for materials that didn't also have normal wire @Pyritie
+- Fixed cobalt brass and potin double plates not being obtainable until MV @Pyritie
+- Fixed missing recipe for cooking fox meat @Pyritie
+- Fixed ingot extruder mold recipe conflict @BlueBoat29
+- Fixed wire cutter head extruder recipes missing a mold @Pyritie
+- Possibly fixed the issue with airplanes and akistor carts not appearing when placing them (#1447) @Pyritie
+- Fixed not being able to make sea water with TFC salt in a barrel (#1476) @Pyritie
+- Fixed the electric greenhouse fruit tree recipes making more saplings instead of fruit (#1445) @Pyritie
+- Fixed missing firmalife jam food processor recipes (#1478) @Pyritie
+### Translations
+- Ukranian @Furryks
+
+## [0.10.4] - 25-07-2025
+### Changes
+- Added block interactions for mossy cobble (#1434) @Redeix
+- Clipboards are now craftable earlier (#1432) @Pyritie
+### Bug fixes
+- Fixed key bindings being reverted every time you started the game (#1430)
+- Pushed a patch to fix registry errors on Linux machines. If you are still receiving these errors please report it [here](https://github.com/TerraFirmaGreg-Team/Modpack-Modern/issues/1431) (#1434) @Redeix
+- Added a temporary workaround for the blue steel diving suit not protecting from lava (#1361) @Pyritie
+- Fixed a broken link in the papermaking field guide entry (#1426) @Pyritie
+- Fixed small springs melting into twice as much as they should (#1435) @Pyritie
+- Fixed framed item frames having the same crafting ratio as regular ones (#1427) @Pyritie
+- Fixed a recipe conflict with kaolinite powder and fire clay in an alloy smelter @Pyritie
+- Fixed some mixing bowl recipes with too many outputs @Pyritie
+
+## [0.10.3] - 23-07-2025
+### Changes
+- Reduced duration of biodiesel recipes @Pyritie
+- Changed some options of a performance mod, let us know if you find any weird issues! (#1410) @victordlp8
+- Added mortar and pestel recipes for grain to flour @Pyritie
+- Added in-world shift + right-click interactions for bricks. Greens can be used to turn bricks into mossy bricks, and a knife reverts it. Hammers make cracked bricks and mortar repairs them. (#1416) @Redeix
+- Steam can now be pumped into Blaze Burners via the Straw (#1379) @Nyonyix
+- Rearranged some anvil finish sequences to fit TFG convention @Zippity
+- Replaced moon skeletons with Strays @Pyritie
+- Replaced Beneath cave endermen with a different, passive one (same loot table though) @Pyritie
+- Added sandpaper recipes for early game gems @Pyritie
+- Unified observer recipes @Pyritie
+### Bug fixes
+- Fixed butchery knife crafting recipe (#1405) @Pyritie
+- Fixed new extruder molds missing a tag to work with the curving press (#1412) @Forsuin
+- Fixed contraptions no longer understanding TFC chests @Pyritie
+- Fixed ice never melting in the overworld (#1408) @Pyritie
+- Fixed small gears not having heat data @Zippity
+- Fixed forgeable small gears not being meltable @Zippity
+- Removed most empty tag recipes (#1420) @BlueBoat29
+- Fixed Styrene Butadiene Belt recipe (#1421) @BlueBoat29
+- Fixed deer dropping camelidae meat with a butchery knife @Pyritie
+- Fixed gas pressurizer machine not having a GUI (#1425) @Pyritie
+- Fixed recipe conflict with hoppers and ULV machine casings (#1423) @Pyritie
+
+## [0.10.2] - 20-07-2025
+### Changes
+- Aged Corn Whiskey and Aged Rye Whiskey now have status effects (#1390) @EveProgrammingsockson 
+### Bug fixes
+- Fixed TFG-Core version mismatch @Xikaro
+- Fixed hardwood logs macerating into softwood pulp (#1391) @Forsuin
+- Fixed iron flask dupe (#1397) @Pyritie
+- Fixed amethyst/nether quartz dupe (#1395) @Pyritie
+
+## [0.10.1] - 19-07-2025
+### Changes
+- Added harvest baskets to pick fruit from fruit trees and berry bushes (#1338) @Redeix
+- Added ice soup @Pyritie
+- Gave plants tag to bushes so they can be used for other things (#1338) @Redeix
+- Allowed elytra's to be repaired regardless of damage (#1338) @Redeix
+- Increased maximum range of rope/elevator pulleys to 400 blocks (#1347) @Pyritie
+- Added Tier 2 Insulation: Alkaline Earth Silicate @BlueBoat29
+- Added tfc data to tacz guns and attachments (#1353) @Redeix
+- Allowed "window" blocks and panes to be broken and picked up @BlueBoat29
+- Updated title and loading screens to be more memory efficient and hopefully look better on other resolutions. (#1381) @Redeix
+- Changed Firmalife greenhouses to no longer allow any doors/trapdoors/pipes (#1363) @BlueBoat29
+- Thorium is now Pink (#1378) @Nebby1999
+### Bug fixes
+- Fixed yeast food processor conflict (#1310) @Redeix
+- Fixed seed oil voiding in barrels (#1310) @Redeix
+- Fixed inconsistent item sizes for sunflower_product and rapeseed_product (#1310) @Redeix
+- Fixed Radiator Fan uncraftable recipe (#1302) @TomPlop
+- Fixed Fluid Solidifier Recipe Conflict for Snow (#1295) @TomPlop
+- Fixed Steel engine crafting by using the GT Rotor (#1290) @TomPlop
+- Change Electrical Greenhouse to not consome the input but lower the seed output @TomPlop
+- Fixed the Autoclave recipe to make Rose Quartz at MV @TomPlop
+- Fixed bug with Extruder Mold crafting (#1298) @BlueBoat29
+- Fixed texture issues found on some of the Extruder Mold textures @BlueBoat29
+- Added default GUI Scale (#1313) @Redeix
+- Added Kelp and Seaweed drying to electric oven (#1315) @BlueBoat29
+- Added Nugget anvil recipe and 45-70 bullet assembler recipe @BlueBoat29 @Pyritie
+- Fixed AFC wood stomping barrel recipes @BlueBoat29
+- Fixed rotten cheese in moon quest reward @Pyritie
+- Fixed create + greate configs (#1300) @HiddenOwlllll1 @Pyritie
+- Fixed blue steel diving suit looking like netherite (#1293) @Pyritie
+- Fixed anthracite not working with blaze burners @Pyritie
+- Fixed baked potato recipe missing from oven (#1338) @Redeix
+- Fixed sea water barrel recipes (#1338) @Redeix
+- Fixed Quests #1318 #1291 and finish other quests related stuffs @TomPlop
+- Integrated Ad Astra wood types with tfc (#1346) @Redeix
+- Fixed duplicate pizza dough recipe @Pyritie
+- Unified Pressure Plate Recipes among mods @BlueBoat29
+- Fixed treated composite barrel recipe lang (#1353) @Redeix
+- Fixed food processor jam recipe duping jars (#1353) @Redeix
+- Fixed Ad Astra space suit quest mentioning oxygen instead of breathable gas (#1353) @Redeix
+- Fixed flintlock not being craftable before LV (#1353) @Redeix
+- Fixed the field guide not working for chinese players (#1356) @Pyritie
+- Fixed glass blocks dropping with gem saw (#1367) @BlueBoat29
+- Fixed Hv Quest TNT #1373 @TomPlop
+- Fixed Smooth Stone #1380 @TomPlop
+
+## [0.10.0] - 13.07.2025
+- [!WARNING] If you're upgrading your world from 0.9 to 0.10, please read the upgrade guide [here](https://github.com/TerraFirmaGreg-Team/Modpack-Modern/wiki/%5BEN%5D-Upgrading-from-0.9-to-0.10). We do not recommend using Alpha versions for progression, but if you do, please make frequent backups!
 ### Major changes
 - Build a rocket and blast off to the moon, a new dimension! You can get started in mid-HV.
 - AE2 inscriber presses are now found on the moon instead of being craftable, and making various AE2 components is also significantly cheaper there. @TomPlop & @Pyritie
 - Significant ore changes: certus quartz, raw aluminium, ilmenite, and some other mid-lategame materials have been moved from the overworld to the moon. Check your field guide for more information. @TomPlop
-- A new system for interstellar item transport, made just for TerraFirmaGreg - new logistical problems to solve and automate. @ofoxsmith
-- New bedrock ore veins on the moon! Much better sources of infinite materials than stone dusts. @TomPlop
-- New machines to properly automate food, along with proper compatibility between machines and TFC's food system, so you can't turn rotten grains into fresh bread any more. The electric greenhouse now also always outputs fresh food. @ofoxsmith & @Redeix
-- New electric refrigerator with different tiers. You can craft the old one into this new one, but please take your food out of it before upgrading otherwise it will be lost! @ofoxsmith
+- A new system for interstellar item transport, made just for TerraFirmaGreg - new logistical problems to solve and automate. (Coming soon) @gustovafing
+- New machines to properly automate food, along with proper compatibility between machines and TFC's food system, so you can't turn rotten grains into fresh bread any more. The electric greenhouse now also always outputs fresh food. @gustovafing & @Redeix
+- New electric refrigerator with different tiers. You can craft the old one into this new one, but please take your food out of it before upgrading otherwise it will be lost! @gustovafing
 - Added many new advanced food items including freeze-dried fruit, calorie paste, and meal bags. @Redeix
-- Quest updates for all of the above. @TomPlop
+- Quest updates for all of the above @TomPlop @Redeix @Pyritie
+- Main UI overhaul and curseforge branding updated @Redeix
+- Added sunflowers and rapeseed to make Bio Diesel viable (#1248) @34y34y34y34y34y34y34y34y34y @Redeix
+- Create 6 update! @AirRice @aidie8
+- Added guns! @BlueBoat29
 ### Minor changes
 - Balance changes for water wheels and glowstone blocks @Pyritie
 - Added straws for the blaze burners so now you can pump liquid fuels into them (#1204) @34y34y34y34y34y34y34y34y34y
@@ -31,6 +160,22 @@
 - Removed gems tag from flint @Pyritie
 - Updated texture for aqueous accumulator (#1168) @Redeix
 - Kaolin Klayzes now also drop blood lilies @Pyritie
+- Crushing wheels need a machine hull to craft now @Pyritie
+- Anvil rod recipes are easier now (#1225) @Redeix
+- Minecraft campfires now drop themselves (RIP lost bluesteel) (#1225) @Redeix
+- Wooden multiblock tank increased to 1000000mB, and steel multiblock tank increased to 8000000mB @Redeix
+- Added back the mechanical press, now it's basically a welding + forge hammer machine @Pyritie
+- Changed the recipe to make the steam age plywood @kaylatheegg
+- Added a recipe to craft Glow Ink Sacs @BlueBoat29
+- New bedrock ore veins on the moon! Much better sources of infinite materials than stone dusts. @TomPlop
+- Overhaul of the ore processing quest chapter @Pyritie
+- Nanosuit and Quarktech armor have actual armor values now @Pyritie
+- Firmalife greenhouses can now be totally automated with the new Sweeper and Picker! Just add redstone @eerussianguy
+- Vats can now be opened and closed via redstone @eerussianguy
+- New item replacement for ender eyes @Pyritie @Redeix
+- Added more tools and components to the anvil and extruder molds (#898) @BlueBoat29 @Pyritie
+- Added recipes for crafting all the cakes @Pyritie
+- Removed infinite lava from hose-pulleys. Check out new biodiesel line for early power! (#1271) @Redeix 
 ### Bug fixes
 - Fixed a mud hut structure that had deprecated zinc ingots @Pyritie
 - The electric greenhouse now also allows loose rocks and plants inside, since TFC spawns them on any grass block @Pyritie
@@ -40,6 +185,13 @@
 - Fixed some other steel/colored steel items being extractable in LV (#1212) @Pyritie
 - Fixed polished/cut migmatite recipe conflict (#1153) @JeanRdSz
 - Fixed some bugs with the lunchbox (#1200) @Thomasx0
+- Greate millstones/crushing wheels now give the correct amount of byproducts @Electrolyte220
+- Greate bulk washing now correctly works on depots and belts @Electrolyte220
+- Fixed dough consuming whole drums of yeast starter (#1203) @Pyritie
+- Fixed missing recipes for some iron create deco things (#1240) @Pyritie
+### Translations
+- Ukranian @MetenBouldry
+- Brazilian Portuguese @gifpxto & @lemonpillow5
 
 ## [0.9.11] - 13.06.2025
 ### New features
@@ -75,7 +227,7 @@
 - Added wine-related recipes to GregTech machines (#1111) @JeanRdS
 - Added optional quest for bacon because its JEI recipe isn't clear (#1122) @SpicyNoodle5
 - Anthracite now also superheats blaze burners @Pyritie
-- Changed LV chem reactor quest to work with any container of rubber instead of just a rubber bucket (#1116) @ofoxsmith
+- Changed LV chem reactor quest to work with any container of rubber instead of just a rubber bucket (#1116) @gustovafing
 - Added perfect overclock to the electric greenhouse so it scales better with the pyro oven @Pyritie
 - Electric greenhouse now accepts logs and leaf blocks inside it, so you can build a little tree if you want @Pyritie
 - Increased durability of the blue steel diving suit to match blue steel armor @Pyritie

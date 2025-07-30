@@ -1,7 +1,10 @@
 // priority: 0
+"use strict";
 
-function registerGTCEuTFCMetalsRecipes(event)
-{
+/**
+ * @param {Internal.RecipesEventJS} event 
+ */
+function registerGTCEuTFCMetalsRecipes(event) {
 	//#region LV hull
 
 	event.replaceInput('gtceu:shaped/lv_machine_hull', '#forge:plates/wrought_iron', '#forge:plates/red_steel')
@@ -120,7 +123,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_forge_hammer' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_forge_hammer')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_forge_hammer')
 		.itemInputs('1x gtceu:hp_steam_forge_hammer')
 		.itemOutputs('7x gtceu:wrought_iron_dust', '2x gtceu:steel_dust', '2x gtceu:tin_alloy_dust', '12x gtceu:brick_dust', '1x #forge:dusts/black_steel')
@@ -136,7 +139,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_extractor' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_extractor')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_extractor')
 		.itemInputs('1x gtceu:hp_steam_extractor')
 		.itemOutputs('7x gtceu:wrought_iron_dust', '2x gtceu:steel_dust', '2x gtceu:tin_alloy_dust', '12x gtceu:brick_dust')
@@ -152,7 +155,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_macerator' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_macerator')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_macerator')
 		.itemInputs('1x gtceu:hp_steam_macerator')
 		.itemOutputs('7x gtceu:wrought_iron_dust', '2x gtceu:steel_dust', '1x #forge:dusts/black_steel', '1x gtceu:tin_alloy_dust', '12x gtceu:brick_dust')
@@ -168,7 +171,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_compressor' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_compressor')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_compressor')
 		.itemInputs('1x gtceu:hp_steam_compressor')
 		.itemOutputs('8x gtceu:wrought_iron_dust', '1x gtceu:steel_dust', '2x gtceu:tin_alloy_dust', '12x gtceu:brick_dust')
@@ -184,7 +187,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_furnace' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_furnace')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_furnace')
 		.itemInputs('1x gtceu:hp_steam_furnace')
 		.itemOutputs('7x gtceu:wrought_iron_dust', '2x gtceu:tin_alloy_dust', '1x gtceu:steel_dust', '1x #forge:dusts/black_steel', '12x gtceu:brick_dust')
@@ -200,7 +203,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_alloy_smelter' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_alloy_smelter')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_alloy_smelter')
 		.itemInputs('1x gtceu:hp_steam_alloy_smelter')
 		.itemOutputs('7x gtceu:wrought_iron_dust', '3x gtceu:steel_dust', '1x gtceu:tin_alloy_dust', '1x #forge:dusts/black_steel', '12x gtceu:brick_dust')
@@ -216,7 +219,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_rock_crusher' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_rock_crusher')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_rock_crusher')
 		.itemInputs('1x gtceu:hp_steam_rock_crusher')
 		.itemOutputs('6x gtceu:wrought_iron_dust', '2x gtceu:tin_alloy_dust', '12x gtceu:brick_dust')
@@ -232,7 +235,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_miner' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_miner')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_miner')
 		.itemInputs('1x gtceu:hp_steam_miner')
 		.itemOutputs('7x gtceu:wrought_iron_dust', '2x gtceu:tin_alloy_dust', '1x #forge:dusts/steel', '12x gtceu:brick_dust')
@@ -248,7 +251,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_solid_boiler' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_solid_boiler')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_solid_boiler')
 		.itemInputs('1x gtceu:hp_steam_solid_boiler')
 		.itemOutputs('5x gtceu:wrought_iron_dust', '4x #forge:dusts/steel', '2x gtceu:tin_alloy_dust', '12x gtceu:brick_dust')
@@ -264,7 +267,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_liquid_boiler' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_liquid_boiler')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_liquid_boiler')
 		.itemInputs('1x gtceu:hp_steam_liquid_boiler')
 		.itemOutputs('5x gtceu:wrought_iron_dust', '4x #forge:dusts/steel', '2x gtceu:tin_alloy_dust', '12x gtceu:brick_dust')
@@ -280,7 +283,7 @@ function registerGTCEuTFCMetalsRecipes(event)
 		.EUt(30)
 		.category(GTRecipeCategories.ARC_FURNACE_RECYCLING)
 
-	event.remove({ id: 'gtceu:macerator/macerate_hp_steam_solar_boiler' })
+	removeMaceratorRecipe(event, 'macerate_hp_steam_solar_boiler')
 	event.recipes.gtceu.macerator('tfg:macerate_hp_steam_solar_boiler')
 		.itemInputs('1x gtceu:hp_steam_solar_boiler')
 		.itemOutputs('5x gtceu:wrought_iron_dust', '4x #forge:dusts/silver', '2x gtceu:tin_alloy_dust', '12x gtceu:brick_dust')

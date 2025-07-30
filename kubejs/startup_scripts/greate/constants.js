@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 global.GREATE_DISABLED_ITEMS = [
 	
@@ -29,13 +30,6 @@ global.GREATE_DISABLED_ITEMS = [
 	// Disabled because they don't respect the cleanroom requirement of some recipes
 	'greate:stainless_steel_mechanical_saw',
 	'greate:titanium_mechanical_saw',
-
-	// Disable these until it's possible to disable spring recipes in them
-	'greate:andesite_alloy_mechanical_press',
-	'greate:steel_mechanical_press',
-	'greate:aluminium_mechanical_press',
-	'greate:stainless_steel_mechanical_press',
-	'greate:titanium_mechanical_press',
 
 	// You should be graduating to IV multiblocks in IV
 	'greate:tungsten_steel_shaft',

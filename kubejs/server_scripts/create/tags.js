@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerCreateItemTags = (event) => {
 
@@ -24,7 +25,7 @@ const registerCreateItemTags = (event) => {
 	global.MINECRAFT_DYE_NAMES.forEach(dye => {
 		event.add('tfg:colored_valve_handles', `create:${dye}_valve_handle`)
 
-		if (dye != 'white') event.add('tfg:colored_seats', `create:${dye}_seat`)
+		if (dye !== 'white') event.add('tfg:colored_seats', `create:${dye}_seat`)
 	})
 
 	event.add('minecraft:trimmable_armor', 'create:copper_diving_helmet')
@@ -46,26 +47,27 @@ const registerCreateItemTags = (event) => {
 	event.add('create:blaze_burner_fuel/special', "gtceu:flawless_coal_gem")
 	event.add('create:blaze_burner_fuel/special', "gtceu:exquisite_coal_gem")
 	event.add('create:blaze_burner_fuel/special', "gtceu:coke_gem")
-
-	// Lets the basin be put on top of a charcoal forge
-	event.add('tfc:forge_invisible_whitelist', 'create:basin')
-
-	// Allows automation with the 3x3 Hellforge
-	event.add('tfc:forge_invisible_whitelist', 'tfcchannelcasting:channel')
-	event.add('tfc:forge_invisible_whitelist', 'tfcchannelcasting:mold_table')
-	event.add('tfc:forge_invisible_whitelist', 'greate:steel_mechanical_pump')
-	event.add('tfc:forge_invisible_whitelist', 'greate:aluminum_mechanical_pump')
-	event.add('tfc:forge_invisible_whitelist', 'greate:stainless_steel_mechanical_pump')
-	event.add('tfc:forge_invisible_whitelist', 'greate:titanium_mechanical_pump')
+	event.add('create:blaze_burner_fuel/special', "beneath:cursecoal")
 
 	event.add('create:non_movable', 'gtceu:wood_crate')
 	event.add('create:non_movable', 'gtceu:bronze_crate')
+	event.add('create:non_movable', 'gtceu:black_bronze_crate')
+	event.add('create:non_movable', 'gtceu:bismuth_bronze_crate')
 	event.add('create:non_movable', 'gtceu:steel_crate')
 	event.add('create:non_movable', 'gtceu:aluminium_crate')
 	event.add('create:non_movable', 'gtceu:stainless_steel_crate')
 	event.add('create:non_movable', 'gtceu:titanium_crate')
 	event.add('create:non_movable', 'gtceu:tungsten_steel_crate')
 	event.add('create:non_movable', '#create:toolboxes')
+	event.add('create:non_movable', 'gtceu:lv_super_chest')
+	event.add('create:non_movable', 'gtceu:mv_super_chest')
+	event.add('create:non_movable', 'gtceu:hv_super_chest')
+	event.add('create:non_movable', 'gtceu:ev_super_chest')
+
+	event.add('c:hidden_from_recipe_viewers', 'create:cardboard_package_12x10')
+	event.add('c:hidden_from_recipe_viewers', 'create:cardboard_package_10x8')
+	event.add('c:hidden_from_recipe_viewers', 'create:cardboard_package_10x12')
+	event.add('c:hidden_from_recipe_viewers', 'create:cardboard_package_12x12')
 
 	event.remove('create:stone_types/deepslate', 'minecraft:deepslate')
 	event.remove('create:stone_types/dripstone', 'minecraft:dripstone_block')
@@ -83,27 +85,21 @@ const registerCreateBlockTags = (event) => {
 	global.MINECRAFT_DYE_NAMES.forEach(dye => {
 		event.add('tfg:colored_valve_handles', `create:${dye}_valve_handle`)
 
-		if (dye != 'white') event.add('tfg:colored_seats', `create:${dye}_seat`)
+		if (dye !== 'white') event.add('tfg:colored_seats', `create:${dye}_seat`)
 	})
 
 	// Disable bulk blasting
 	event.removeAll('create:fan_processing_catalysts/blasting')
+	event.removeAll('create:fan_processing_catalysts/haunting')
 
 	// Waters for bulk washing
 	event.add('create:fan_processing_catalysts/splashing', 'tfc:fluid/river_water')
 	event.add('create:fan_processing_catalysts/splashing', 'tfc:fluid/salt_water')
 	event.add('create:fan_processing_catalysts/splashing', 'tfc:fluid/spring_water')
+	event.add('create:fan_processing_catalysts/splashing', 'tfg:semiheavy_ammoniacal_water')
 
-	// Lets the basin be put on top of a charcoal forge
-	event.add('tfc:forge_invisible_whitelist', 'create:basin')
-
-	// Allows automation with the 3x3 Hellforge
-	event.add('tfc:forge_invisible_whitelist', 'tfcchannelcasting:channel')
-	event.add('tfc:forge_invisible_whitelist', 'tfcchannelcasting:mold_table')
-	event.add('tfc:forge_invisible_whitelist', 'greate:steel_mechanical_pump')
-	event.add('tfc:forge_invisible_whitelist', 'greate:aluminum_mechanical_pump')
-	event.add('tfc:forge_invisible_whitelist', 'greate:stainless_steel_mechanical_pump')
-	event.add('tfc:forge_invisible_whitelist', 'greate:titanium_mechanical_pump')
+	event.add('create:chest_mounted_storage', '#forge:chests/wooden')
+	event.add('create:chest_mounted_storage', 'framedblocks:framed_chest')
 }
 
 
@@ -116,12 +112,20 @@ const registerCreateFluidTags = (event) => {
 	// Добавляем тег для скрытия в EMI
 	event.add('c:hidden_from_recipe_viewers', 'create:chocolate')
 	event.add('c:hidden_from_recipe_viewers', 'create:honey')
+	event.add('c:hidden_from_recipe_viewers', 'create:builders_tea')
+	event.add('c:hidden_from_recipe_viewers', 'create:uncraftable_potion')
 
 	// Disable bulk blasting
 	event.removeAll('create:fan_processing_catalysts/blasting')
+	event.removeAll('create:fan_processing_catalysts/haunting')
 	
 	// Waters for bulk washing
 	event.add('create:fan_processing_catalysts/splashing', 'tfc:river_water')
 	event.add('create:fan_processing_catalysts/splashing', 'tfc:salt_water')
 	event.add('create:fan_processing_catalysts/splashing', 'tfc:spring_water')
+	event.add('create:fan_processing_catalysts/splashing', 'tfg:semiheavy_ammoniacal_water')
+
+	//Hose Pulley Infinites
+	event.add('create:bottomless/allow', 'tfg:semiheavy_ammoniacal_water')
+	event.remove('create:bottomless/allow', 'minecraft:lava')
 }

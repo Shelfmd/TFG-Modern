@@ -1,3 +1,5 @@
+"use strict";
+
 function registerTFGSpaceBlocks(event) {
 
 	// Dimension markers
@@ -7,7 +9,7 @@ function registerTFGSpaceBlocks(event) {
 		.item(item => {
 			item.modelJson({ parent: 'tfg:block/marker/moon' })
 		})
-		.tagBlock('minecraft:mineable/pickaxe')
+		.tagBlock('c:hidden_from_recipe_viewers')
 		.fullBlock(true)
 		.opaque(true)
 
@@ -16,7 +18,7 @@ function registerTFGSpaceBlocks(event) {
 		.item(item => {
 			item.modelJson({ parent: 'tfg:block/marker/mars' })
 		})
-		.tagBlock('minecraft:mineable/pickaxe')
+		.tagBlock('c:hidden_from_recipe_viewers')
 		.fullBlock(true)
 		.opaque(true)
 
@@ -25,7 +27,7 @@ function registerTFGSpaceBlocks(event) {
 		.item(item => {
 			item.modelJson({ parent: 'tfg:block/marker/venus' })
 		})
-		.tagBlock('minecraft:mineable/pickaxe')
+		.tagBlock('c:hidden_from_recipe_viewers')
 		.fullBlock(true)
 		.opaque(true)
 
@@ -34,7 +36,7 @@ function registerTFGSpaceBlocks(event) {
 		.item(item => {
 			item.modelJson({ parent: 'tfg:block/marker/mercury' })
 		})
-		.tagBlock('minecraft:mineable/pickaxe')
+		.tagBlock('c:hidden_from_recipe_viewers')
 		.fullBlock(true)
 		.opaque(true)
 
@@ -124,6 +126,20 @@ function registerTFGSpaceBlocks(event) {
 		.fullBlock(true)
 		.opaque(true)
 
+	event.create('tfg:rock/hardened_red_granite')
+		.stoneSoundType()
+		.requiresTool(true)
+		.item(item => {
+			item.modelJson({ parent: 'gtceu:item/red_granite' })
+		})
+		.tagBlock('tfc:can_carve')
+		.tagBoth('forge:stone')
+		.tagBoth('tfc:rock/hardened')
+		.tagBlock('minecraft:mineable/pickaxe')
+		.mapColor('terracotta_red')
+		.fullBlock(true)
+		.opaque(true)
+
 	// Loose stones
 
 	event.create('tfg:loose/moon_stone', 'tfc:loose_rock')
@@ -182,6 +198,14 @@ function registerTFGSpaceBlocks(event) {
 		.tagItem('tfc:rock_knapping')
 		.tagItem('tfc:metamorphic_rock')
 
+	event.create('tfg:loose/red_granite', 'tfc:loose_rock')
+		.stoneSoundType()
+		.itemTexture('tfg:item/loose/red_granite')
+		.tagBlock('tfc:loose_rocks')
+		.tagItem('tfc:any_knapping')
+		.tagItem('tfc:rock_knapping')
+		.tagItem('tfc:igneous_intrusive_rock')
+
 	// Spikes
 
 	event.create('tfg:spike/moon_stone_spike', 'tfc:rock_spike')
@@ -212,6 +236,93 @@ function registerTFGSpaceBlocks(event) {
 		.stoneSoundType()
 		.noItem()
 
+	event.create('tfg:spike/red_granite_spike', 'tfc:rock_spike')
+		.stoneSoundType()
+		.noItem()
+
+	// #region Plants
+
+	/*
+	Custom TFG Builder information https://github.com/TerraFirmaGreg-Team/Modpack-Modern/wiki/%5BEN%5D-TFG-Custom-Kubejs-Scripts
+	*/
+
+	event.create('tfg:lunar_roots', 'tfg:decorative_plant')
+		.soundType('nether_wart')
+		.lightLevel(0.4)
+		.tagItem('tfg:moon_plants')
+		.tagBlock('minecraft:replaceable')
+
+	event.create('tfg:lunar_sprouts', 'tfg:decorative_plant')
+		.soundType('nether_wart')
+		.tagItem('tfg:moon_plants')
+		.tagBlock('minecraft:replaceable')
+
+	event.create('tfg:corallium_arenicolus_0', 'tfg:double_decorative_plant')
+		.soundType('nether_wart')
+		.tagItem('tfg:venus_plants')
+		.lightLevel(0.4)
+		.renderType('translucent')
+
+	event.create('tfg:corallium_arenicolus_1', 'tfg:decorative_plant')
+		.soundType('nether_wart')
+		.tagItem('tfg:venus_plants')
+		.box(3, 0, 3, 13, 14, 13)
+
+	event.create('tfg:corallium_arenicolus_2', 'tfg:decorative_plant')
+		.soundType('nether_wart')
+		.tagItem('tfg:venus_plants')
+		.renderType('translucent')
+		.box(0, 0, 0, 16, 4, 16)
+
+	event.create('tfg:corallium_arenicolus_3', 'tfg:decorative_plant')
+		.soundType('nether_wart')
+		.tagItem('tfg:venus_plants')
+		.box(3, 0, 3, 13, 14, 13)
+
+	event.create('tfg:corallium_arenicolus_4', 'tfg:decorative_plant')
+		.soundType('nether_wart')
+		.tagItem('tfg:venus_plants')
+		.box(3, 0, 3, 13, 14, 13)
+
+	event.create('tfg:corallium_arenicolus_5', 'tfg:decorative_plant')
+		.soundType('nether_wart')
+		.tagItem('tfg:venus_plants')
+		.box(3, 0, 3, 13, 14, 13)
+
+	event.create('tfg:geyser_source', 'tfg:particle_emitter_decoration')
+		.soundType('dripstone_block')
+		.mapColor('color_white')
+		.resistance(6)
+		.hardness(1.5)
+		.particleOffset(0.3, 1, 0.3)
+		.particleVelocity(0, 0.1, 0)
+		.particle('minecraft:campfire_signal_smoke')
+		.particleCount(5)
+		.particleForced(true)
+
+	event.create('tfg:geyser_source_small', 'tfg:particle_emitter_decoration')
+		.soundType('dripstone_block')
+		.mapColor('color_white')
+		.resistance(6)
+		.hardness(1.5)
+		.particleOffset(0.3, 1, 0.3)
+		.particleVelocity(0, 0.05, 0)
+		.particle('minecraft:campfire_cosy_smoke')
+		.particleCount(2)
+		.particleForced(false)
+
+	event.create('tfg:stromatolite_cluster_small', 'tfg:decorative_plant')
+		.soundType('dripstone_block')
+		.mapColor('color_brown')
+		.box(3, 0, 3, 13, 6, 13)
+
+	event.create('tfg:stromatolite_cluster_medium', 'tfg:decorative_plant')
+		.soundType('dripstone_block')
+		.mapColor('color_brown')
+		.box(3, 0, 3, 13, 14, 13)
+
+	// #endregion
+
 	//#region Venus Blocks
 	//Fluorapatite
 	const fluorapatite_colors = ['blue', 'green', 'brown', 'orange', 'white', 'yellow'];
@@ -241,39 +352,6 @@ function registerTFGSpaceBlocks(event) {
 			.mapColor(`color_${color}`)
 			.fullBlock(true)
 			.opaque(true)
-		//Raw Sandstone Wall
-		event.create(`tfg:sandstone/wall/raw/fluorapatite/${color}`, 'wall')
-			.textureAll(`tfg:block/planets/venus/sandstone_bottom_fluorapatite_${color}`)
-			.hardness(0.8)
-			.resistance(0.8)
-			.soundType('stone')
-			.requiresTool(true)
-			.tagBlock('minecraft:mineable/pickaxe')
-			.mapColor(`color_${color}`)
-			.fullBlock(true)
-			.opaque(true)
-		//Raw Sandstone Slab
-		event.create(`tfg:sandstone/slab/raw/fluorapatite/${color}`, 'slab')
-			.textureAll(`tfg:block/planets/venus/sandstone_bottom_fluorapatite_${color}`)
-			.hardness(0.8)
-			.resistance(0.8)
-			.soundType('stone')
-			.requiresTool(true)
-			.tagBlock('minecraft:mineable/pickaxe')
-			.mapColor(`color_${color}`)
-			.fullBlock(true)
-			.opaque(true)
-		//Raw Sandstone Stairs
-		event.create(`tfg:sandstone/stairs/raw/fluorapatite/${color}`, 'stairs')
-			.textureAll(`tfg:block/planets/venus/sandstone_bottom_fluorapatite_${color}`)
-			.hardness(0.8)
-			.resistance(0.8)
-			.soundType('stone')
-			.requiresTool(true)
-			.tagBlock('minecraft:mineable/pickaxe')
-			.mapColor(`color_${color}`)
-			.fullBlock(true)
-			.opaque(true)
 		//Smooth Sandstone
 		event.create(`tfg:sandstone/smooth/fluorapatite/${color}`)
 			.textureAll(`tfg:block/planets/venus/sandstone_top_fluorapatite_${color}`)
@@ -283,39 +361,6 @@ function registerTFGSpaceBlocks(event) {
 			.requiresTool(true)
 			.tagBoth('forge:sandstone')
 			.tagItem('forge:sandstone/fluorapatite')
-			.tagBlock('minecraft:mineable/pickaxe')
-			.mapColor(`color_${color}`)
-			.fullBlock(true)
-			.opaque(true)
-		//Smooth Sandstone Wall
-		event.create(`tfg:sandstone/smooth/wall/fluorapatite/${color}`, 'wall')
-			.textureAll(`tfg:block/planets/venus/sandstone_top_fluorapatite_${color}`)
-			.hardness(0.8)
-			.resistance(0.8)
-			.soundType('stone')
-			.requiresTool(true)
-			.tagBlock('minecraft:mineable/pickaxe')
-			.mapColor(`color_${color}`)
-			.fullBlock(true)
-			.opaque(true)
-		//Smooth Sandstone Slab
-		event.create(`tfg:sandstone/smooth/slab/fluorapatite/${color}`, 'slab')
-			.textureAll(`tfg:block/planets/venus/sandstone_top_fluorapatite_${color}`)
-			.hardness(0.8)
-			.resistance(0.8)
-			.soundType('stone')
-			.requiresTool(true)
-			.tagBlock('minecraft:mineable/pickaxe')
-			.mapColor(`color_${color}`)
-			.fullBlock(true)
-			.opaque(true)
-		//Smooth Sandstone Stairs
-		event.create(`tfg:sandstone/smooth/stairs/fluorapatite/${color}`, 'stairs')
-			.textureAll(`tfg:block/planets/venus/sandstone_top_fluorapatite_${color}`)
-			.hardness(0.8)
-			.resistance(0.8)
-			.soundType('stone')
-			.requiresTool(true)
 			.tagBlock('minecraft:mineable/pickaxe')
 			.mapColor(`color_${color}`)
 			.fullBlock(true)

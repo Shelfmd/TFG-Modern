@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerAdAstraMaterials = (event) => {
 
@@ -22,31 +23,38 @@ const registerAdAstraMaterials = (event) => {
 		.ore()
 		.addOreByproducts('olivine', 'rutile', 'rutile')
 		.ingot()
+		.liquid()
+		.blastTemp(2000, 'low', GTValues.VA[GTValues.MV])
 		.flags(
 			GTMaterialFlags.FORCE_GENERATE_BLOCK, 
 			GTMaterialFlags.GENERATE_PLATE, 
 			GTMaterialFlags.GENERATE_ROD,
-			GTMaterialFlags.GENERATE_DENSE
+			GTMaterialFlags.GENERATE_DENSE,
+			GTMaterialFlags.GENERATE_GEAR,
+			GTMaterialFlags.GENERATE_FRAME,
+			GTMaterialFlags.DISABLE_ALLOY_BLAST
 		)
 
-	// TODO: remove the components until we know what to put in them
-
-	// mars?
+	// mars
 	event.create('ostrum')
-		.components('2x scheelite', '1x hematite', '1x rutile', '4x oxygen')
+		//.components('3x scheelite', '2x hematite', '2x thorium', '4x oxygen')
 		.color(0xbd7980)
 		.secondaryColor(0xA66C8D)
 		.iconSet(GTMaterialIconSet.getByName('tfc_cassiterite'))
-		.ore()
+		.dust()
 		.ingot()
+		.liquid()
+		.blastTemp(2900, 'mid', GTValues.VA[GTValues.HV])
 		.flags(
 			GTMaterialFlags.FORCE_GENERATE_BLOCK, 
-			GTMaterialFlags.GENERATE_PLATE
+			GTMaterialFlags.GENERATE_PLATE,
+			GTMaterialFlags.DISABLE_ALLOY_BLAST
+
 		)
 
 	// venus?
 	event.create('calorite')
-		.components('2x mercury', '1x tungsten', '1x rhodium', '2x sulfur')
+		//.components('2x mercury', '1x tungsten', '1x rhodium', '2x sulfur')
 		.color(0xC94D4E)
 		.secondaryColor(0x9A296A)
 		.iconSet(GTMaterialIconSet.getByName('tfc_copper'))
@@ -59,7 +67,7 @@ const registerAdAstraMaterials = (event) => {
 
 	// ???
 	event.create('etrium')
-		.components('1x niobium', '1x molybdenum', '1x ruthenium', '3x carbon', '1x monochloramine')
+		//.components('1x niobium', '1x molybdenum', '1x ruthenium', '3x carbon', '1x monochloramine')
 		.color(0x7BFCD7)
 		.secondaryColor(0x3582D2)
 		.iconSet(GTMaterialIconSet.getByName('tfc_silver'))

@@ -1,29 +1,39 @@
-# Always use LF line endings so that if a repo is accessed
-# in Unix via a file share from Windows, the scripts will
-# work as expected.
-*.sh text eol=lf
-* text=auto eol=lf
+# Set the default behavior:
+# On checkout, the line endings will be normalized to the correct one for the OS
+# On commit, the line endings will be reset to lf
+* text=auto
 
-# Don't diff churn.
-*.age -diff
-*.lock -diff
-*LICENSE -diff
-*pnpm-lock.yaml -diff
+# Text Files
+*.txt text
+*.md text
+LICENSE text
 
-# Try to get markdown files to be treated as markdown
-# by linguist - ** prefix is for all subdirectories.
-**/*.md linguist-detectable
-**/*.md linguist-language=Markdown
+*.cfg text
+*.lang text
 
-# Those should not be rendered in GH's rich display.
-*.zip binary
+*.bat text
+*.sh text
+
+*.json text
+*.yml text
+*.yaml text
+*.toml text
+
+*.js text
+*.ts text
+
+*.zs text
+*.groovy text
+
+*.xml text
+*.xsd text
+*.svg text
+
+# Binary Files
 *.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
 
-# Git Configuration files
-*.gitattributes linguist-detectable=false
-*.gitattributes linguist-documentation=false
-*.gitignore linguist-detectable=false
-*.gitignore linguist-documentation=false
-*.editorconfig linguist-detectable=false
-*.editorconfig linguist-documentation=false
-
+dumps/**/*.* linguist-generated=true
+*.log linguist-generated=true

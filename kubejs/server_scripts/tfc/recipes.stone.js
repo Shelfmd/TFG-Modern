@@ -1,4 +1,5 @@
 ﻿// priority: 0
+"use strict";
 
 function registerTFCStoneRecipes(event) {
 
@@ -30,6 +31,10 @@ function registerTFCStoneRecipes(event) {
 			.itemOutputs(`tfc:rock/cobble/${stone}`)
 			.duration(10)
 			.EUt(16)
+
+		event.recipes.greate.pressing(`tfc:rock/cobble/${stone}`, `tfc:rock/raw/${stone}`)
+			.recipeTier(1)
+			.id(`greate:pressing/${stone}_raw_to_cobble`)
 
 		// ? -> Сырая нажимная пластина
 		event.shaped(`tfc:rock/pressure_plate/${stone}`, [
@@ -174,6 +179,10 @@ function registerTFCStoneRecipes(event) {
 			.duration(10)
 			.EUt(16)
 
+		event.recipes.greate.pressing(`tfc:rock/gravel/${stone}`, `tfc:rock/cobble/${stone}`)
+			.recipeTier(1)
+			.id(`greate:pressing/${stone}_cobble_to_gravel`)
+
 		// Камни -> Булыжник
 		event.shaped(`tfc:rock/cobble/${stone}`, [
 			'ABA',
@@ -215,6 +224,10 @@ function registerTFCStoneRecipes(event) {
 			.duration(25)
 			.EUt(8)
 
+		event.recipes.greate.pressing(`tfc:rock/cracked_bricks/${stone}`, `tfc:rock/bricks/${stone}`)
+			.recipeTier(1)
+			.id(`greate:pressing/cracked_bricks_${stone}`)
+
 		//#endregion
 
 		//#region Замшелый булыжник
@@ -240,7 +253,7 @@ function registerTFCStoneRecipes(event) {
 		event.recipes.gtceu.assembler(`${stone}_cobble_rocks_to_mossy_cobble`)
 			.itemInputs(`tfc:rock/cobble/${stone}`, '#tfc:compost_greens_low')
 			.circuit(0)
-			.inputFluids(Fluid.of('minecraft:water', 144))
+			.inputFluids("#tfg:clean_water 144")
 			.itemOutputs(`tfc:rock/mossy_cobble/${stone}`)
 			.duration(50)
 			.EUt(2)
@@ -252,7 +265,7 @@ function registerTFCStoneRecipes(event) {
 		event.recipes.gtceu.assembler(`mossy_bricks_${stone}`)
 			.itemInputs(`tfc:rock/bricks/${stone}`, '#tfc:compost_greens_low')
 			.circuit(0)
-			.inputFluids(Fluid.of('minecraft:water', 144))
+			.inputFluids("#tfg:clean_water 144")
 			.itemOutputs(`tfc:rock/mossy_bricks/${stone}`)
 			.duration(50)
 			.EUt(2)
@@ -266,6 +279,18 @@ function registerTFCStoneRecipes(event) {
 			.circuit(0)
 			.inputFluids(Fluid.of('gtceu:concrete', 72))
 			.itemOutputs(`2x tfc:rock/hardened/${stone}`)
+			.duration(250)
+			.EUt(8)
+
+		//#endregion
+
+		//#region Укрепленный камень
+
+		event.recipes.gtceu.assembler(`smooth_${stone}`)
+			.itemInputs(`8x tfc:rock/raw/${stone}`)
+			.circuit(2)
+			.inputFluids(Fluid.of('gtceu:concrete', 72))
+			.itemOutputs(`8x tfc:rock/smooth/${stone}`)
 			.duration(250)
 			.EUt(8)
 

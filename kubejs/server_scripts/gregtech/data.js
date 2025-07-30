@@ -1,4 +1,5 @@
 // priority: 0
+"use strict";
 
 const registerTFCDataForGTCEU = (event) => {
 	registerGTCEUHeats(event)
@@ -28,7 +29,7 @@ const registerGTCEUHeats = (event) => {
 	forEachMaterial(material => {
 		let tfcProperty = material.getProperty(TFGPropertyKey.TFC_PROPERTY)
 
-		if (tfcProperty != null) {
+		if (tfcProperty !== null) {
 			makeItemHeatByTagPrefix(TagPrefix.dustTiny, material, tfcProperty, 0.357)
 			makeItemHeatByTagPrefix(TagPrefix.dustSmall, material, tfcProperty, 0.714)
 			makeItemHeatByTagPrefix(TagPrefix.dust, material, tfcProperty, 1.429)
@@ -38,6 +39,7 @@ const registerGTCEUHeats = (event) => {
 			makeItemHeatByTagPrefix(TagPrefix.nugget, material, tfcProperty, 0.124)
 			makeItemHeatByTagPrefix(TagPrefix.block, material, tfcProperty, 20)
 			makeItemHeatByTagPrefix(TagPrefix.rodLong, material, tfcProperty, 1.429)
+			makeItemHeatByTagPrefix(TagPrefix.gearSmall, material, tfcProperty, 1.429)
 
 			makeItemHeatByTagPrefix(TagPrefix.ingot, material, tfcProperty, 1.429)
 			makeItemHeatByTagPrefix(TFGTagPrefix.ingotDouble, material, tfcProperty, 2.875)
@@ -112,6 +114,7 @@ const registerGTCEUMetals = (event) => {
 	event.metal('gtceu:redstone', 460, 0.01729, null, null, null, 1, 'tfg:redstone')
 	event.metal('gtceu:red_alloy', 740, 0.01529, '#forge:ingots/red_alloy', '#forge:double_ingots/red_alloy', '#forge:plates/red_alloy', 2, 'tfg:red_alloy')
 	event.metal('gtceu:tin_alloy', 1250, 0.00829, '#forge:ingots/tin_alloy', '#forge:double_ingots/tin_alloy', '#forge:plates/tin_alloy', 3, 'tfg:tin_alloy')
+	event.metal('gtceu:lead', 330, 0.01729, '#forge:ingots/lead', '#forge:double_ingots/lead', '#forge:plates/lead', 2, 'tfg:lead')
 }
 
 
@@ -182,5 +185,41 @@ const registerGTCEUBedrockOreVeins = (event) => {
 			.material(GTMaterials.Kyanite, 2)
 			.material(GTMaterials.Pollucite, 1)
 			.dimensions('ad_astra:moon')
+	})
+}
+
+function registerGTCEUBedrockFluidVeins(event) {
+
+	event.add('tfg:moon_helium_3', vein => {
+		vein.dimensions('ad_astra:moon')
+		vein.fluid(() => Fluid.of('gtceu:helium_3').fluid)
+		vein.weight(100)
+		vein.minimumYield(200)
+		vein.maximumYield(400)
+		vein.depletionAmount(1)
+		vein.depletionChance(1)
+		vein.depletedYield(200)
+	})
+
+	event.add('tfg:moon_helium', vein => {
+		vein.dimensions('ad_astra:moon')
+		vein.fluid(() => Fluid.of('gtceu:helium').fluid)
+		vein.weight(10)
+		vein.minimumYield(50)
+		vein.maximumYield(20)
+		vein.depletionAmount(1)
+		vein.depletionChance(1)
+		vein.depletedYield(50)
+	})
+
+	event.add('tfg:moon_argon', vein => {
+		vein.dimensions('ad_astra:moon')
+		vein.fluid(() => Fluid.of('gtceu:argon').fluid)
+		vein.weight(5)
+		vein.minimumYield(30)
+		vein.maximumYield(10)
+		vein.depletionAmount(1)
+		vein.depletionChance(1)
+		vein.depletedYield(10)
 	})
 }
