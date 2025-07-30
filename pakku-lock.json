@@ -795,6 +795,67 @@
             ]
         },
         {
+            "pakku_id": "qRo2Tz8MTFvEgLH3",
+            "type": "MOD",
+            "side": "BOTH",
+            "slug": {
+                "curseforge": "another-furniture",
+                "modrinth": "another-furniture"
+            },
+            "name": {
+                "curseforge": "Another Furniture",
+                "modrinth": "Another Furniture"
+            },
+            "id": {
+                "curseforge": "610492",
+                "modrinth": "ulloLmqG"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "another_furniture-forge-1.20.1-3.0.2.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/6276/829/another_furniture-forge-1.20.1-3.0.2.jar",
+                    "id": "6276829",
+                    "parent_id": "610492",
+                    "hashes": {
+                        "sha1": "02cd9c85f5806cbba9c1220b8da28ca1c16aa26f",
+                        "md5": "4ea0e6533aedbeb5679fd46aa039cbda"
+                    },
+                    "required_dependencies": [],
+                    "size": 2425050,
+                    "date_published": "2025-03-07T21:51:27.780Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "another_furniture-forge-1.20.1-3.0.2.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/ulloLmqG/versions/aR6kgnDf/another_furniture-forge-1.20.1-3.0.2.jar",
+                    "id": "aR6kgnDf",
+                    "parent_id": "ulloLmqG",
+                    "hashes": {
+                        "sha512": "0304aca12c6e2965ea4386eb57fda68ccdc2e3dbd8b928149bf84c8f30a95f019578a52a7f3c3fd4b5cddbfc38df1659e05af88c36c0b01b784a27145201f039",
+                        "sha1": "02cd9c85f5806cbba9c1220b8da28ca1c16aa26f"
+                    },
+                    "required_dependencies": [],
+                    "size": 2425050,
+                    "date_published": "2025-03-07T21:56:30.681440Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "mYY02F5XR0fB6HXF",
             "pakku_links": [
                 "E7ASIvLUKD1YJURv"
