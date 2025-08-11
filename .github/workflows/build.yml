@@ -192,7 +192,7 @@ jobs:
       - name: 📄 Format diff
         id: format_diff
         if: ${{ steps.read_diff.outputs.diff != '' }}
-        uses: roamingowl/template-output-with-eta@v1.12.0
+        uses: roamingowl/template-output-with-eta@v1.13.0
         with:
           template: |
             ```markdown
@@ -234,7 +234,7 @@ jobs:
           sed -i -e "s/DEV/${VERSION}/g" config/fancymenu/customization/gui_main_menu.txt
 
       - name: 📝 Cache pakku
-        uses: actions/cache@v4.2.3
+        uses: actions/cache@v4.2.4
         id: cache
         with:
           path: build/.cache
@@ -276,7 +276,7 @@ jobs:
           sed -i -e "s/DEV/${VERSION}/g" config/fancymenu/customization/gui_main_menu.txt
 
       - name: 📝 Cache pakku
-        uses: actions/cache@v4.2.3
+        uses: actions/cache@v4.2.4
         id: cache
         with:
           path: build/.cache
@@ -320,7 +320,7 @@ jobs:
           sed -i -e "s/DEV/${VERSION}/g" .pakku/multimc-overrides/instance.cfg
 
       - name: 📝 Cache pakku
-        uses: actions/cache@v4.2.3
+        uses: actions/cache@v4.2.4
         id: cache
         with:
           path: build/.cache
@@ -366,7 +366,7 @@ jobs:
         uses: actions/checkout@v4.2.2
 
       - name: 📦 Download artifact
-        uses: actions/download-artifact@v4.3.0
+        uses: actions/download-artifact@v5
         with:
           merge-multiple: true
 
@@ -402,7 +402,7 @@ jobs:
       - name: 📄 Format diff
         id: format_diff
         if: ${{ needs.info.outputs.diff != '' }}
-        uses: roamingowl/template-output-with-eta@v1.12.0
+        uses: roamingowl/template-output-with-eta@v1.13.0
         with:
           template: |
             ```markdown
