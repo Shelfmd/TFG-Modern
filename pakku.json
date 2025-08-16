@@ -59,6 +59,9 @@
         "controlling": {
             "side": "CLIENT"
         },
+        "dcintegration": {
+            "side": "SERVER"
+        },
         "dynamic-darkness": {
             "side": "CLIENT"
         },

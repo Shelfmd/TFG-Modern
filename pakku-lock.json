@@ -5270,6 +5270,67 @@
             ]
         },
         {
+            "pakku_id": "jo9QEYwShbGdzwrt",
+            "type": "MOD",
+            "side": "SERVER",
+            "slug": {
+                "curseforge": "dcintegration",
+                "modrinth": "dcintegration"
+            },
+            "name": {
+                "curseforge": "Discord Integration Forge",
+                "modrinth": "Discord Integration"
+            },
+            "id": {
+                "curseforge": "324952",
+                "modrinth": "rbJ7eS5V"
+            },
+            "files": [
+                {
+                    "type": "curseforge",
+                    "file_name": "dcintegration-forge-3.0.7.1-1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://edge.forgecdn.net/files/5332/465/dcintegration-forge-3.0.7.1-1.20.1.jar",
+                    "id": "5332465",
+                    "parent_id": "324952",
+                    "hashes": {
+                        "sha1": "28d0562167f26d5caa71866255a163d68417edd2",
+                        "md5": "fc0cc2f0d9239f1c2dcf526559b9343a"
+                    },
+                    "required_dependencies": [],
+                    "size": 16358023,
+                    "date_published": "2024-05-10T12:05:16.543Z"
+                },
+                {
+                    "type": "modrinth",
+                    "file_name": "dcintegration-forge-3.0.7.1-1.20.1.jar",
+                    "mc_versions": [
+                        "1.20.1"
+                    ],
+                    "loaders": [
+                        "forge"
+                    ],
+                    "release_type": "release",
+                    "url": "https://cdn.modrinth.com/data/rbJ7eS5V/versions/ILJrSvYW/dcintegration-forge-3.0.7.1-1.20.1.jar",
+                    "id": "ILJrSvYW",
+                    "parent_id": "rbJ7eS5V",
+                    "hashes": {
+                        "sha512": "a4bcef59ff48059595fbcb50891b4561db8fdfe6e30ad4a6277eb0506bac519a3d69431aa691969d8894b93e5dc055b94cb0a9c09a1e3066eb5cbde411d2e483",
+                        "sha1": "28d0562167f26d5caa71866255a163d68417edd2"
+                    },
+                    "required_dependencies": [],
+                    "size": 16358023,
+                    "date_published": "2024-05-10T12:05:32.195976Z"
+                }
+            ]
+        },
+        {
             "pakku_id": "lv9zy1yqw8z5AIQb",
             "type": "MOD",
             "side": "BOTH",
